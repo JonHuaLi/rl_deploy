@@ -1,0 +1,11 @@
+/data/rl_deploy/build/node_control_msgs/rosidl_adapter/node_control_msgs:msg/MotorCommandFeedback.idl
+/data/rl_deploy/build/node_control_msgs/rosidl_adapter/node_control_msgs:msg/MotorCommand.idl
+/data/rl_deploy/build/node_control_msgs/rosidl_adapter/node_control_msgs:msg/MotorConfig.idl
+/data/rl_deploy/build/node_control_msgs/rosidl_adapter/node_control_msgs:msg/MotorConfigDev.idl
+/data/rl_deploy/build/node_control_msgs/rosidl_adapter/node_control_msgs:msg/MotorControl.idl
+/data/rl_deploy/build/node_control_msgs/rosidl_adapter/node_control_msgs:msg/MotorFeedback.idl
+/data/rl_deploy/build/node_control_msgs/rosidl_adapter/node_control_msgs:msg/MotorHealth.idl
+/data/rl_deploy/build/node_control_msgs/rosidl_adapter/node_control_msgs:msg/MotorHealthState.idl
+/data/rl_deploy/build/node_control_msgs/rosidl_adapter/node_control_msgs:msg/MotorInfo.idl
+/data/rl_deploy/build/node_control_msgs/rosidl_adapter/node_control_msgs:msg/MotorInfoValue.idl
+/data/rl_deploy/build/node_control_msgs/rosidl_adapter/node_control_msgs:srv/MotorConfigStatus.idl

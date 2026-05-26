@@ -1,0 +1,22 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from node_control_msgs/msg/MotorHealth.msg
+// generated code does not contain a copyright notice
+
+#include "node_control_msgs/msg/MotorHealthState.idl"
+#include "std_msgs/msg/Header.idl"
+
+module node_control_msgs {
+  module msg {
+    struct MotorHealth {
+      std_msgs::msg::Header header;
+
+      @verbatim (language="comment", text=
+        "各个关节电机状态")
+      sequence<node_control_msgs::msg::MotorHealthState> state;
+
+      @verbatim (language="comment", text=
+        "所有关节电机状态")
+      node_control_msgs::msg::MotorHealthState state_all;
+    };
+  };
+};

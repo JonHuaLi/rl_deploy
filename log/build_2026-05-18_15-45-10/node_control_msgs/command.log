@@ -1,0 +1,6 @@
+Invoking command in '/data/rl_deploy/build/node_control_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/local/bin/cmake /data/rl_deploy/src/node_control_msgs -DCMAKE_INSTALL_PREFIX=/data/rl_deploy/install/node_control_msgs
+Invoked command in '/data/rl_deploy/build/node_control_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/local/bin/cmake /data/rl_deploy/src/node_control_msgs -DCMAKE_INSTALL_PREFIX=/data/rl_deploy/install/node_control_msgs
+Invoking command in '/data/rl_deploy/build/node_control_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/local/bin/cmake --build /data/rl_deploy/build/node_control_msgs -- -j8 -l8
+Invoked command in '/data/rl_deploy/build/node_control_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/local/bin/cmake --build /data/rl_deploy/build/node_control_msgs -- -j8 -l8
+Invoking command in '/data/rl_deploy/build/node_control_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/local/bin/cmake --install /data/rl_deploy/build/node_control_msgs
+Invoked command in '/data/rl_deploy/build/node_control_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/local/bin/cmake --install /data/rl_deploy/build/node_control_msgs

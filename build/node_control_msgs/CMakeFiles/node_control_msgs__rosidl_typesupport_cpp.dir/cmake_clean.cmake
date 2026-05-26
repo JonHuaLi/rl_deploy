@@ -1,0 +1,42 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/node_control_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/node_control_msgs/msg/motor_command__type_support.cpp.o"
+  "CMakeFiles/node_control_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/node_control_msgs/msg/motor_command__type_support.cpp.o.d"
+  "CMakeFiles/node_control_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/node_control_msgs/msg/motor_command_feedback__type_support.cpp.o"
+  "CMakeFiles/node_control_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/node_control_msgs/msg/motor_command_feedback__type_support.cpp.o.d"
+  "CMakeFiles/node_control_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/node_control_msgs/msg/motor_config__type_support.cpp.o"
+  "CMakeFiles/node_control_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/node_control_msgs/msg/motor_config__type_support.cpp.o.d"
+  "CMakeFiles/node_control_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/node_control_msgs/msg/motor_config_dev__type_support.cpp.o"
+  "CMakeFiles/node_control_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/node_control_msgs/msg/motor_config_dev__type_support.cpp.o.d"
+  "CMakeFiles/node_control_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/node_control_msgs/msg/motor_control__type_support.cpp.o"
+  "CMakeFiles/node_control_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/node_control_msgs/msg/motor_control__type_support.cpp.o.d"
+  "CMakeFiles/node_control_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/node_control_msgs/msg/motor_feedback__type_support.cpp.o"
+  "CMakeFiles/node_control_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/node_control_msgs/msg/motor_feedback__type_support.cpp.o.d"
+  "CMakeFiles/node_control_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/node_control_msgs/msg/motor_health__type_support.cpp.o"
+  "CMakeFiles/node_control_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/node_control_msgs/msg/motor_health__type_support.cpp.o.d"
+  "CMakeFiles/node_control_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/node_control_msgs/msg/motor_health_state__type_support.cpp.o"
+  "CMakeFiles/node_control_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/node_control_msgs/msg/motor_health_state__type_support.cpp.o.d"
+  "CMakeFiles/node_control_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/node_control_msgs/msg/motor_info__type_support.cpp.o"
+  "CMakeFiles/node_control_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/node_control_msgs/msg/motor_info__type_support.cpp.o.d"
+  "CMakeFiles/node_control_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/node_control_msgs/msg/motor_info_value__type_support.cpp.o"
+  "CMakeFiles/node_control_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/node_control_msgs/msg/motor_info_value__type_support.cpp.o.d"
+  "CMakeFiles/node_control_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/node_control_msgs/srv/motor_config_status__type_support.cpp.o"
+  "CMakeFiles/node_control_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/node_control_msgs/srv/motor_config_status__type_support.cpp.o.d"
+  "libnode_control_msgs__rosidl_typesupport_cpp.pdb"
+  "libnode_control_msgs__rosidl_typesupport_cpp.so"
+  "rosidl_typesupport_cpp/node_control_msgs/msg/motor_command__type_support.cpp"
+  "rosidl_typesupport_cpp/node_control_msgs/msg/motor_command_feedback__type_support.cpp"
+  "rosidl_typesupport_cpp/node_control_msgs/msg/motor_config__type_support.cpp"
+  "rosidl_typesupport_cpp/node_control_msgs/msg/motor_config_dev__type_support.cpp"
+  "rosidl_typesupport_cpp/node_control_msgs/msg/motor_control__type_support.cpp"
+  "rosidl_typesupport_cpp/node_control_msgs/msg/motor_feedback__type_support.cpp"
+  "rosidl_typesupport_cpp/node_control_msgs/msg/motor_health__type_support.cpp"
+  "rosidl_typesupport_cpp/node_control_msgs/msg/motor_health_state__type_support.cpp"
+  "rosidl_typesupport_cpp/node_control_msgs/msg/motor_info__type_support.cpp"
+  "rosidl_typesupport_cpp/node_control_msgs/msg/motor_info_value__type_support.cpp"
+  "rosidl_typesupport_cpp/node_control_msgs/srv/motor_config_status__type_support.cpp"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/node_control_msgs__rosidl_typesupport_cpp.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

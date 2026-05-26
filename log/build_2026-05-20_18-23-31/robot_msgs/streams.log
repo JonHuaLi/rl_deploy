@@ -1,0 +1,154 @@
+[0.017s] Invoking command in '/data/rl_deploy/build/robot_msgs': AMENT_PREFIX_PATH=/data/rl_deploy/install/node_control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/data/rl_deploy/install/node_control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/data/rl_deploy/install/node_control_msgs/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/app/lib:/app/lib:/usr/local/cuda-12/lib64:/usr/local/cuda-12/lib64:/usr/local/cuda-12/lib64 PYTHONPATH=/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/local/bin/cmake --build /data/rl_deploy/build/robot_msgs -- -j8 -l8
+[0.210s] [  3%] Built target robot_msgs__rs
+[0.212s] [  6%] Built target robot_msgs__cpp
+[0.213s] [  6%] Built target ament_cmake_python_copy_robot_msgs
+[0.266s] [ 15%] Built target robot_msgs__rosidl_generator_c
+[0.281s] [ 25%] Built target robot_msgs__rosidl_typesupport_cpp
+[0.282s] [ 34%] Built target robot_msgs__rosidl_typesupport_introspection_cpp
+[0.292s] [ 43%] Built target robot_msgs__rosidl_typesupport_fastrtps_cpp
+[0.326s] [ 53%] Built target robot_msgs__rosidl_typesupport_c
+[0.331s] [ 62%] Built target robot_msgs__rosidl_typesupport_fastrtps_c
+[0.348s] [ 71%] Built target robot_msgs__rosidl_typesupport_introspection_c
+[0.377s] [ 71%] Built target robot_msgs
+[0.411s] [ 75%] Built target robot_msgs__py
+[0.460s] [ 81%] Built target robot_msgs__rosidl_generator_py
+[0.494s] [ 87%] Built target robot_msgs__rosidl_typesupport_c__pyext
+[0.496s] [ 93%] Built target robot_msgs__rosidl_typesupport_fastrtps_c__pyext
+[0.499s] [100%] Built target robot_msgs__rosidl_typesupport_introspection_c__pyext
+[0.667s] running egg_info
+[0.669s] writing robot_msgs.egg-info/PKG-INFO
+[0.669s] writing dependency_links to robot_msgs.egg-info/dependency_links.txt
+[0.670s] writing top-level names to robot_msgs.egg-info/top_level.txt
+[0.674s] reading manifest file 'robot_msgs.egg-info/SOURCES.txt'
+[0.675s] writing manifest file 'robot_msgs.egg-info/SOURCES.txt'
+[0.727s] [100%] Built target ament_cmake_python_build_robot_msgs_egg
+[0.739s] Invoked command in '/data/rl_deploy/build/robot_msgs' returned '0': AMENT_PREFIX_PATH=/data/rl_deploy/install/node_control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/data/rl_deploy/install/node_control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/data/rl_deploy/install/node_control_msgs/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/app/lib:/app/lib:/usr/local/cuda-12/lib64:/usr/local/cuda-12/lib64:/usr/local/cuda-12/lib64 PYTHONPATH=/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/local/bin/cmake --build /data/rl_deploy/build/robot_msgs -- -j8 -l8
+[0.743s] Invoking command in '/data/rl_deploy/build/robot_msgs': AMENT_PREFIX_PATH=/data/rl_deploy/install/node_control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/data/rl_deploy/install/node_control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/data/rl_deploy/install/node_control_msgs/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/app/lib:/app/lib:/usr/local/cuda-12/lib64:/usr/local/cuda-12/lib64:/usr/local/cuda-12/lib64 PYTHONPATH=/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/local/bin/cmake --install /data/rl_deploy/build/robot_msgs
+[0.878s] -- Install configuration: ""
+[0.878s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/ament_index/resource_index/rosidl_interfaces/robot_msgs
+[0.878s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/include/robot_msgs/robot_msgs
+[0.878s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/include/robot_msgs/robot_msgs/msg
+[0.879s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/include/robot_msgs/robot_msgs/msg/robot_state.h
+[0.879s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/include/robot_msgs/robot_msgs/msg/detail
+[0.879s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/include/robot_msgs/robot_msgs/msg/detail/robot_state__functions.c
+[0.879s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/include/robot_msgs/robot_msgs/msg/detail/robot_state__struct.h
+[0.879s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/include/robot_msgs/robot_msgs/msg/detail/robot_state__type_support.h
+[0.879s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/include/robot_msgs/robot_msgs/msg/detail/robot_state__functions.h
+[0.879s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/include/robot_msgs/robot_msgs/msg/rosidl_generator_c__visibility_control.h
+[0.880s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/environment/library_path.sh
+[0.881s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/environment/library_path.dsv
+[0.881s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/lib/librobot_msgs__rosidl_generator_c.so
+[0.881s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/include/robot_msgs/robot_msgs
+[0.881s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/include/robot_msgs/robot_msgs/msg
+[0.881s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/include/robot_msgs/robot_msgs/msg/detail
+[0.881s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/include/robot_msgs/robot_msgs/msg/detail/robot_state__rosidl_typesupport_fastrtps_c.h
+[0.881s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/include/robot_msgs/robot_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[0.881s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/lib/librobot_msgs__rosidl_typesupport_fastrtps_c.so
+[0.882s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/include/robot_msgs/robot_msgs
+[0.882s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/include/robot_msgs/robot_msgs/msg
+[0.882s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/include/robot_msgs/robot_msgs/msg/robot_state.hpp
+[0.882s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/include/robot_msgs/robot_msgs/msg/detail
+[0.883s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/include/robot_msgs/robot_msgs/msg/detail/robot_state__builder.hpp
+[0.883s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/include/robot_msgs/robot_msgs/msg/detail/robot_state__struct.hpp
+[0.883s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/include/robot_msgs/robot_msgs/msg/detail/robot_state__traits.hpp
+[0.883s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/include/robot_msgs/robot_msgs/msg/detail/robot_state__type_support.hpp
+[0.883s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/include/robot_msgs/robot_msgs/msg/rosidl_generator_cpp__visibility_control.hpp
+[0.883s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/include/robot_msgs/robot_msgs
+[0.883s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/include/robot_msgs/robot_msgs/msg
+[0.884s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/include/robot_msgs/robot_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[0.884s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/include/robot_msgs/robot_msgs/msg/detail
+[0.884s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/include/robot_msgs/robot_msgs/msg/detail/dds_fastrtps
+[0.884s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/include/robot_msgs/robot_msgs/msg/detail/robot_state__rosidl_typesupport_fastrtps_cpp.hpp
+[0.884s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/lib/librobot_msgs__rosidl_typesupport_fastrtps_cpp.so
+[0.884s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/include/robot_msgs/robot_msgs
+[0.884s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/include/robot_msgs/robot_msgs/msg
+[0.884s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/include/robot_msgs/robot_msgs/msg/detail
+[0.884s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/include/robot_msgs/robot_msgs/msg/detail/robot_state__type_support.c
+[0.885s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/include/robot_msgs/robot_msgs/msg/detail/robot_state__rosidl_typesupport_introspection_c.h
+[0.885s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/include/robot_msgs/robot_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[0.885s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/lib/librobot_msgs__rosidl_typesupport_introspection_c.so
+[0.885s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/lib/librobot_msgs__rosidl_typesupport_c.so
+[0.885s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/include/robot_msgs/robot_msgs
+[0.885s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/include/robot_msgs/robot_msgs/msg
+[0.885s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/include/robot_msgs/robot_msgs/msg/detail
+[0.885s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/include/robot_msgs/robot_msgs/msg/detail/robot_state__type_support.cpp
+[0.885s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/include/robot_msgs/robot_msgs/msg/detail/robot_state__rosidl_typesupport_introspection_cpp.hpp
+[0.886s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/lib/librobot_msgs__rosidl_typesupport_introspection_cpp.so
+[0.886s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/lib/librobot_msgs__rosidl_typesupport_cpp.so
+[0.886s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/environment/pythonpath.sh
+[0.886s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/environment/pythonpath.dsv
+[0.886s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/local/lib/python3.10/dist-packages/robot_msgs-0.0.0-py3.10.egg-info
+[0.886s] -- Installing: /data/rl_deploy/install/robot_msgs/local/lib/python3.10/dist-packages/robot_msgs-0.0.0-py3.10.egg-info/top_level.txt
+[0.887s] -- Installing: /data/rl_deploy/install/robot_msgs/local/lib/python3.10/dist-packages/robot_msgs-0.0.0-py3.10.egg-info/PKG-INFO
+[0.887s] -- Installing: /data/rl_deploy/install/robot_msgs/local/lib/python3.10/dist-packages/robot_msgs-0.0.0-py3.10.egg-info/SOURCES.txt
+[0.887s] -- Installing: /data/rl_deploy/install/robot_msgs/local/lib/python3.10/dist-packages/robot_msgs-0.0.0-py3.10.egg-info/dependency_links.txt
+[0.887s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/local/lib/python3.10/dist-packages/robot_msgs
+[0.887s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/local/lib/python3.10/dist-packages/robot_msgs/_robot_msgs_s.ep.rosidl_typesupport_introspection_c.c
+[0.887s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/local/lib/python3.10/dist-packages/robot_msgs/_robot_msgs_s.ep.rosidl_typesupport_c.c
+[0.887s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/local/lib/python3.10/dist-packages/robot_msgs/robot_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so
+[0.887s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/local/lib/python3.10/dist-packages/robot_msgs/robot_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so
+[0.887s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/local/lib/python3.10/dist-packages/robot_msgs/__init__.py
+[0.888s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/local/lib/python3.10/dist-packages/robot_msgs/_robot_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+[0.888s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/local/lib/python3.10/dist-packages/robot_msgs/librobot_msgs__rosidl_generator_py.so
+[0.888s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/local/lib/python3.10/dist-packages/robot_msgs/robot_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so
+[0.888s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/local/lib/python3.10/dist-packages/robot_msgs/msg
+[0.888s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/local/lib/python3.10/dist-packages/robot_msgs/msg/_robot_state_s.c
+[0.888s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/local/lib/python3.10/dist-packages/robot_msgs/msg/_robot_state.py
+[0.888s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/local/lib/python3.10/dist-packages/robot_msgs/msg/__init__.py
+[0.946s] Listing '/data/rl_deploy/install/robot_msgs/local/lib/python3.10/dist-packages/robot_msgs'...
+[0.946s] Listing '/data/rl_deploy/install/robot_msgs/local/lib/python3.10/dist-packages/robot_msgs/msg'...
+[0.957s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/local/lib/python3.10/dist-packages/robot_msgs/robot_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so
+[0.958s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/local/lib/python3.10/dist-packages/robot_msgs/robot_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so
+[0.958s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/local/lib/python3.10/dist-packages/robot_msgs/robot_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so
+[0.958s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/lib/librobot_msgs__rosidl_generator_py.so
+[0.959s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/ament_index/resource_index/rust_packages/robot_msgs
+[0.959s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/rust
+[0.959s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/rust/Cargo.toml
+[0.960s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/rust/src
+[0.960s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/rust/src/lib.rs
+[0.960s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/rust/src/msg.rs
+[0.960s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/rust/src/msg
+[0.960s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/rust/src/msg/rmw.rs
+[0.960s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/rust/build.rs
+[0.961s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/msg/RobotState.idl
+[0.961s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/msg/RobotState.msg
+[0.961s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/ament_index/resource_index/package_run_dependencies/robot_msgs
+[0.961s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/ament_index/resource_index/parent_prefix_path/robot_msgs
+[0.961s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/environment/ament_prefix_path.sh
+[0.961s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/environment/ament_prefix_path.dsv
+[0.962s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/environment/path.sh
+[0.962s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/environment/path.dsv
+[0.962s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/local_setup.bash
+[0.962s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/local_setup.sh
+[0.962s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/local_setup.zsh
+[0.962s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/local_setup.dsv
+[0.963s] -- Installing: /data/rl_deploy/install/robot_msgs/share/robot_msgs/package.dsv
+[0.963s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/ament_index/resource_index/packages/robot_msgs
+[0.963s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/cmake/export_robot_msgs__rosidl_generator_cExport.cmake
+[0.963s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/cmake/export_robot_msgs__rosidl_generator_cExport-noconfig.cmake
+[0.963s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/cmake/export_robot_msgs__rosidl_typesupport_fastrtps_cExport.cmake
+[0.963s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/cmake/export_robot_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[0.963s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/cmake/export_robot_msgs__rosidl_generator_cppExport.cmake
+[0.964s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/cmake/export_robot_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
+[0.964s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/cmake/export_robot_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[0.964s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/cmake/robot_msgs__rosidl_typesupport_introspection_cExport.cmake
+[0.964s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/cmake/robot_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[0.964s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/cmake/robot_msgs__rosidl_typesupport_cExport.cmake
+[0.964s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/cmake/robot_msgs__rosidl_typesupport_cExport-noconfig.cmake
+[0.965s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/cmake/robot_msgs__rosidl_typesupport_introspection_cppExport.cmake
+[0.965s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/cmake/robot_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[0.965s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/cmake/robot_msgs__rosidl_typesupport_cppExport.cmake
+[0.965s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/cmake/robot_msgs__rosidl_typesupport_cppExport-noconfig.cmake
+[0.966s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/cmake/export_robot_msgs__rosidl_generator_pyExport.cmake
+[0.966s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/cmake/export_robot_msgs__rosidl_generator_pyExport-noconfig.cmake
+[0.966s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/cmake/rosidl_cmake-extras.cmake
+[0.966s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/cmake/ament_cmake_export_dependencies-extras.cmake
+[0.966s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/cmake/ament_cmake_export_include_directories-extras.cmake
+[0.966s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/cmake/ament_cmake_export_libraries-extras.cmake
+[0.967s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/cmake/ament_cmake_export_targets-extras.cmake
+[0.967s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[0.967s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[0.967s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/cmake/robot_msgsConfig.cmake
+[0.967s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/cmake/robot_msgsConfig-version.cmake
+[0.967s] -- Up-to-date: /data/rl_deploy/install/robot_msgs/share/robot_msgs/package.xml
+[0.971s] Invoked command in '/data/rl_deploy/build/robot_msgs' returned '0': AMENT_PREFIX_PATH=/data/rl_deploy/install/node_control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/data/rl_deploy/install/node_control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/data/rl_deploy/install/node_control_msgs/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/app/lib:/app/lib:/usr/local/cuda-12/lib64:/usr/local/cuda-12/lib64:/usr/local/cuda-12/lib64 PYTHONPATH=/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/local/bin/cmake --install /data/rl_deploy/build/robot_msgs

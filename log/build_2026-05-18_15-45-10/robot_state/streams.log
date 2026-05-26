@@ -1,0 +1,79 @@
+[0.023s] Invoking command in '/data/rl_deploy/build/robot_state': AMENT_PREFIX_PATH=/data/rl_deploy/install/robot_msgs:/data/rl_deploy/install/node_control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/data/rl_deploy/install/robot_msgs:/data/rl_deploy/install/node_control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/data/rl_deploy/install/robot_msgs/lib:/data/rl_deploy/install/node_control_msgs/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/app/lib:/usr/local/cuda-12/lib64 PYTHONPATH=/data/rl_deploy/install/robot_msgs/local/lib/python3.10/dist-packages:/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/local/bin/cmake /data/rl_deploy/src/robot_state -DCMAKE_INSTALL_PREFIX=/data/rl_deploy/install/robot_state
+[0.157s] [0mCMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+[0.157s]   Compatibility with CMake < 3.10 will be removed from a future version of
+[0.157s]   CMake.
+[0.157s] 
+[0.157s]   Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+[0.158s]   to tell CMake that the project requires at least <min> but has been updated
+[0.158s]   to work with policies introduced by <max> or earlier.
+[0.158s] 
+[0.158s] [0m
+[0.243s] -- The C compiler identification is GNU 11.4.0
+[0.367s] -- The CXX compiler identification is GNU 11.4.0
+[0.387s] -- Detecting C compiler ABI info
+[0.503s] -- Detecting C compiler ABI info - done
+[0.529s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.530s] -- Detecting C compile features
+[0.531s] -- Detecting C compile features - done
+[0.556s] -- Detecting CXX compiler ABI info
+[0.689s] -- Detecting CXX compiler ABI info - done
+[0.716s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.717s] -- Detecting CXX compile features
+[0.718s] -- Detecting CXX compile features - done
+[0.739s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.009s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter
+[1.201s] -- Found rclcpp: 16.0.19 (/opt/ros/humble/share/rclcpp/cmake)
+[1.285s] -- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.294s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.313s] -- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.341s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.380s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.512s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.520s] -- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.747s] -- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.2")
+[1.792s] -- Found FastRTPS: /opt/ros/humble/include
+[1.845s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.865s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.980s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[1.982s] -- Found Threads: TRUE
+[2.129s] -- Found rclcpp_components: 16.0.19 (/opt/ros/humble/share/rclcpp_components/cmake)
+[2.200s] -- Found sensor_msgs: 4.9.1 (/opt/ros/humble/share/sensor_msgs/cmake)
+[2.282s] -- Found node_control_msgs: 0.0.0 (/data/rl_deploy/install/node_control_msgs/share/node_control_msgs/cmake)
+[2.323s] -- Found robot_msgs: 0.0.0 (/data/rl_deploy/install/robot_msgs/share/robot_msgs/cmake)
+[2.373s] -- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[2.530s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[2.531s] -- Configured cppcheck include dirs: $<BUILD_INTERFACE:/data/rl_deploy/src/robot_state/include>
+[2.531s] -- Configured cppcheck exclude dirs and/or files: 
+[2.533s] -- Added test 'lint_cmake' to check CMake code style
+[2.535s] -- Added test 'uncrustify' to check C / C++ code style
+[2.535s] -- Configured uncrustify additional arguments: 
+[2.536s] -- Added test 'xmllint' to check XML markup files
+[2.539s] -- Configuring done (2.4s)
+[2.576s] -- Generating done (0.0s)
+[2.641s] -- Build files have been written to: /data/rl_deploy/build/robot_state
+[2.670s] Invoked command in '/data/rl_deploy/build/robot_state' returned '0': AMENT_PREFIX_PATH=/data/rl_deploy/install/robot_msgs:/data/rl_deploy/install/node_control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/data/rl_deploy/install/robot_msgs:/data/rl_deploy/install/node_control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/data/rl_deploy/install/robot_msgs/lib:/data/rl_deploy/install/node_control_msgs/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/app/lib:/usr/local/cuda-12/lib64 PYTHONPATH=/data/rl_deploy/install/robot_msgs/local/lib/python3.10/dist-packages:/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/local/bin/cmake /data/rl_deploy/src/robot_state -DCMAKE_INSTALL_PREFIX=/data/rl_deploy/install/robot_state
+[2.674s] Invoking command in '/data/rl_deploy/build/robot_state': AMENT_PREFIX_PATH=/data/rl_deploy/install/robot_msgs:/data/rl_deploy/install/node_control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/data/rl_deploy/install/robot_msgs:/data/rl_deploy/install/node_control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/data/rl_deploy/install/robot_msgs/lib:/data/rl_deploy/install/node_control_msgs/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/app/lib:/usr/local/cuda-12/lib64 PYTHONPATH=/data/rl_deploy/install/robot_msgs/local/lib/python3.10/dist-packages:/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/local/bin/cmake --build /data/rl_deploy/build/robot_state -- -j8 -l8
+[2.863s] [ 50%] [32mBuilding CXX object CMakeFiles/robot_state_node.dir/src/robot_state_node.cpp.o[0m
+[26.175s] [100%] [1m[32mLinking CXX executable robot_state_node[0m
+[27.359s] [100%] Built target robot_state_node
+[27.370s] Invoked command in '/data/rl_deploy/build/robot_state' returned '0': AMENT_PREFIX_PATH=/data/rl_deploy/install/robot_msgs:/data/rl_deploy/install/node_control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/data/rl_deploy/install/robot_msgs:/data/rl_deploy/install/node_control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/data/rl_deploy/install/robot_msgs/lib:/data/rl_deploy/install/node_control_msgs/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/app/lib:/usr/local/cuda-12/lib64 PYTHONPATH=/data/rl_deploy/install/robot_msgs/local/lib/python3.10/dist-packages:/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/local/bin/cmake --build /data/rl_deploy/build/robot_state -- -j8 -l8
+[27.374s] Invoking command in '/data/rl_deploy/build/robot_state': AMENT_PREFIX_PATH=/data/rl_deploy/install/robot_msgs:/data/rl_deploy/install/node_control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/data/rl_deploy/install/robot_msgs:/data/rl_deploy/install/node_control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/data/rl_deploy/install/robot_msgs/lib:/data/rl_deploy/install/node_control_msgs/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/app/lib:/usr/local/cuda-12/lib64 PYTHONPATH=/data/rl_deploy/install/robot_msgs/local/lib/python3.10/dist-packages:/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/local/bin/cmake --install /data/rl_deploy/build/robot_state
+[27.517s] -- Install configuration: ""
+[27.517s] -- Installing: /data/rl_deploy/install/robot_state/lib/robot_state/robot_state_node
+[27.529s] -- Set non-toolchain portion of runtime path of "/data/rl_deploy/install/robot_state/lib/robot_state/robot_state_node" to ""
+[27.529s] -- Installing: /data/rl_deploy/install/robot_state/share/ament_index/resource_index/package_run_dependencies/robot_state
+[27.529s] -- Installing: /data/rl_deploy/install/robot_state/share/ament_index/resource_index/parent_prefix_path/robot_state
+[27.530s] -- Installing: /data/rl_deploy/install/robot_state/share/robot_state/environment/ament_prefix_path.sh
+[27.530s] -- Installing: /data/rl_deploy/install/robot_state/share/robot_state/environment/ament_prefix_path.dsv
+[27.530s] -- Installing: /data/rl_deploy/install/robot_state/share/robot_state/environment/path.sh
+[27.531s] -- Installing: /data/rl_deploy/install/robot_state/share/robot_state/environment/path.dsv
+[27.531s] -- Installing: /data/rl_deploy/install/robot_state/share/robot_state/local_setup.bash
+[27.532s] -- Installing: /data/rl_deploy/install/robot_state/share/robot_state/local_setup.sh
+[27.532s] -- Installing: /data/rl_deploy/install/robot_state/share/robot_state/local_setup.zsh
+[27.532s] -- Installing: /data/rl_deploy/install/robot_state/share/robot_state/local_setup.dsv
+[27.532s] -- Installing: /data/rl_deploy/install/robot_state/share/robot_state/package.dsv
+[27.532s] -- Installing: /data/rl_deploy/install/robot_state/share/ament_index/resource_index/packages/robot_state
+[27.533s] -- Installing: /data/rl_deploy/install/robot_state/share/robot_state/cmake/robot_stateConfig.cmake
+[27.533s] -- Installing: /data/rl_deploy/install/robot_state/share/robot_state/cmake/robot_stateConfig-version.cmake
+[27.533s] -- Installing: /data/rl_deploy/install/robot_state/share/robot_state/package.xml
+[27.537s] Invoked command in '/data/rl_deploy/build/robot_state' returned '0': AMENT_PREFIX_PATH=/data/rl_deploy/install/robot_msgs:/data/rl_deploy/install/node_control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/data/rl_deploy/install/robot_msgs:/data/rl_deploy/install/node_control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/data/rl_deploy/install/robot_msgs/lib:/data/rl_deploy/install/node_control_msgs/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/app/lib:/usr/local/cuda-12/lib64 PYTHONPATH=/data/rl_deploy/install/robot_msgs/local/lib/python3.10/dist-packages:/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/local/bin/cmake --install /data/rl_deploy/build/robot_state

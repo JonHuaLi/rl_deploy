@@ -1,0 +1,29 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from node_app_msgs/msg/IotCmdMsg.msg
+// generated code does not contain a copyright notice
+
+#include "std_msgs/msg/Header.idl"
+
+module node_app_msgs {
+  module msg {
+    struct IotCmdMsg {
+      std_msgs::msg::Header header;
+
+      @verbatim (language="comment", text=
+        "分类")
+      string category;
+
+      @verbatim (language="comment", text=
+        "功能名称")
+      string fun_name;
+
+      @verbatim (language="comment", text=
+        "附加信息")
+      string sub;
+
+      @verbatim (language="comment", text=
+        "参数")
+      string param;
+    };
+  };
+};

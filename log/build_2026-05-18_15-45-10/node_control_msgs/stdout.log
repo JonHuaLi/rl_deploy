@@ -1,0 +1,547 @@
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter
+-- Found rosidl_default_generators: 1.2.1 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found builtin_interfaces: 1.2.2 (/opt/ros/humble/share/builtin_interfaces/cmake)
+-- Found std_msgs: 4.9.1 (/opt/ros/humble/share/std_msgs/cmake)
+-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6")
+-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+-- Found PythonLibs: /usr/lib/aarch64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5")
+-- Using PYTHON_EXECUTABLE: /usr/bin/python3
+-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+-- Using PYTHON_LIBRARIES: /usr/lib/aarch64-linux-gnu/libpython3.10.so
+-- Found PythonExtra: .so
+-- Using numpy include directory: /usr/local/lib/python3.10/dist-packages/numpy/core/include
+-- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done (5.2s)
+-- Generating done (0.1s)
+-- Build files have been written to: /data/rl_deploy/build/node_control_msgs
+[  1%] [1m[34mGenerating C code for ROS interfaces[0m
+[  2%] [1m[34mGenerating Rust code for ROS interfaces[0m
+[  2%] [1m[34mGenerating C++ code for ROS interfaces[0m
+[  2%] Built target ament_cmake_python_copy_node_control_msgs
+running egg_info
+creating node_control_msgs.egg-info
+writing node_control_msgs.egg-info/PKG-INFO
+writing dependency_links to node_control_msgs.egg-info/dependency_links.txt
+writing top-level names to node_control_msgs.egg-info/top_level.txt
+writing manifest file 'node_control_msgs.egg-info/SOURCES.txt'
+reading manifest file 'node_control_msgs.egg-info/SOURCES.txt'
+writing manifest file 'node_control_msgs.egg-info/SOURCES.txt'
+[  2%] Built target ament_cmake_python_build_node_control_msgs_egg
+[  2%] Built target node_control_msgs__rs
+[  2%] Built target node_control_msgs__cpp
+[  3%] [1m[34mGenerating C++ type support for eProsima Fast-RTPS[0m
+[  4%] [1m[34mGenerating C++ introspection for ROS interfaces[0m
+[  5%] [1m[34mGenerating C++ type support dispatch for ROS interfaces[0m
+[  6%] [32mBuilding C object CMakeFiles/node_control_msgs__rosidl_generator_c.dir/rosidl_generator_c/node_control_msgs/msg/detail/motor_command__functions.c.o[0m
+[  7%] [32mBuilding C object CMakeFiles/node_control_msgs__rosidl_generator_c.dir/rosidl_generator_c/node_control_msgs/msg/detail/motor_command_feedback__functions.c.o[0m
+[  8%] [32mBuilding C object CMakeFiles/node_control_msgs__rosidl_generator_c.dir/rosidl_generator_c/node_control_msgs/msg/detail/motor_config__functions.c.o[0m
+[  9%] [32mBuilding C object CMakeFiles/node_control_msgs__rosidl_generator_c.dir/rosidl_generator_c/node_control_msgs/msg/detail/motor_control__functions.c.o[0m
+[ 10%] [32mBuilding C object CMakeFiles/node_control_msgs__rosidl_generator_c.dir/rosidl_generator_c/node_control_msgs/msg/detail/motor_config_dev__functions.c.o[0m
+[ 10%] [32mBuilding C object CMakeFiles/node_control_msgs__rosidl_generator_c.dir/rosidl_generator_c/node_control_msgs/msg/detail/motor_health__functions.c.o[0m
+[ 11%] [32mBuilding C object CMakeFiles/node_control_msgs__rosidl_generator_c.dir/rosidl_generator_c/node_control_msgs/msg/detail/motor_feedback__functions.c.o[0m
+[ 12%] [32mBuilding C object CMakeFiles/node_control_msgs__rosidl_generator_c.dir/rosidl_generator_c/node_control_msgs/msg/detail/motor_health_state__functions.c.o[0m
+[ 13%] [32mBuilding C object CMakeFiles/node_control_msgs__rosidl_generator_c.dir/rosidl_generator_c/node_control_msgs/msg/detail/motor_info__functions.c.o[0m
+[ 14%] [32mBuilding C object CMakeFiles/node_control_msgs__rosidl_generator_c.dir/rosidl_generator_c/node_control_msgs/msg/detail/motor_info_value__functions.c.o[0m
+[ 15%] [32mBuilding C object CMakeFiles/node_control_msgs__rosidl_generator_c.dir/rosidl_generator_c/node_control_msgs/srv/detail/motor_config_status__functions.c.o[0m
+[ 16%] [1m[32mLinking C shared library libnode_control_msgs__rosidl_generator_c.so[0m
+[ 16%] Built target node_control_msgs__rosidl_generator_c
+[ 17%] [1m[34mGenerating C introspection for ROS interfaces[0m
+[ 18%] [1m[34mGenerating C type support for eProsima Fast-RTPS[0m
+[ 19%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/node_control_msgs/msg/motor_command_feedback__type_support.cpp.o[0m
+[ 20%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/node_control_msgs/msg/motor_command__type_support.cpp.o[0m
+[ 21%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/node_control_msgs/msg/motor_config__type_support.cpp.o[0m
+[ 21%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/node_control_msgs/msg/motor_config_dev__type_support.cpp.o[0m
+[ 22%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/node_control_msgs/msg/detail/dds_fastrtps/motor_command_feedback__type_support.cpp.o[0m
+[ 23%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/node_control_msgs/msg/motor_control__type_support.cpp.o[0m
+[ 24%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/node_control_msgs/msg/motor_feedback__type_support.cpp.o[0m
+[ 25%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/node_control_msgs/msg/motor_health__type_support.cpp.o[0m
+[ 26%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/node_control_msgs/msg/detail/dds_fastrtps/motor_command__type_support.cpp.o[0m
+[ 27%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/node_control_msgs/msg/motor_health_state__type_support.cpp.o[0m
+[ 28%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/node_control_msgs/msg/motor_info__type_support.cpp.o[0m
+[ 28%] [32mBuilding C object CMakeFiles/node_control_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/node_control_msgs/msg/detail/motor_command_feedback__type_support.c.o[0m
+[ 29%] [32mBuilding C object CMakeFiles/node_control_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/node_control_msgs/msg/detail/motor_command__type_support.c.o[0m
+[ 30%] [32mBuilding C object CMakeFiles/node_control_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/node_control_msgs/msg/detail/motor_config__type_support.c.o[0m
+[ 31%] [32mBuilding C object CMakeFiles/node_control_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/node_control_msgs/msg/detail/motor_config_dev__type_support.c.o[0m
+[ 32%] [32mBuilding C object CMakeFiles/node_control_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/node_control_msgs/msg/detail/motor_control__type_support.c.o[0m
+[ 33%] [32mBuilding C object CMakeFiles/node_control_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/node_control_msgs/msg/detail/motor_feedback__type_support.c.o[0m
+[ 34%] [32mBuilding C object CMakeFiles/node_control_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/node_control_msgs/msg/detail/motor_health__type_support.c.o[0m
+[ 34%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/node_control_msgs/msg/detail/motor_command_feedback__type_support_c.cpp.o[0m
+[ 35%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/node_control_msgs/msg/motor_info_value__type_support.cpp.o[0m
+[ 36%] [32mBuilding C object CMakeFiles/node_control_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/node_control_msgs/msg/detail/motor_health_state__type_support.c.o[0m
+[ 37%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/node_control_msgs/msg/detail/motor_command__type_support_c.cpp.o[0m
+[ 38%] [32mBuilding C object CMakeFiles/node_control_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/node_control_msgs/msg/detail/motor_info__type_support.c.o[0m
+[ 39%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/node_control_msgs/msg/detail/dds_fastrtps/motor_config__type_support.cpp.o[0m
+[ 40%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/node_control_msgs/srv/motor_config_status__type_support.cpp.o[0m
+[ 40%] [32mBuilding C object CMakeFiles/node_control_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/node_control_msgs/msg/detail/motor_info_value__type_support.c.o[0m
+[ 41%] [32mBuilding C object CMakeFiles/node_control_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/node_control_msgs/srv/detail/motor_config_status__type_support.c.o[0m
+[ 42%] [1m[32mLinking C shared library libnode_control_msgs__rosidl_typesupport_introspection_c.so[0m
+[ 42%] Built target node_control_msgs__rosidl_typesupport_introspection_c
+[ 43%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/node_control_msgs/msg/detail/motor_config__type_support_c.cpp.o[0m
+[ 44%] [1m[34mGenerating C type support dispatch for ROS interfaces[0m
+[ 45%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/node_control_msgs/msg/detail/motor_config_dev__type_support_c.cpp.o[0m
+[ 46%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/node_control_msgs/msg/detail/motor_control__type_support_c.cpp.o[0m
+[ 47%] [1m[32mLinking CXX shared library libnode_control_msgs__rosidl_typesupport_cpp.so[0m
+[ 47%] Built target node_control_msgs__rosidl_typesupport_cpp
+[ 47%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/node_control_msgs/msg/detail/dds_fastrtps/motor_config_dev__type_support.cpp.o[0m
+[ 48%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/node_control_msgs/msg/detail/motor_health_state__type_support_c.cpp.o[0m
+[ 49%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/node_control_msgs/msg/detail/dds_fastrtps/motor_control__type_support.cpp.o[0m
+[ 49%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/node_control_msgs/msg/motor_command_feedback__type_support.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/node_control_msgs/msg/detail/motor_info__type_support_c.cpp.o[0m
+[ 51%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/node_control_msgs/msg/motor_command__type_support.cpp.o[0m
+[ 52%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/node_control_msgs/msg/motor_config__type_support.cpp.o[0m
+[ 53%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/node_control_msgs/msg/motor_config_dev__type_support.cpp.o[0m
+[ 54%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/node_control_msgs/msg/motor_control__type_support.cpp.o[0m
+[ 55%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/node_control_msgs/msg/motor_feedback__type_support.cpp.o[0m
+[ 56%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/node_control_msgs/msg/motor_health__type_support.cpp.o[0m
+[ 57%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/node_control_msgs/msg/motor_health_state__type_support.cpp.o[0m
+[ 58%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/node_control_msgs/msg/motor_info__type_support.cpp.o[0m
+[ 58%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/node_control_msgs/msg/motor_info_value__type_support.cpp.o[0m
+[ 59%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/node_control_msgs/srv/motor_config_status__type_support.cpp.o[0m
+[ 60%] [1m[32mLinking CXX shared library libnode_control_msgs__rosidl_typesupport_c.so[0m
+[ 61%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/node_control_msgs/msg/detail/motor_health__type_support_c.cpp.o[0m
+[ 61%] Built target node_control_msgs__rosidl_typesupport_c
+[ 62%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/node_control_msgs/msg/detail/dds_fastrtps/motor_feedback__type_support.cpp.o[0m
+[ 63%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/node_control_msgs/srv/detail/motor_config_status__type_support_c.cpp.o[0m
+[ 64%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/node_control_msgs/msg/detail/dds_fastrtps/motor_health__type_support.cpp.o[0m
+[ 65%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/node_control_msgs/msg/detail/motor_command_feedback__type_support.cpp.o[0m
+[ 65%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/node_control_msgs/msg/detail/motor_info_value__type_support_c.cpp.o[0m
+[ 66%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/node_control_msgs/msg/detail/dds_fastrtps/motor_info_value__type_support.cpp.o[0m
+[ 67%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/node_control_msgs/msg/detail/motor_feedback__type_support_c.cpp.o[0m
+[ 68%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/node_control_msgs/msg/detail/motor_config__type_support.cpp.o[0m
+[ 69%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/node_control_msgs/srv/detail/dds_fastrtps/motor_config_status__type_support.cpp.o[0m
+[ 70%] [1m[32mLinking CXX shared library libnode_control_msgs__rosidl_typesupport_fastrtps_c.so[0m
+[ 70%] Built target node_control_msgs__rosidl_typesupport_fastrtps_c
+[ 71%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/node_control_msgs/msg/detail/motor_feedback__type_support.cpp.o[0m
+[ 72%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/node_control_msgs/msg/detail/dds_fastrtps/motor_info__type_support.cpp.o[0m
+[ 73%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/node_control_msgs/msg/detail/motor_health_state__type_support.cpp.o[0m
+[ 74%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/node_control_msgs/msg/detail/dds_fastrtps/motor_health_state__type_support.cpp.o[0m
+[ 75%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/node_control_msgs/msg/detail/motor_info_value__type_support.cpp.o[0m
+[ 76%] [1m[32mLinking CXX shared library libnode_control_msgs__rosidl_typesupport_fastrtps_cpp.so[0m
+[ 76%] Built target node_control_msgs__rosidl_typesupport_fastrtps_cpp
+[ 77%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/node_control_msgs/srv/detail/motor_config_status__type_support.cpp.o[0m
+[ 78%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/node_control_msgs/msg/detail/motor_info__type_support.cpp.o[0m
+[ 79%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/node_control_msgs/msg/detail/motor_health__type_support.cpp.o[0m
+[ 80%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/node_control_msgs/msg/detail/motor_control__type_support.cpp.o[0m
+[ 80%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/node_control_msgs/msg/detail/motor_config_dev__type_support.cpp.o[0m
+[ 81%] [32mBuilding CXX object CMakeFiles/node_control_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/node_control_msgs/msg/detail/motor_command__type_support.cpp.o[0m
+[ 82%] [1m[32mLinking CXX shared library libnode_control_msgs__rosidl_typesupport_introspection_cpp.so[0m
+[ 82%] Built target node_control_msgs__rosidl_typesupport_introspection_cpp
+[ 82%] Built target node_control_msgs
+[ 83%] [1m[34mGenerating Python code for ROS interfaces[0m
+[ 83%] Built target node_control_msgs__py
+[ 84%] [32mBuilding C object CMakeFiles/node_control_msgs__rosidl_generator_py.dir/rosidl_generator_py/node_control_msgs/msg/_motor_command_feedback_s.c.o[0m
+[ 85%] [32mBuilding C object CMakeFiles/node_control_msgs__rosidl_generator_py.dir/rosidl_generator_py/node_control_msgs/msg/_motor_health_state_s.c.o[0m
+[ 86%] [32mBuilding C object CMakeFiles/node_control_msgs__rosidl_generator_py.dir/rosidl_generator_py/node_control_msgs/msg/_motor_info_s.c.o[0m
+[ 87%] [32mBuilding C object CMakeFiles/node_control_msgs__rosidl_generator_py.dir/rosidl_generator_py/node_control_msgs/msg/_motor_info_value_s.c.o[0m
+[ 88%] [32mBuilding C object CMakeFiles/node_control_msgs__rosidl_generator_py.dir/rosidl_generator_py/node_control_msgs/srv/_motor_config_status_s.c.o[0m
+[ 89%] [32mBuilding C object CMakeFiles/node_control_msgs__rosidl_generator_py.dir/rosidl_generator_py/node_control_msgs/msg/_motor_health_s.c.o[0m
+[ 90%] [32mBuilding C object CMakeFiles/node_control_msgs__rosidl_generator_py.dir/rosidl_generator_py/node_control_msgs/msg/_motor_feedback_s.c.o[0m
+[ 91%] [32mBuilding C object CMakeFiles/node_control_msgs__rosidl_generator_py.dir/rosidl_generator_py/node_control_msgs/msg/_motor_control_s.c.o[0m
+[ 91%] [32mBuilding C object CMakeFiles/node_control_msgs__rosidl_generator_py.dir/rosidl_generator_py/node_control_msgs/msg/_motor_config_dev_s.c.o[0m
+[ 92%] [32mBuilding C object CMakeFiles/node_control_msgs__rosidl_generator_py.dir/rosidl_generator_py/node_control_msgs/msg/_motor_config_s.c.o[0m
+[ 93%] [32mBuilding C object CMakeFiles/node_control_msgs__rosidl_generator_py.dir/rosidl_generator_py/node_control_msgs/msg/_motor_command_s.c.o[0m
+[ 94%] [1m[32mLinking C shared library rosidl_generator_py/node_control_msgs/libnode_control_msgs__rosidl_generator_py.so[0m
+[ 94%] Built target node_control_msgs__rosidl_generator_py
+[ 95%] [32mBuilding C object CMakeFiles/node_control_msgs__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/node_control_msgs/_node_control_msgs_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[ 96%] [1m[32mLinking C shared library rosidl_generator_py/node_control_msgs/node_control_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so[0m
+[ 96%] Built target node_control_msgs__rosidl_typesupport_fastrtps_c__pyext
+[ 97%] [32mBuilding C object CMakeFiles/node_control_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/node_control_msgs/_node_control_msgs_s.ep.rosidl_typesupport_c.c.o[0m
+[ 98%] [1m[32mLinking C shared library rosidl_generator_py/node_control_msgs/node_control_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so[0m
+[ 98%] Built target node_control_msgs__rosidl_typesupport_c__pyext
+[ 99%] [32mBuilding C object CMakeFiles/node_control_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/node_control_msgs/_node_control_msgs_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[100%] [1m[32mLinking C shared library rosidl_generator_py/node_control_msgs/node_control_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so[0m
+[100%] Built target node_control_msgs__rosidl_typesupport_introspection_c__pyext
+-- Install configuration: ""
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/ament_index/resource_index/rosidl_interfaces/node_control_msgs
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/srv
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/srv/motor_config_status.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/srv/detail
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/srv/detail/motor_config_status__functions.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/srv/detail/motor_config_status__struct.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/srv/detail/motor_config_status__functions.c
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/srv/detail/motor_config_status__type_support.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/motor_health.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/motor_config_dev.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/motor_feedback.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/motor_health_state.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/motor_config.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/motor_info_value.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/motor_control.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_command__type_support.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_health_state__struct.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_config_dev__functions.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_command__functions.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_command__struct.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_info__functions.c
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_info__functions.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_info_value__functions.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_info__struct.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_feedback__type_support.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_control__type_support.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_health_state__functions.c
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_config_dev__type_support.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_info_value__struct.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_control__functions.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_command_feedback__functions.c
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_feedback__functions.c
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_config_dev__struct.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_config__functions.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_health__functions.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_health_state__type_support.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_feedback__functions.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_info__type_support.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_info_value__functions.c
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_command_feedback__struct.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_command_feedback__functions.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_info_value__type_support.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_health__struct.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_config_dev__functions.c
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_config__functions.c
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_command_feedback__type_support.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_health_state__functions.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_health__functions.c
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_health__type_support.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_feedback__struct.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_control__struct.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_control__functions.c
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_config__type_support.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_command__functions.c
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_config__struct.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/rosidl_generator_c__visibility_control.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/motor_command_feedback.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/motor_info.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/motor_command.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/environment/library_path.sh
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/environment/library_path.dsv
+-- Installing: /data/rl_deploy/install/node_control_msgs/lib/libnode_control_msgs__rosidl_generator_c.so
+-- Set non-toolchain portion of runtime path of "/data/rl_deploy/install/node_control_msgs/lib/libnode_control_msgs__rosidl_generator_c.so" to ""
+-- Up-to-date: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs
+-- Up-to-date: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/srv
+-- Up-to-date: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/srv/detail
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/srv/detail/motor_config_status__rosidl_typesupport_fastrtps_c.h
+-- Up-to-date: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg
+-- Up-to-date: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_info__rosidl_typesupport_fastrtps_c.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_config_dev__rosidl_typesupport_fastrtps_c.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_health__rosidl_typesupport_fastrtps_c.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_control__rosidl_typesupport_fastrtps_c.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_info_value__rosidl_typesupport_fastrtps_c.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_feedback__rosidl_typesupport_fastrtps_c.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_config__rosidl_typesupport_fastrtps_c.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_health_state__rosidl_typesupport_fastrtps_c.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_command_feedback__rosidl_typesupport_fastrtps_c.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_command__rosidl_typesupport_fastrtps_c.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/lib/libnode_control_msgs__rosidl_typesupport_fastrtps_c.so
+-- Set non-toolchain portion of runtime path of "/data/rl_deploy/install/node_control_msgs/lib/libnode_control_msgs__rosidl_typesupport_fastrtps_c.so" to ""
+-- Up-to-date: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs
+-- Up-to-date: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/srv
+-- Up-to-date: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/srv/detail
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/srv/detail/motor_config_status__type_support.c
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/srv/detail/motor_config_status__rosidl_typesupport_introspection_c.h
+-- Up-to-date: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg
+-- Up-to-date: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_config_dev__rosidl_typesupport_introspection_c.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_health__rosidl_typesupport_introspection_c.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_info_value__type_support.c
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_info__type_support.c
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_control__type_support.c
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_config__type_support.c
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_command__type_support.c
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_health__type_support.c
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_info_value__rosidl_typesupport_introspection_c.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_command_feedback__type_support.c
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_config__rosidl_typesupport_introspection_c.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_command_feedback__rosidl_typesupport_introspection_c.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_command__rosidl_typesupport_introspection_c.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_health_state__rosidl_typesupport_introspection_c.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_info__rosidl_typesupport_introspection_c.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_feedback__type_support.c
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_control__rosidl_typesupport_introspection_c.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_config_dev__type_support.c
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_health_state__type_support.c
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_feedback__rosidl_typesupport_introspection_c.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h
+-- Installing: /data/rl_deploy/install/node_control_msgs/lib/libnode_control_msgs__rosidl_typesupport_introspection_c.so
+-- Set non-toolchain portion of runtime path of "/data/rl_deploy/install/node_control_msgs/lib/libnode_control_msgs__rosidl_typesupport_introspection_c.so" to ""
+-- Installing: /data/rl_deploy/install/node_control_msgs/lib/libnode_control_msgs__rosidl_typesupport_c.so
+-- Set non-toolchain portion of runtime path of "/data/rl_deploy/install/node_control_msgs/lib/libnode_control_msgs__rosidl_typesupport_c.so" to ""
+-- Up-to-date: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs
+-- Up-to-date: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/srv
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/srv/motor_config_status.hpp
+-- Up-to-date: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/srv/detail
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/srv/detail/motor_config_status__struct.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/srv/detail/motor_config_status__builder.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/srv/detail/motor_config_status__traits.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/srv/detail/motor_config_status__type_support.hpp
+-- Up-to-date: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/motor_info_value.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/motor_config_dev.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/motor_feedback.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/motor_config.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/motor_info.hpp
+-- Up-to-date: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_command__builder.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_config_dev__struct.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_config__type_support.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_health__type_support.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_feedback__type_support.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_info__type_support.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_config_dev__traits.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_info__traits.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_health_state__traits.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_info_value__builder.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_config__struct.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_info_value__traits.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_command__struct.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_health__traits.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_health__builder.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_command_feedback__traits.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_config__builder.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_config__traits.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_feedback__traits.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_command_feedback__builder.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_info_value__struct.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_config_dev__builder.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_health__struct.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_command_feedback__type_support.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_command__type_support.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_control__type_support.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_feedback__struct.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_health_state__struct.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_control__struct.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_health_state__builder.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_info_value__type_support.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_info__builder.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_info__struct.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_control__traits.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_command__traits.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_control__builder.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_config_dev__type_support.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_command_feedback__struct.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_health_state__type_support.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_feedback__builder.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/motor_health.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/rosidl_generator_cpp__visibility_control.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/motor_health_state.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/motor_command_feedback.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/motor_control.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/motor_command.hpp
+-- Up-to-date: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs
+-- Up-to-date: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/srv
+-- Up-to-date: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/srv/detail
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/srv/detail/motor_config_status__rosidl_typesupport_fastrtps_cpp.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/srv/detail/dds_fastrtps
+-- Up-to-date: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+-- Up-to-date: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_health_state__rosidl_typesupport_fastrtps_cpp.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_feedback__rosidl_typesupport_fastrtps_cpp.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/dds_fastrtps
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_health__rosidl_typesupport_fastrtps_cpp.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_command_feedback__rosidl_typesupport_fastrtps_cpp.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_control__rosidl_typesupport_fastrtps_cpp.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_config_dev__rosidl_typesupport_fastrtps_cpp.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_info_value__rosidl_typesupport_fastrtps_cpp.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_config__rosidl_typesupport_fastrtps_cpp.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_info__rosidl_typesupport_fastrtps_cpp.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_command__rosidl_typesupport_fastrtps_cpp.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/lib/libnode_control_msgs__rosidl_typesupport_fastrtps_cpp.so
+-- Set non-toolchain portion of runtime path of "/data/rl_deploy/install/node_control_msgs/lib/libnode_control_msgs__rosidl_typesupport_fastrtps_cpp.so" to ""
+-- Up-to-date: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs
+-- Up-to-date: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/srv
+-- Up-to-date: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/srv/detail
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/srv/detail/motor_config_status__rosidl_typesupport_introspection_cpp.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/srv/detail/motor_config_status__type_support.cpp
+-- Up-to-date: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg
+-- Up-to-date: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_config__type_support.cpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_feedback__type_support.cpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_info__type_support.cpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_health__rosidl_typesupport_introspection_cpp.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_config_dev__type_support.cpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_command__rosidl_typesupport_introspection_cpp.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_info_value__type_support.cpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_health_state__rosidl_typesupport_introspection_cpp.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_feedback__rosidl_typesupport_introspection_cpp.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_control__rosidl_typesupport_introspection_cpp.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_info_value__rosidl_typesupport_introspection_cpp.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_command_feedback__type_support.cpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_config_dev__rosidl_typesupport_introspection_cpp.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_info__rosidl_typesupport_introspection_cpp.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_config__rosidl_typesupport_introspection_cpp.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_health__type_support.cpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_control__type_support.cpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_command__type_support.cpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_health_state__type_support.cpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/include/node_control_msgs/node_control_msgs/msg/detail/motor_command_feedback__rosidl_typesupport_introspection_cpp.hpp
+-- Installing: /data/rl_deploy/install/node_control_msgs/lib/libnode_control_msgs__rosidl_typesupport_introspection_cpp.so
+-- Set non-toolchain portion of runtime path of "/data/rl_deploy/install/node_control_msgs/lib/libnode_control_msgs__rosidl_typesupport_introspection_cpp.so" to ""
+-- Installing: /data/rl_deploy/install/node_control_msgs/lib/libnode_control_msgs__rosidl_typesupport_cpp.so
+-- Set non-toolchain portion of runtime path of "/data/rl_deploy/install/node_control_msgs/lib/libnode_control_msgs__rosidl_typesupport_cpp.so" to ""
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/environment/pythonpath.sh
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/environment/pythonpath.dsv
+-- Installing: /data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs-0.0.0-py3.10.egg-info
+-- Installing: /data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs-0.0.0-py3.10.egg-info/top_level.txt
+-- Installing: /data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs-0.0.0-py3.10.egg-info/PKG-INFO
+-- Installing: /data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs-0.0.0-py3.10.egg-info/SOURCES.txt
+-- Installing: /data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs-0.0.0-py3.10.egg-info/dependency_links.txt
+-- Installing: /data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs
+-- Installing: /data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/libnode_control_msgs__rosidl_generator_py.so
+-- Installing: /data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/node_control_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so
+-- Installing: /data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/node_control_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so
+-- Installing: /data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/_node_control_msgs_s.ep.rosidl_typesupport_introspection_c.c
+-- Installing: /data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/__init__.py
+-- Installing: /data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/node_control_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so
+-- Installing: /data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/srv
+-- Installing: /data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/srv/_motor_config_status.py
+-- Installing: /data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/srv/_motor_config_status_s.c
+-- Installing: /data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/srv/__init__.py
+-- Installing: /data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/_node_control_msgs_s.ep.rosidl_typesupport_c.c
+-- Installing: /data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/_node_control_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+-- Installing: /data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/msg
+-- Installing: /data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/msg/_motor_config_dev_s.c
+-- Installing: /data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/msg/_motor_command_s.c
+-- Installing: /data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/msg/_motor_config_dev.py
+-- Installing: /data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/msg/_motor_config_s.c
+-- Installing: /data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/msg/_motor_control_s.c
+-- Installing: /data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/msg/_motor_info_value.py
+-- Installing: /data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/msg/_motor_info_value_s.c
+-- Installing: /data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/msg/_motor_health.py
+-- Installing: /data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/msg/_motor_command_feedback_s.c
+-- Installing: /data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/msg/__init__.py
+-- Installing: /data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/msg/_motor_config.py
+-- Installing: /data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/msg/_motor_health_s.c
+-- Installing: /data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/msg/_motor_command_feedback.py
+-- Installing: /data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/msg/_motor_info_s.c
+-- Installing: /data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/msg/_motor_info.py
+-- Installing: /data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/msg/_motor_health_state.py
+-- Installing: /data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/msg/_motor_feedback.py
+-- Installing: /data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/msg/_motor_control.py
+-- Installing: /data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/msg/_motor_feedback_s.c
+-- Installing: /data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/msg/_motor_health_state_s.c
+-- Installing: /data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/msg/_motor_command.py
+Listing '/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs'...
+Compiling '/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/__init__.py'...
+Listing '/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/msg'...
+Compiling '/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/msg/__init__.py'...
+Compiling '/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/msg/_motor_command.py'...
+Compiling '/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/msg/_motor_command_feedback.py'...
+Compiling '/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/msg/_motor_config.py'...
+Compiling '/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/msg/_motor_config_dev.py'...
+Compiling '/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/msg/_motor_control.py'...
+Compiling '/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/msg/_motor_feedback.py'...
+Compiling '/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/msg/_motor_health.py'...
+Compiling '/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/msg/_motor_health_state.py'...
+Compiling '/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/msg/_motor_info.py'...
+Compiling '/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/msg/_motor_info_value.py'...
+Listing '/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/srv'...
+Compiling '/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/srv/__init__.py'...
+Compiling '/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/srv/_motor_config_status.py'...
+-- Installing: /data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/node_control_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so
+-- Set non-toolchain portion of runtime path of "/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/node_control_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so" to ""
+-- Installing: /data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/node_control_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so
+-- Set non-toolchain portion of runtime path of "/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/node_control_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so" to ""
+-- Installing: /data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/node_control_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so
+-- Set non-toolchain portion of runtime path of "/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages/node_control_msgs/node_control_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so" to ""
+-- Installing: /data/rl_deploy/install/node_control_msgs/lib/libnode_control_msgs__rosidl_generator_py.so
+-- Set non-toolchain portion of runtime path of "/data/rl_deploy/install/node_control_msgs/lib/libnode_control_msgs__rosidl_generator_py.so" to ""
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/ament_index/resource_index/rust_packages/node_control_msgs
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/rust
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/rust/Cargo.toml
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/rust/src
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/rust/src/lib.rs
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/rust/src/srv.rs
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/rust/src/srv
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/rust/src/srv/rmw.rs
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/rust/src/msg.rs
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/rust/src/msg
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/rust/src/msg/rmw.rs
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/rust/build.rs
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/msg/MotorCommandFeedback.idl
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/msg/MotorCommand.idl
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/msg/MotorConfig.idl
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/msg/MotorConfigDev.idl
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/msg/MotorControl.idl
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/msg/MotorFeedback.idl
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/msg/MotorHealth.idl
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/msg/MotorHealthState.idl
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/msg/MotorInfo.idl
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/msg/MotorInfoValue.idl
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/srv/MotorConfigStatus.idl
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/msg/MotorCommandFeedback.msg
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/msg/MotorCommand.msg
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/msg/MotorConfig.msg
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/msg/MotorConfigDev.msg
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/msg/MotorControl.msg
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/msg/MotorFeedback.msg
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/msg/MotorHealth.msg
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/msg/MotorHealthState.msg
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/msg/MotorInfo.msg
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/msg/MotorInfoValue.msg
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/srv/MotorConfigStatus.srv
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/srv/MotorConfigStatus_Request.msg
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/srv/MotorConfigStatus_Response.msg
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/ament_index/resource_index/package_run_dependencies/node_control_msgs
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/ament_index/resource_index/parent_prefix_path/node_control_msgs
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/environment/ament_prefix_path.sh
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/environment/ament_prefix_path.dsv
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/environment/path.sh
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/environment/path.dsv
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/local_setup.bash
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/local_setup.sh
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/local_setup.zsh
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/local_setup.dsv
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/package.dsv
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/ament_index/resource_index/packages/node_control_msgs
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/cmake/export_node_control_msgs__rosidl_generator_cExport.cmake
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/cmake/export_node_control_msgs__rosidl_generator_cExport-noconfig.cmake
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/cmake/export_node_control_msgs__rosidl_typesupport_fastrtps_cExport.cmake
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/cmake/export_node_control_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/cmake/node_control_msgs__rosidl_typesupport_introspection_cExport.cmake
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/cmake/node_control_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/cmake/node_control_msgs__rosidl_typesupport_cExport.cmake
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/cmake/node_control_msgs__rosidl_typesupport_cExport-noconfig.cmake
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/cmake/export_node_control_msgs__rosidl_generator_cppExport.cmake
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/cmake/export_node_control_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/cmake/export_node_control_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/cmake/node_control_msgs__rosidl_typesupport_introspection_cppExport.cmake
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/cmake/node_control_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/cmake/node_control_msgs__rosidl_typesupport_cppExport.cmake
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/cmake/node_control_msgs__rosidl_typesupport_cppExport-noconfig.cmake
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/cmake/export_node_control_msgs__rosidl_generator_pyExport.cmake
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/cmake/export_node_control_msgs__rosidl_generator_pyExport-noconfig.cmake
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/cmake/rosidl_cmake-extras.cmake
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/cmake/ament_cmake_export_include_directories-extras.cmake
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/cmake/ament_cmake_export_libraries-extras.cmake
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/cmake/ament_cmake_export_targets-extras.cmake
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/cmake/node_control_msgsConfig.cmake
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/cmake/node_control_msgsConfig-version.cmake
+-- Installing: /data/rl_deploy/install/node_control_msgs/share/node_control_msgs/package.xml

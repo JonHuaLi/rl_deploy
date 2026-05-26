@@ -1,0 +1,9 @@
+{
+	"InstallScripts" : 
+	[
+		"/data/rl_deploy/build/node_control_msgs/cmake_install.cmake",
+		"/data/rl_deploy/build/node_control_msgs/node_control_msgs__py/cmake_install.cmake",
+		"/data/rl_deploy/build/node_control_msgs/node_control_msgs__rs/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

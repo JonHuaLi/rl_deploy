@@ -1,0 +1,7 @@
+{
+  "package_name": "node_driver_msgs",
+  "non_idl_tuples": [
+    "/data/rl_deploy/src/node_driver_msgs:msg/Sensormsgcontrol.msg",
+    "/data/rl_deploy/src/node_driver_msgs:msg/Sensormsgstate.msg"
+  ]
+}

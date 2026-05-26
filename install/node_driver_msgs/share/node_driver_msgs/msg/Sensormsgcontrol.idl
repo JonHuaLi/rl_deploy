@@ -1,0 +1,21 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from node_driver_msgs/msg/Sensormsgcontrol.msg
+// generated code does not contain a copyright notice
+
+#include "std_msgs/msg/Header.idl"
+
+module node_driver_msgs {
+  module msg {
+    struct Sensormsgcontrol {
+      std_msgs::msg::Header header;
+
+      @verbatim (language="comment", text=
+        "传感器类型，例如 0:IMU, 1:激光, 2:超声波等")
+      int8 sensor_type;
+
+      @verbatim (language="comment", text=
+        "控制内容，0:关闭，1:开启，2:状态查询等")
+      int8 control_command;
+    };
+  };
+};

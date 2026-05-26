@@ -1,0 +1,25 @@
+[1.145s] Invoking command in '/data/rl_deploy/src/robot_rl_controller': AMENT_PREFIX_PATH=/data/rl_deploy/install/robot_msgs:/data/rl_deploy/install/node_app_msgs:/data/rl_deploy/install/node_control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/data/rl_deploy/install/robot_msgs:/data/rl_deploy/install/node_app_msgs:/data/rl_deploy/install/node_control_msgs LD_LIBRARY_PATH=/data/rl_deploy/install/robot_msgs/lib:/data/rl_deploy/install/node_app_msgs/lib:/data/rl_deploy/install/node_control_msgs/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/app/lib:/app/lib:/usr/local/cuda-12/lib64:/usr/local/cuda-12/lib64:/usr/local/cuda-12/lib64 PYTHONPATH=/data/rl_deploy/build/robot_rl_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/data/rl_deploy/install/robot_rl_controller/lib/python3.10/site-packages:/data/rl_deploy/install/robot_msgs/local/lib/python3.10/dist-packages:/data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages:/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/robot_rl_controller build --build-base /data/rl_deploy/build/robot_rl_controller/build install --record /data/rl_deploy/build/robot_rl_controller/install.log --single-version-externally-managed install_data
+[1.546s] running egg_info
+[1.547s] writing ../../build/robot_rl_controller/robot_rl_controller.egg-info/PKG-INFO
+[1.548s] writing dependency_links to ../../build/robot_rl_controller/robot_rl_controller.egg-info/dependency_links.txt
+[1.548s] writing entry points to ../../build/robot_rl_controller/robot_rl_controller.egg-info/entry_points.txt
+[1.548s] writing requirements to ../../build/robot_rl_controller/robot_rl_controller.egg-info/requires.txt
+[1.548s] writing top-level names to ../../build/robot_rl_controller/robot_rl_controller.egg-info/top_level.txt
+[1.552s] reading manifest file '../../build/robot_rl_controller/robot_rl_controller.egg-info/SOURCES.txt'
+[1.554s] writing manifest file '../../build/robot_rl_controller/robot_rl_controller.egg-info/SOURCES.txt'
+[1.554s] running build
+[1.554s] running build_py
+[1.555s] running install
+[1.556s] running install_lib
+[1.558s] running install_data
+[1.559s] copying config/waist_15_robot_controller_config.yaml -> /data/rl_deploy/install/robot_rl_controller/share/robot_rl_controller/config
+[1.560s] running install_egg_info
+[1.563s] removing '/data/rl_deploy/install/robot_rl_controller/lib/python3.10/site-packages/robot_rl_controller-0.0.0-py3.10.egg-info' (and everything under it)
+[1.564s] Copying ../../build/robot_rl_controller/robot_rl_controller.egg-info to /data/rl_deploy/install/robot_rl_controller/lib/python3.10/site-packages/robot_rl_controller-0.0.0-py3.10.egg-info
+[1.566s] running install_scripts
+[1.603s] Installing action_robot_controller script to /data/rl_deploy/install/robot_rl_controller/lib/robot_rl_controller
+[1.604s] Installing dance_robot_controller script to /data/rl_deploy/install/robot_rl_controller/lib/robot_rl_controller
+[1.604s] Installing s_waist_15_action_robot_controller script to /data/rl_deploy/install/robot_rl_controller/lib/robot_rl_controller
+[1.604s] Installing waist_15_action_robot_controller script to /data/rl_deploy/install/robot_rl_controller/lib/robot_rl_controller
+[1.605s] writing list of installed files to '/data/rl_deploy/build/robot_rl_controller/install.log'
+[1.661s] Invoked command in '/data/rl_deploy/src/robot_rl_controller' returned '0': AMENT_PREFIX_PATH=/data/rl_deploy/install/robot_msgs:/data/rl_deploy/install/node_app_msgs:/data/rl_deploy/install/node_control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/data/rl_deploy/install/robot_msgs:/data/rl_deploy/install/node_app_msgs:/data/rl_deploy/install/node_control_msgs LD_LIBRARY_PATH=/data/rl_deploy/install/robot_msgs/lib:/data/rl_deploy/install/node_app_msgs/lib:/data/rl_deploy/install/node_control_msgs/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/app/lib:/app/lib:/usr/local/cuda-12/lib64:/usr/local/cuda-12/lib64:/usr/local/cuda-12/lib64 PYTHONPATH=/data/rl_deploy/build/robot_rl_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/data/rl_deploy/install/robot_rl_controller/lib/python3.10/site-packages:/data/rl_deploy/install/robot_msgs/local/lib/python3.10/dist-packages:/data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages:/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/robot_rl_controller build --build-base /data/rl_deploy/build/robot_rl_controller/build install --record /data/rl_deploy/build/robot_rl_controller/install.log --single-version-externally-managed install_data

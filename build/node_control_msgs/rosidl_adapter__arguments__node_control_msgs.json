@@ -1,0 +1,16 @@
+{
+  "package_name": "node_control_msgs",
+  "non_idl_tuples": [
+    "/data/rl_deploy/src/node_control_msgs:msg/MotorCommandFeedback.msg",
+    "/data/rl_deploy/src/node_control_msgs:msg/MotorCommand.msg",
+    "/data/rl_deploy/src/node_control_msgs:msg/MotorConfig.msg",
+    "/data/rl_deploy/src/node_control_msgs:msg/MotorConfigDev.msg",
+    "/data/rl_deploy/src/node_control_msgs:msg/MotorControl.msg",
+    "/data/rl_deploy/src/node_control_msgs:msg/MotorFeedback.msg",
+    "/data/rl_deploy/src/node_control_msgs:msg/MotorHealth.msg",
+    "/data/rl_deploy/src/node_control_msgs:msg/MotorHealthState.msg",
+    "/data/rl_deploy/src/node_control_msgs:msg/MotorInfo.msg",
+    "/data/rl_deploy/src/node_control_msgs:msg/MotorInfoValue.msg",
+    "/data/rl_deploy/src/node_control_msgs:srv/MotorConfigStatus.srv"
+  ]
+}

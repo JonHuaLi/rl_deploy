@@ -1,0 +1,6 @@
+{
+  "package_name": "robot_msgs",
+  "non_idl_tuples": [
+    "/data/rl_deploy/src/robot_msgs:msg/RobotState.msg"
+  ]
+}

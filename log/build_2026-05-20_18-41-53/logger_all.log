@@ -1,0 +1,493 @@
+[0.259s] [34mcolcon[0m [1;30mDEBUG[0m [32mCommand line arguments: ['/usr/bin/colcon', 'build'][0m
+[0.259s] [34mcolcon[0m [1;30mDEBUG[0m [32mParsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=8, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0xffff81c78d60>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0xffff81bfda50>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0xffff81bfda50>>)[0m
+[0.618s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(colcon_meta) check parameters
+[0.619s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(recursive) check parameters
+[0.619s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(ignore) check parameters
+[0.619s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(path) check parameters
+[0.619s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(colcon_meta) discover
+[0.619s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(recursive) discover
+[0.619s] [34mcolcon.colcon_core.package_discovery[0m [1;30mINFO[0m Crawling recursively for packages in '/data/rl_deploy'
+[0.619s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.620s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'ignore'
+[0.620s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'ignore_ament_install'
+[0.620s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['colcon_pkg']
+[0.620s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'colcon_pkg'
+[0.620s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['colcon_meta']
+[0.620s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'colcon_meta'
+[0.621s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['ros']
+[0.621s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'ros'
+[0.648s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['cmake', 'python']
+[0.648s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'cmake'
+[0.649s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'python'
+[0.649s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['python_setup_py']
+[0.649s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'python_setup_py'
+[0.649s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(action) by extensions ['ignore', 'ignore_ament_install']
+[0.649s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(action) by extension 'ignore'
+[0.650s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(action) by extension 'ignore_ament_install'
+[0.650s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(action) by extensions ['colcon_pkg']
+[0.650s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(action) by extension 'colcon_pkg'
+[0.650s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(action) by extensions ['colcon_meta']
+[0.650s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(action) by extension 'colcon_meta'
+[0.650s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(action) by extensions ['ros']
+[0.650s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(action) by extension 'ros'
+[0.651s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(action) by extensions ['cmake', 'python']
+[0.651s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(action) by extension 'cmake'
+[0.651s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(action) by extension 'python'
+[0.651s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(action) by extensions ['python_setup_py']
+[0.651s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(action) by extension 'python_setup_py'
+[0.651s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.652s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(build) by extension 'ignore'
+[0.652s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(build) ignored
+[0.652s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.652s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(install) by extension 'ignore'
+[0.652s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(install) ignored
+[0.653s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.653s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(log) by extension 'ignore'
+[0.653s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(log) ignored
+[0.653s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.653s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'ignore'
+[0.654s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'ignore_ament_install'
+[0.654s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['colcon_pkg']
+[0.654s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'colcon_pkg'
+[0.654s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['colcon_meta']
+[0.654s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'colcon_meta'
+[0.654s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['ros']
+[0.654s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'ros'
+[0.655s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['cmake', 'python']
+[0.655s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'cmake'
+[0.655s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'python'
+[0.655s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['python_setup_py']
+[0.655s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'python_setup_py'
+[0.655s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/node_app_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.655s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/node_app_msgs) by extension 'ignore'
+[0.656s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/node_app_msgs) by extension 'ignore_ament_install'
+[0.656s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/node_app_msgs) by extensions ['colcon_pkg']
+[0.656s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/node_app_msgs) by extension 'colcon_pkg'
+[0.656s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/node_app_msgs) by extensions ['colcon_meta']
+[0.656s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/node_app_msgs) by extension 'colcon_meta'
+[0.656s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/node_app_msgs) by extensions ['ros']
+[0.656s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/node_app_msgs) by extension 'ros'
+[0.662s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/node_app_msgs' with type 'ros.ament_cmake' and name 'node_app_msgs'[0m
+[0.663s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/node_control_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.663s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/node_control_msgs) by extension 'ignore'
+[0.663s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/node_control_msgs) by extension 'ignore_ament_install'
+[0.664s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/node_control_msgs) by extensions ['colcon_pkg']
+[0.664s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/node_control_msgs) by extension 'colcon_pkg'
+[0.664s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/node_control_msgs) by extensions ['colcon_meta']
+[0.664s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/node_control_msgs) by extension 'colcon_meta'
+[0.664s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/node_control_msgs) by extensions ['ros']
+[0.664s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/node_control_msgs) by extension 'ros'
+[0.666s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/node_control_msgs' with type 'ros.ament_cmake' and name 'node_control_msgs'[0m
+[0.666s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/node_driver_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.666s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/node_driver_msgs) by extension 'ignore'
+[0.666s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/node_driver_msgs) by extension 'ignore_ament_install'
+[0.667s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/node_driver_msgs) by extensions ['colcon_pkg']
+[0.667s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/node_driver_msgs) by extension 'colcon_pkg'
+[0.667s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/node_driver_msgs) by extensions ['colcon_meta']
+[0.667s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/node_driver_msgs) by extension 'colcon_meta'
+[0.667s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/node_driver_msgs) by extensions ['ros']
+[0.667s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/node_driver_msgs) by extension 'ros'
+[0.669s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/node_driver_msgs' with type 'ros.ament_cmake' and name 'node_driver_msgs'[0m
+[0.669s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.669s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_msgs) by extension 'ignore'
+[0.669s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_msgs) by extension 'ignore_ament_install'
+[0.670s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_msgs) by extensions ['colcon_pkg']
+[0.670s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_msgs) by extension 'colcon_pkg'
+[0.670s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_msgs) by extensions ['colcon_meta']
+[0.670s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_msgs) by extension 'colcon_meta'
+[0.670s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_msgs) by extensions ['ros']
+[0.670s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_msgs) by extension 'ros'
+[0.672s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/robot_msgs' with type 'ros.ament_cmake' and name 'robot_msgs'[0m
+[0.673s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_rl_controller) by extensions ['ignore', 'ignore_ament_install']
+[0.673s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_rl_controller) by extension 'ignore'
+[0.673s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_rl_controller) by extension 'ignore_ament_install'
+[0.673s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_rl_controller) by extensions ['colcon_pkg']
+[0.673s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_rl_controller) by extension 'colcon_pkg'
+[0.673s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_rl_controller) by extensions ['colcon_meta']
+[0.673s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_rl_controller) by extension 'colcon_meta'
+[0.674s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_rl_controller) by extensions ['ros']
+[0.674s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_rl_controller) by extension 'ros'
+[0.676s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/robot_rl_controller' with type 'ros.ament_python' and name 'robot_rl_controller'[0m
+[0.676s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_state) by extensions ['ignore', 'ignore_ament_install']
+[0.676s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_state) by extension 'ignore'
+[0.677s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_state) by extension 'ignore_ament_install'
+[0.677s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_state) by extensions ['colcon_pkg']
+[0.677s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_state) by extension 'colcon_pkg'
+[0.677s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_state) by extensions ['colcon_meta']
+[0.677s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_state) by extension 'colcon_meta'
+[0.677s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_state) by extensions ['ros']
+[0.677s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_state) by extension 'ros'
+[0.679s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/robot_state' with type 'ros.ament_cmake' and name 'robot_state'[0m
+[0.679s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(recursive) using defaults
+[0.680s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(ignore) discover
+[0.680s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(ignore) using defaults
+[0.680s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(path) discover
+[0.680s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(path) using defaults
+[0.718s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(prefix_path) check parameters
+[0.719s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(prefix_path) discover
+[0.723s] [34mcolcon.colcon_installed_package_information.package_discovery[0m [1;30mDEBUG[0m [32mFound 189 installed packages in /opt/ros/humble[0m
+[0.725s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(prefix_path) using defaults
+[0.812s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'node_control_msgs' build argument 'cmake_args' from command line to 'None'
+[0.812s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'node_control_msgs' build argument 'cmake_target' from command line to 'None'
+[0.812s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'node_control_msgs' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.812s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'node_control_msgs' build argument 'cmake_clean_cache' from command line to 'False'
+[0.812s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'node_control_msgs' build argument 'cmake_clean_first' from command line to 'False'
+[0.812s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'node_control_msgs' build argument 'cmake_force_configure' from command line to 'False'
+[0.812s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'node_control_msgs' build argument 'ament_cmake_args' from command line to 'None'
+[0.812s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'node_control_msgs' build argument 'catkin_cmake_args' from command line to 'None'
+[0.812s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'node_control_msgs' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.813s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'node_control_msgs' with the following arguments: {'ament_cmake_args': None, 'build_base': '/data/rl_deploy/build/node_control_msgs', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/data/rl_deploy/install/node_control_msgs', 'merge_install': False, 'path': '/data/rl_deploy/src/node_control_msgs', 'symlink_install': False, 'test_result_base': None}[0m
+[0.813s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'node_driver_msgs' build argument 'cmake_args' from command line to 'None'
+[0.814s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'node_driver_msgs' build argument 'cmake_target' from command line to 'None'
+[0.814s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'node_driver_msgs' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.814s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'node_driver_msgs' build argument 'cmake_clean_cache' from command line to 'False'
+[0.814s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'node_driver_msgs' build argument 'cmake_clean_first' from command line to 'False'
+[0.814s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'node_driver_msgs' build argument 'cmake_force_configure' from command line to 'False'
+[0.814s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'node_driver_msgs' build argument 'ament_cmake_args' from command line to 'None'
+[0.814s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'node_driver_msgs' build argument 'catkin_cmake_args' from command line to 'None'
+[0.814s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'node_driver_msgs' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.814s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'node_driver_msgs' with the following arguments: {'ament_cmake_args': None, 'build_base': '/data/rl_deploy/build/node_driver_msgs', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/data/rl_deploy/install/node_driver_msgs', 'merge_install': False, 'path': '/data/rl_deploy/src/node_driver_msgs', 'symlink_install': False, 'test_result_base': None}[0m
+[0.815s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'node_app_msgs' build argument 'cmake_args' from command line to 'None'
+[0.815s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'node_app_msgs' build argument 'cmake_target' from command line to 'None'
+[0.815s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'node_app_msgs' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.815s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'node_app_msgs' build argument 'cmake_clean_cache' from command line to 'False'
+[0.815s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'node_app_msgs' build argument 'cmake_clean_first' from command line to 'False'
+[0.816s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'node_app_msgs' build argument 'cmake_force_configure' from command line to 'False'
+[0.816s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'node_app_msgs' build argument 'ament_cmake_args' from command line to 'None'
+[0.816s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'node_app_msgs' build argument 'catkin_cmake_args' from command line to 'None'
+[0.816s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'node_app_msgs' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.816s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'node_app_msgs' with the following arguments: {'ament_cmake_args': None, 'build_base': '/data/rl_deploy/build/node_app_msgs', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/data/rl_deploy/install/node_app_msgs', 'merge_install': False, 'path': '/data/rl_deploy/src/node_app_msgs', 'symlink_install': False, 'test_result_base': None}[0m
+[0.817s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_msgs' build argument 'cmake_args' from command line to 'None'
+[0.817s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_msgs' build argument 'cmake_target' from command line to 'None'
+[0.817s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_msgs' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.817s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_msgs' build argument 'cmake_clean_cache' from command line to 'False'
+[0.817s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_msgs' build argument 'cmake_clean_first' from command line to 'False'
+[0.817s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_msgs' build argument 'cmake_force_configure' from command line to 'False'
+[0.817s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_msgs' build argument 'ament_cmake_args' from command line to 'None'
+[0.817s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_msgs' build argument 'catkin_cmake_args' from command line to 'None'
+[0.817s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_msgs' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.817s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'robot_msgs' with the following arguments: {'ament_cmake_args': None, 'build_base': '/data/rl_deploy/build/robot_msgs', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/data/rl_deploy/install/robot_msgs', 'merge_install': False, 'path': '/data/rl_deploy/src/robot_msgs', 'symlink_install': False, 'test_result_base': None}[0m
+[0.818s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_rl_controller' build argument 'cmake_args' from command line to 'None'
+[0.818s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_rl_controller' build argument 'cmake_target' from command line to 'None'
+[0.818s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_rl_controller' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.819s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_rl_controller' build argument 'cmake_clean_cache' from command line to 'False'
+[0.819s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_rl_controller' build argument 'cmake_clean_first' from command line to 'False'
+[0.819s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_rl_controller' build argument 'cmake_force_configure' from command line to 'False'
+[0.819s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_rl_controller' build argument 'ament_cmake_args' from command line to 'None'
+[0.819s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_rl_controller' build argument 'catkin_cmake_args' from command line to 'None'
+[0.819s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_rl_controller' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.819s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'robot_rl_controller' with the following arguments: {'ament_cmake_args': None, 'build_base': '/data/rl_deploy/build/robot_rl_controller', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/data/rl_deploy/install/robot_rl_controller', 'merge_install': False, 'path': '/data/rl_deploy/src/robot_rl_controller', 'symlink_install': False, 'test_result_base': None}[0m
+[0.820s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_state' build argument 'cmake_args' from command line to 'None'
+[0.820s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_state' build argument 'cmake_target' from command line to 'None'
+[0.820s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_state' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.820s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_state' build argument 'cmake_clean_cache' from command line to 'False'
+[0.820s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_state' build argument 'cmake_clean_first' from command line to 'False'
+[0.820s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_state' build argument 'cmake_force_configure' from command line to 'False'
+[0.820s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_state' build argument 'ament_cmake_args' from command line to 'None'
+[0.820s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_state' build argument 'catkin_cmake_args' from command line to 'None'
+[0.820s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_state' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.820s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'robot_state' with the following arguments: {'ament_cmake_args': None, 'build_base': '/data/rl_deploy/build/robot_state', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/data/rl_deploy/install/robot_state', 'merge_install': False, 'path': '/data/rl_deploy/src/robot_state', 'symlink_install': False, 'test_result_base': None}[0m
+[0.821s] [34mcolcon.colcon_core.executor[0m [1;30mINFO[0m Executing jobs using 'parallel' executor
+[0.823s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mrun_until_complete[0m
+[0.824s] [34mcolcon.colcon_ros.task.ament_cmake.build[0m [1;30mINFO[0m Building ROS package in '/data/rl_deploy/src/node_control_msgs' with build type 'ament_cmake'
+[0.824s] [34mcolcon.colcon_cmake.task.cmake.build[0m [1;30mINFO[0m Building CMake package in '/data/rl_deploy/src/node_control_msgs'
+[0.829s] [34mcolcon.colcon_core.plugin_system[0m [1;30mINFO[0m Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.829s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.829s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[0.834s] [34mcolcon.colcon_ros.task.ament_cmake.build[0m [1;30mINFO[0m Building ROS package in '/data/rl_deploy/src/node_driver_msgs' with build type 'ament_cmake'
+[0.834s] [34mcolcon.colcon_cmake.task.cmake.build[0m [1;30mINFO[0m Building CMake package in '/data/rl_deploy/src/node_driver_msgs'
+[0.835s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.835s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[0.849s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/data/rl_deploy/build/node_control_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/local/bin/cmake --build /data/rl_deploy/build/node_control_msgs -- -j8 -l8[0m
+[0.858s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/data/rl_deploy/build/node_driver_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/local/bin/cmake --build /data/rl_deploy/build/node_driver_msgs -- -j8 -l8[0m
+[1.680s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/data/rl_deploy/build/node_driver_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/local/bin/cmake --build /data/rl_deploy/build/node_driver_msgs -- -j8 -l8[0m
+[1.846s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/data/rl_deploy/build/node_driver_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/local/bin/cmake --install /data/rl_deploy/build/node_driver_msgs[0m
+[1.850s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/data/rl_deploy/build/node_control_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/local/bin/cmake --build /data/rl_deploy/build/node_control_msgs -- -j8 -l8[0m
+[1.852s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/data/rl_deploy/build/node_control_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/local/bin/cmake --install /data/rl_deploy/build/node_control_msgs[0m
+[2.102s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(node_driver_msgs)
+[2.103s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/data/rl_deploy/build/node_driver_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/local/bin/cmake --install /data/rl_deploy/build/node_driver_msgs[0m
+[2.116s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/node_driver_msgs' for CMake module files
+[2.117s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/node_driver_msgs' for CMake config files
+[2.118s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('node_driver_msgs', 'cmake_prefix_path')
+[2.119s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/data/rl_deploy/install/node_driver_msgs/share/node_driver_msgs/hook/cmake_prefix_path.ps1'
+[2.120s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/data/rl_deploy/install/node_driver_msgs/share/node_driver_msgs/hook/cmake_prefix_path.dsv'
+[2.124s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/data/rl_deploy/install/node_driver_msgs/share/node_driver_msgs/hook/cmake_prefix_path.sh'
+[2.127s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/node_driver_msgs/lib'
+[2.128s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('node_driver_msgs', 'ld_library_path_lib')
+[2.128s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/data/rl_deploy/install/node_driver_msgs/share/node_driver_msgs/hook/ld_library_path_lib.ps1'
+[2.130s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/data/rl_deploy/install/node_driver_msgs/share/node_driver_msgs/hook/ld_library_path_lib.dsv'
+[2.133s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/data/rl_deploy/install/node_driver_msgs/share/node_driver_msgs/hook/ld_library_path_lib.sh'
+[2.136s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/node_driver_msgs/bin'
+[2.136s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/node_driver_msgs/lib/pkgconfig/node_driver_msgs.pc'
+[2.137s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/node_driver_msgs/lib/python3.10/site-packages'
+[2.138s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/node_driver_msgs/bin'
+[2.139s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/data/rl_deploy/install/node_driver_msgs/share/node_driver_msgs/package.ps1'
+[2.142s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/data/rl_deploy/install/node_driver_msgs/share/node_driver_msgs/package.dsv'
+[2.144s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/data/rl_deploy/install/node_driver_msgs/share/node_driver_msgs/package.sh'
+[2.145s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/data/rl_deploy/install/node_driver_msgs/share/node_driver_msgs/package.bash'
+[2.147s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/data/rl_deploy/install/node_driver_msgs/share/node_driver_msgs/package.zsh'
+[2.148s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/data/rl_deploy/install/node_driver_msgs/share/colcon-core/packages/node_driver_msgs)
+[2.151s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(node_driver_msgs)
+[2.151s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/node_driver_msgs' for CMake module files
+[2.152s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/node_driver_msgs' for CMake config files
+[2.154s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('node_driver_msgs', 'cmake_prefix_path')
+[2.155s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/data/rl_deploy/install/node_driver_msgs/share/node_driver_msgs/hook/cmake_prefix_path.ps1'
+[2.156s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/data/rl_deploy/install/node_driver_msgs/share/node_driver_msgs/hook/cmake_prefix_path.dsv'
+[2.157s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/data/rl_deploy/install/node_driver_msgs/share/node_driver_msgs/hook/cmake_prefix_path.sh'
+[2.158s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/node_driver_msgs/lib'
+[2.158s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('node_driver_msgs', 'ld_library_path_lib')
+[2.159s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/data/rl_deploy/install/node_driver_msgs/share/node_driver_msgs/hook/ld_library_path_lib.ps1'
+[2.160s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/data/rl_deploy/install/node_driver_msgs/share/node_driver_msgs/hook/ld_library_path_lib.dsv'
+[2.161s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/data/rl_deploy/install/node_driver_msgs/share/node_driver_msgs/hook/ld_library_path_lib.sh'
+[2.162s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/node_driver_msgs/bin'
+[2.162s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/node_driver_msgs/lib/pkgconfig/node_driver_msgs.pc'
+[2.162s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/node_driver_msgs/lib/python3.10/site-packages'
+[2.163s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/node_driver_msgs/bin'
+[2.164s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/data/rl_deploy/install/node_driver_msgs/share/node_driver_msgs/package.ps1'
+[2.165s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/data/rl_deploy/install/node_driver_msgs/share/node_driver_msgs/package.dsv'
+[2.166s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/data/rl_deploy/install/node_driver_msgs/share/node_driver_msgs/package.sh'
+[2.167s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/data/rl_deploy/install/node_driver_msgs/share/node_driver_msgs/package.bash'
+[2.168s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/data/rl_deploy/install/node_driver_msgs/share/node_driver_msgs/package.zsh'
+[2.169s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/data/rl_deploy/install/node_driver_msgs/share/colcon-core/packages/node_driver_msgs)
+[2.172s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(node_control_msgs)
+[2.172s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/node_control_msgs' for CMake module files
+[2.174s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/data/rl_deploy/build/node_control_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/local/bin/cmake --install /data/rl_deploy/build/node_control_msgs[0m
+[2.175s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/node_control_msgs' for CMake config files
+[2.177s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('node_control_msgs', 'cmake_prefix_path')
+[2.178s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/data/rl_deploy/install/node_control_msgs/share/node_control_msgs/hook/cmake_prefix_path.ps1'
+[2.179s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/data/rl_deploy/install/node_control_msgs/share/node_control_msgs/hook/cmake_prefix_path.dsv'
+[2.180s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/data/rl_deploy/install/node_control_msgs/share/node_control_msgs/hook/cmake_prefix_path.sh'
+[2.181s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/node_control_msgs/lib'
+[2.182s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('node_control_msgs', 'ld_library_path_lib')
+[2.182s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/data/rl_deploy/install/node_control_msgs/share/node_control_msgs/hook/ld_library_path_lib.ps1'
+[2.183s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/data/rl_deploy/install/node_control_msgs/share/node_control_msgs/hook/ld_library_path_lib.dsv'
+[2.184s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/data/rl_deploy/install/node_control_msgs/share/node_control_msgs/hook/ld_library_path_lib.sh'
+[2.185s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/node_control_msgs/bin'
+[2.185s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/node_control_msgs/lib/pkgconfig/node_control_msgs.pc'
+[2.186s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/node_control_msgs/lib/python3.10/site-packages'
+[2.187s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/node_control_msgs/bin'
+[2.187s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/data/rl_deploy/install/node_control_msgs/share/node_control_msgs/package.ps1'
+[2.189s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/data/rl_deploy/install/node_control_msgs/share/node_control_msgs/package.dsv'
+[2.190s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/data/rl_deploy/install/node_control_msgs/share/node_control_msgs/package.sh'
+[2.191s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/data/rl_deploy/install/node_control_msgs/share/node_control_msgs/package.bash'
+[2.192s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/data/rl_deploy/install/node_control_msgs/share/node_control_msgs/package.zsh'
+[2.193s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/data/rl_deploy/install/node_control_msgs/share/colcon-core/packages/node_control_msgs)
+[2.195s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(node_control_msgs)
+[2.195s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/node_control_msgs' for CMake module files
+[2.196s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/node_control_msgs' for CMake config files
+[2.199s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('node_control_msgs', 'cmake_prefix_path')
+[2.199s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/data/rl_deploy/install/node_control_msgs/share/node_control_msgs/hook/cmake_prefix_path.ps1'
+[2.201s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/data/rl_deploy/install/node_control_msgs/share/node_control_msgs/hook/cmake_prefix_path.dsv'
+[2.201s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/data/rl_deploy/install/node_control_msgs/share/node_control_msgs/hook/cmake_prefix_path.sh'
+[2.203s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/node_control_msgs/lib'
+[2.203s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('node_control_msgs', 'ld_library_path_lib')
+[2.204s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/data/rl_deploy/install/node_control_msgs/share/node_control_msgs/hook/ld_library_path_lib.ps1'
+[2.205s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/data/rl_deploy/install/node_control_msgs/share/node_control_msgs/hook/ld_library_path_lib.dsv'
+[2.206s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/data/rl_deploy/install/node_control_msgs/share/node_control_msgs/hook/ld_library_path_lib.sh'
+[2.207s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/node_control_msgs/bin'
+[2.207s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/node_control_msgs/lib/pkgconfig/node_control_msgs.pc'
+[2.207s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/node_control_msgs/lib/python3.10/site-packages'
+[2.208s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/node_control_msgs/bin'
+[2.209s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/data/rl_deploy/install/node_control_msgs/share/node_control_msgs/package.ps1'
+[2.210s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/data/rl_deploy/install/node_control_msgs/share/node_control_msgs/package.dsv'
+[2.212s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/data/rl_deploy/install/node_control_msgs/share/node_control_msgs/package.sh'
+[2.213s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/data/rl_deploy/install/node_control_msgs/share/node_control_msgs/package.bash'
+[2.214s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/data/rl_deploy/install/node_control_msgs/share/node_control_msgs/package.zsh'
+[2.215s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/data/rl_deploy/install/node_control_msgs/share/colcon-core/packages/node_control_msgs)
+[2.216s] [34mcolcon.colcon_ros.task.ament_cmake.build[0m [1;30mINFO[0m Building ROS package in '/data/rl_deploy/src/robot_msgs' with build type 'ament_cmake'
+[2.216s] [34mcolcon.colcon_cmake.task.cmake.build[0m [1;30mINFO[0m Building CMake package in '/data/rl_deploy/src/robot_msgs'
+[2.217s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.217s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[2.224s] [34mcolcon.colcon_ros.task.ament_cmake.build[0m [1;30mINFO[0m Building ROS package in '/data/rl_deploy/src/node_app_msgs' with build type 'ament_cmake'
+[2.224s] [34mcolcon.colcon_cmake.task.cmake.build[0m [1;30mINFO[0m Building CMake package in '/data/rl_deploy/src/node_app_msgs'
+[2.225s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.225s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[2.239s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/data/rl_deploy/build/robot_msgs': AMENT_PREFIX_PATH=/data/rl_deploy/install/node_control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/data/rl_deploy/install/node_control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/data/rl_deploy/install/node_control_msgs/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/app/lib:/app/lib:/usr/local/cuda-12/lib64:/usr/local/cuda-12/lib64:/usr/local/cuda-12/lib64 PYTHONPATH=/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/local/bin/cmake --build /data/rl_deploy/build/robot_msgs -- -j8 -l8[0m
+[2.250s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/data/rl_deploy/build/node_app_msgs': AMENT_PREFIX_PATH=/data/rl_deploy/install/node_control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/data/rl_deploy/install/node_control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/data/rl_deploy/install/node_control_msgs/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/app/lib:/app/lib:/usr/local/cuda-12/lib64:/usr/local/cuda-12/lib64:/usr/local/cuda-12/lib64 PYTHONPATH=/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/local/bin/cmake --build /data/rl_deploy/build/node_app_msgs -- -j8 -l8[0m
+[3.057s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/data/rl_deploy/build/node_app_msgs' returned '0': AMENT_PREFIX_PATH=/data/rl_deploy/install/node_control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/data/rl_deploy/install/node_control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/data/rl_deploy/install/node_control_msgs/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/app/lib:/app/lib:/usr/local/cuda-12/lib64:/usr/local/cuda-12/lib64:/usr/local/cuda-12/lib64 PYTHONPATH=/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/local/bin/cmake --build /data/rl_deploy/build/node_app_msgs -- -j8 -l8[0m
+[3.080s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/data/rl_deploy/build/node_app_msgs': AMENT_PREFIX_PATH=/data/rl_deploy/install/node_control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/data/rl_deploy/install/node_control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/data/rl_deploy/install/node_control_msgs/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/app/lib:/app/lib:/usr/local/cuda-12/lib64:/usr/local/cuda-12/lib64:/usr/local/cuda-12/lib64 PYTHONPATH=/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/local/bin/cmake --install /data/rl_deploy/build/node_app_msgs[0m
+[3.106s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/data/rl_deploy/build/robot_msgs' returned '0': AMENT_PREFIX_PATH=/data/rl_deploy/install/node_control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/data/rl_deploy/install/node_control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/data/rl_deploy/install/node_control_msgs/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/app/lib:/app/lib:/usr/local/cuda-12/lib64:/usr/local/cuda-12/lib64:/usr/local/cuda-12/lib64 PYTHONPATH=/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/local/bin/cmake --build /data/rl_deploy/build/robot_msgs -- -j8 -l8[0m
+[3.111s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/data/rl_deploy/build/robot_msgs': AMENT_PREFIX_PATH=/data/rl_deploy/install/node_control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/data/rl_deploy/install/node_control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/data/rl_deploy/install/node_control_msgs/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/app/lib:/app/lib:/usr/local/cuda-12/lib64:/usr/local/cuda-12/lib64:/usr/local/cuda-12/lib64 PYTHONPATH=/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/local/bin/cmake --install /data/rl_deploy/build/robot_msgs[0m
+[3.338s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(node_app_msgs)
+[3.339s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/node_app_msgs' for CMake module files
+[3.340s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/node_app_msgs' for CMake config files
+[3.342s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('node_app_msgs', 'cmake_prefix_path')
+[3.342s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/data/rl_deploy/install/node_app_msgs/share/node_app_msgs/hook/cmake_prefix_path.ps1'
+[3.344s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/data/rl_deploy/install/node_app_msgs/share/node_app_msgs/hook/cmake_prefix_path.dsv'
+[3.345s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/data/rl_deploy/install/node_app_msgs/share/node_app_msgs/hook/cmake_prefix_path.sh'
+[3.345s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/data/rl_deploy/build/node_app_msgs' returned '0': AMENT_PREFIX_PATH=/data/rl_deploy/install/node_control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/data/rl_deploy/install/node_control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/data/rl_deploy/install/node_control_msgs/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/app/lib:/app/lib:/usr/local/cuda-12/lib64:/usr/local/cuda-12/lib64:/usr/local/cuda-12/lib64 PYTHONPATH=/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/local/bin/cmake --install /data/rl_deploy/build/node_app_msgs[0m
+[3.348s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/node_app_msgs/lib'
+[3.349s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('node_app_msgs', 'ld_library_path_lib')
+[3.349s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/data/rl_deploy/install/node_app_msgs/share/node_app_msgs/hook/ld_library_path_lib.ps1'
+[3.351s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/data/rl_deploy/install/node_app_msgs/share/node_app_msgs/hook/ld_library_path_lib.dsv'
+[3.354s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/data/rl_deploy/install/node_app_msgs/share/node_app_msgs/hook/ld_library_path_lib.sh'
+[3.355s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/node_app_msgs/bin'
+[3.355s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/node_app_msgs/lib/pkgconfig/node_app_msgs.pc'
+[3.356s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/node_app_msgs/lib/python3.10/site-packages'
+[3.357s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/node_app_msgs/bin'
+[3.357s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/data/rl_deploy/install/node_app_msgs/share/node_app_msgs/package.ps1'
+[3.360s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/data/rl_deploy/install/node_app_msgs/share/node_app_msgs/package.dsv'
+[3.361s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/data/rl_deploy/install/node_app_msgs/share/node_app_msgs/package.sh'
+[3.363s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/data/rl_deploy/install/node_app_msgs/share/node_app_msgs/package.bash'
+[3.365s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/data/rl_deploy/install/node_app_msgs/share/node_app_msgs/package.zsh'
+[3.367s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/data/rl_deploy/install/node_app_msgs/share/colcon-core/packages/node_app_msgs)
+[3.369s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(node_app_msgs)
+[3.370s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/node_app_msgs' for CMake module files
+[3.372s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/node_app_msgs' for CMake config files
+[3.373s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('node_app_msgs', 'cmake_prefix_path')
+[3.374s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/data/rl_deploy/install/node_app_msgs/share/node_app_msgs/hook/cmake_prefix_path.ps1'
+[3.375s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/data/rl_deploy/install/node_app_msgs/share/node_app_msgs/hook/cmake_prefix_path.dsv'
+[3.376s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/data/rl_deploy/install/node_app_msgs/share/node_app_msgs/hook/cmake_prefix_path.sh'
+[3.377s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/node_app_msgs/lib'
+[3.377s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('node_app_msgs', 'ld_library_path_lib')
+[3.378s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/data/rl_deploy/install/node_app_msgs/share/node_app_msgs/hook/ld_library_path_lib.ps1'
+[3.378s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/data/rl_deploy/install/node_app_msgs/share/node_app_msgs/hook/ld_library_path_lib.dsv'
+[3.379s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/data/rl_deploy/install/node_app_msgs/share/node_app_msgs/hook/ld_library_path_lib.sh'
+[3.380s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/node_app_msgs/bin'
+[3.380s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/node_app_msgs/lib/pkgconfig/node_app_msgs.pc'
+[3.381s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/node_app_msgs/lib/python3.10/site-packages'
+[3.381s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/node_app_msgs/bin'
+[3.382s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/data/rl_deploy/install/node_app_msgs/share/node_app_msgs/package.ps1'
+[3.383s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/data/rl_deploy/install/node_app_msgs/share/node_app_msgs/package.dsv'
+[3.384s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/data/rl_deploy/install/node_app_msgs/share/node_app_msgs/package.sh'
+[3.385s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/data/rl_deploy/install/node_app_msgs/share/node_app_msgs/package.bash'
+[3.386s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/data/rl_deploy/install/node_app_msgs/share/node_app_msgs/package.zsh'
+[3.387s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/data/rl_deploy/install/node_app_msgs/share/colcon-core/packages/node_app_msgs)
+[3.390s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(robot_msgs)
+[3.390s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/robot_msgs' for CMake module files
+[3.391s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/data/rl_deploy/build/robot_msgs' returned '0': AMENT_PREFIX_PATH=/data/rl_deploy/install/node_control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/data/rl_deploy/install/node_control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/data/rl_deploy/install/node_control_msgs/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/app/lib:/app/lib:/usr/local/cuda-12/lib64:/usr/local/cuda-12/lib64:/usr/local/cuda-12/lib64 PYTHONPATH=/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/local/bin/cmake --install /data/rl_deploy/build/robot_msgs[0m
+[3.392s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/robot_msgs' for CMake config files
+[3.394s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('robot_msgs', 'cmake_prefix_path')
+[3.394s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/data/rl_deploy/install/robot_msgs/share/robot_msgs/hook/cmake_prefix_path.ps1'
+[3.395s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/data/rl_deploy/install/robot_msgs/share/robot_msgs/hook/cmake_prefix_path.dsv'
+[3.396s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/data/rl_deploy/install/robot_msgs/share/robot_msgs/hook/cmake_prefix_path.sh'
+[3.397s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/robot_msgs/lib'
+[3.397s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('robot_msgs', 'ld_library_path_lib')
+[3.398s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/data/rl_deploy/install/robot_msgs/share/robot_msgs/hook/ld_library_path_lib.ps1'
+[3.399s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/data/rl_deploy/install/robot_msgs/share/robot_msgs/hook/ld_library_path_lib.dsv'
+[3.400s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/data/rl_deploy/install/robot_msgs/share/robot_msgs/hook/ld_library_path_lib.sh'
+[3.400s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/robot_msgs/bin'
+[3.401s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/robot_msgs/lib/pkgconfig/robot_msgs.pc'
+[3.401s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/robot_msgs/lib/python3.10/site-packages'
+[3.402s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/robot_msgs/bin'
+[3.402s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/data/rl_deploy/install/robot_msgs/share/robot_msgs/package.ps1'
+[3.403s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/data/rl_deploy/install/robot_msgs/share/robot_msgs/package.dsv'
+[3.404s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/data/rl_deploy/install/robot_msgs/share/robot_msgs/package.sh'
+[3.405s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/data/rl_deploy/install/robot_msgs/share/robot_msgs/package.bash'
+[3.406s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/data/rl_deploy/install/robot_msgs/share/robot_msgs/package.zsh'
+[3.407s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/data/rl_deploy/install/robot_msgs/share/colcon-core/packages/robot_msgs)
+[3.409s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(robot_msgs)
+[3.409s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/robot_msgs' for CMake module files
+[3.410s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/robot_msgs' for CMake config files
+[3.411s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('robot_msgs', 'cmake_prefix_path')
+[3.412s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/data/rl_deploy/install/robot_msgs/share/robot_msgs/hook/cmake_prefix_path.ps1'
+[3.413s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/data/rl_deploy/install/robot_msgs/share/robot_msgs/hook/cmake_prefix_path.dsv'
+[3.414s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/data/rl_deploy/install/robot_msgs/share/robot_msgs/hook/cmake_prefix_path.sh'
+[3.415s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/robot_msgs/lib'
+[3.415s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('robot_msgs', 'ld_library_path_lib')
+[3.415s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/data/rl_deploy/install/robot_msgs/share/robot_msgs/hook/ld_library_path_lib.ps1'
+[3.416s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/data/rl_deploy/install/robot_msgs/share/robot_msgs/hook/ld_library_path_lib.dsv'
+[3.417s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/data/rl_deploy/install/robot_msgs/share/robot_msgs/hook/ld_library_path_lib.sh'
+[3.418s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/robot_msgs/bin'
+[3.418s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/robot_msgs/lib/pkgconfig/robot_msgs.pc'
+[3.419s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/robot_msgs/lib/python3.10/site-packages'
+[3.419s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/robot_msgs/bin'
+[3.420s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/data/rl_deploy/install/robot_msgs/share/robot_msgs/package.ps1'
+[3.421s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/data/rl_deploy/install/robot_msgs/share/robot_msgs/package.dsv'
+[3.422s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/data/rl_deploy/install/robot_msgs/share/robot_msgs/package.sh'
+[3.423s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/data/rl_deploy/install/robot_msgs/share/robot_msgs/package.bash'
+[3.424s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/data/rl_deploy/install/robot_msgs/share/robot_msgs/package.zsh'
+[3.425s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/data/rl_deploy/install/robot_msgs/share/colcon-core/packages/robot_msgs)
+[3.426s] [34mcolcon.colcon_ros.task.ament_python.build[0m [1;30mINFO[0m Building ROS package in '/data/rl_deploy/src/robot_rl_controller' with build type 'ament_python'
+[3.426s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('robot_rl_controller', 'ament_prefix_path')
+[3.427s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/data/rl_deploy/install/robot_rl_controller/share/robot_rl_controller/hook/ament_prefix_path.ps1'
+[3.428s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/data/rl_deploy/install/robot_rl_controller/share/robot_rl_controller/hook/ament_prefix_path.dsv'
+[3.429s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/data/rl_deploy/install/robot_rl_controller/share/robot_rl_controller/hook/ament_prefix_path.sh'
+[3.430s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.430s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[3.435s] [34mcolcon.colcon_ros.task.ament_cmake.build[0m [1;30mINFO[0m Building ROS package in '/data/rl_deploy/src/robot_state' with build type 'ament_cmake'
+[3.435s] [34mcolcon.colcon_cmake.task.cmake.build[0m [1;30mINFO[0m Building CMake package in '/data/rl_deploy/src/robot_state'
+[3.435s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.436s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[3.917s] [34mcolcon.colcon_core.task.python.build[0m [1;30mINFO[0m Building Python package in '/data/rl_deploy/src/robot_rl_controller'
+[3.917s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.918s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[3.931s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/data/rl_deploy/build/robot_state': AMENT_PREFIX_PATH=/data/rl_deploy/install/robot_msgs:/data/rl_deploy/install/node_control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/data/rl_deploy/install/robot_msgs:/data/rl_deploy/install/node_control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/data/rl_deploy/install/robot_msgs/lib:/data/rl_deploy/install/node_control_msgs/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/app/lib:/app/lib:/usr/local/cuda-12/lib64:/usr/local/cuda-12/lib64:/usr/local/cuda-12/lib64 PYTHONPATH=/data/rl_deploy/install/robot_msgs/local/lib/python3.10/dist-packages:/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/local/bin/cmake --build /data/rl_deploy/build/robot_state -- -j8 -l8[0m
+[4.136s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/data/rl_deploy/build/robot_state' returned '0': AMENT_PREFIX_PATH=/data/rl_deploy/install/robot_msgs:/data/rl_deploy/install/node_control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/data/rl_deploy/install/robot_msgs:/data/rl_deploy/install/node_control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/data/rl_deploy/install/robot_msgs/lib:/data/rl_deploy/install/node_control_msgs/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/app/lib:/app/lib:/usr/local/cuda-12/lib64:/usr/local/cuda-12/lib64:/usr/local/cuda-12/lib64 PYTHONPATH=/data/rl_deploy/install/robot_msgs/local/lib/python3.10/dist-packages:/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/local/bin/cmake --build /data/rl_deploy/build/robot_state -- -j8 -l8[0m
+[4.138s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/data/rl_deploy/build/robot_state': AMENT_PREFIX_PATH=/data/rl_deploy/install/robot_msgs:/data/rl_deploy/install/node_control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/data/rl_deploy/install/robot_msgs:/data/rl_deploy/install/node_control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/data/rl_deploy/install/robot_msgs/lib:/data/rl_deploy/install/node_control_msgs/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/app/lib:/app/lib:/usr/local/cuda-12/lib64:/usr/local/cuda-12/lib64:/usr/local/cuda-12/lib64 PYTHONPATH=/data/rl_deploy/install/robot_msgs/local/lib/python3.10/dist-packages:/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/local/bin/cmake --install /data/rl_deploy/build/robot_state[0m
+[4.268s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(robot_state)
+[4.269s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/robot_state' for CMake module files
+[4.270s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/robot_state' for CMake config files
+[4.270s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('robot_state', 'cmake_prefix_path')
+[4.271s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/data/rl_deploy/install/robot_state/share/robot_state/hook/cmake_prefix_path.ps1'
+[4.272s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/data/rl_deploy/install/robot_state/share/robot_state/hook/cmake_prefix_path.dsv'
+[4.272s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/data/rl_deploy/build/robot_state' returned '0': AMENT_PREFIX_PATH=/data/rl_deploy/install/robot_msgs:/data/rl_deploy/install/node_control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/data/rl_deploy/install/robot_msgs:/data/rl_deploy/install/node_control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/data/rl_deploy/install/robot_msgs/lib:/data/rl_deploy/install/node_control_msgs/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/app/lib:/app/lib:/usr/local/cuda-12/lib64:/usr/local/cuda-12/lib64:/usr/local/cuda-12/lib64 PYTHONPATH=/data/rl_deploy/install/robot_msgs/local/lib/python3.10/dist-packages:/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/local/bin/cmake --install /data/rl_deploy/build/robot_state[0m
+[4.273s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/data/rl_deploy/install/robot_state/share/robot_state/hook/cmake_prefix_path.sh'
+[4.275s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/robot_state/lib'
+[4.275s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/robot_state/bin'
+[4.275s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/robot_state/lib/pkgconfig/robot_state.pc'
+[4.275s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/robot_state/lib/python3.10/site-packages'
+[4.276s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/robot_state/bin'
+[4.276s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/data/rl_deploy/install/robot_state/share/robot_state/package.ps1'
+[4.278s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/data/rl_deploy/install/robot_state/share/robot_state/package.dsv'
+[4.278s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/data/rl_deploy/install/robot_state/share/robot_state/package.sh'
+[4.279s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/data/rl_deploy/install/robot_state/share/robot_state/package.bash'
+[4.280s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/data/rl_deploy/install/robot_state/share/robot_state/package.zsh'
+[4.281s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/data/rl_deploy/install/robot_state/share/colcon-core/packages/robot_state)
+[4.283s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(robot_state)
+[4.283s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/robot_state' for CMake module files
+[4.284s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/robot_state' for CMake config files
+[4.284s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('robot_state', 'cmake_prefix_path')
+[4.285s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/data/rl_deploy/install/robot_state/share/robot_state/hook/cmake_prefix_path.ps1'
+[4.286s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/data/rl_deploy/install/robot_state/share/robot_state/hook/cmake_prefix_path.dsv'
+[4.287s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/data/rl_deploy/install/robot_state/share/robot_state/hook/cmake_prefix_path.sh'
+[4.288s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/robot_state/lib'
+[4.288s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/robot_state/bin'
+[4.288s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/robot_state/lib/pkgconfig/robot_state.pc'
+[4.288s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/robot_state/lib/python3.10/site-packages'
+[4.289s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/robot_state/bin'
+[4.289s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/data/rl_deploy/install/robot_state/share/robot_state/package.ps1'
+[4.291s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/data/rl_deploy/install/robot_state/share/robot_state/package.dsv'
+[4.292s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/data/rl_deploy/install/robot_state/share/robot_state/package.sh'
+[4.292s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/data/rl_deploy/install/robot_state/share/robot_state/package.bash'
+[4.293s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/data/rl_deploy/install/robot_state/share/robot_state/package.zsh'
+[4.294s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/data/rl_deploy/install/robot_state/share/colcon-core/packages/robot_state)
+[4.745s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/data/rl_deploy/src/robot_rl_controller': AMENT_PREFIX_PATH=/data/rl_deploy/install/robot_msgs:/data/rl_deploy/install/node_app_msgs:/data/rl_deploy/install/node_control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/data/rl_deploy/install/robot_msgs:/data/rl_deploy/install/node_app_msgs:/data/rl_deploy/install/node_control_msgs LD_LIBRARY_PATH=/data/rl_deploy/install/robot_msgs/lib:/data/rl_deploy/install/node_app_msgs/lib:/data/rl_deploy/install/node_control_msgs/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/app/lib:/app/lib:/usr/local/cuda-12/lib64:/usr/local/cuda-12/lib64:/usr/local/cuda-12/lib64 PYTHONPATH=/data/rl_deploy/build/robot_rl_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/data/rl_deploy/install/robot_rl_controller/lib/python3.10/site-packages:/data/rl_deploy/install/robot_msgs/local/lib/python3.10/dist-packages:/data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages:/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/robot_rl_controller build --build-base /data/rl_deploy/build/robot_rl_controller/build install --record /data/rl_deploy/build/robot_rl_controller/install.log --single-version-externally-managed install_data[0m
+[5.317s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/robot_rl_controller' for CMake module files
+[5.318s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/data/rl_deploy/src/robot_rl_controller' returned '0': AMENT_PREFIX_PATH=/data/rl_deploy/install/robot_msgs:/data/rl_deploy/install/node_app_msgs:/data/rl_deploy/install/node_control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/data/rl_deploy/install/robot_msgs:/data/rl_deploy/install/node_app_msgs:/data/rl_deploy/install/node_control_msgs LD_LIBRARY_PATH=/data/rl_deploy/install/robot_msgs/lib:/data/rl_deploy/install/node_app_msgs/lib:/data/rl_deploy/install/node_control_msgs/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/app/lib:/app/lib:/usr/local/cuda-12/lib64:/usr/local/cuda-12/lib64:/usr/local/cuda-12/lib64 PYTHONPATH=/data/rl_deploy/build/robot_rl_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/data/rl_deploy/install/robot_rl_controller/lib/python3.10/site-packages:/data/rl_deploy/install/robot_msgs/local/lib/python3.10/dist-packages:/data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages:/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/robot_rl_controller build --build-base /data/rl_deploy/build/robot_rl_controller/build install --record /data/rl_deploy/build/robot_rl_controller/install.log --single-version-externally-managed install_data[0m
+[5.319s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/robot_rl_controller' for CMake config files
+[5.320s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/robot_rl_controller/lib'
+[5.321s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/robot_rl_controller/bin'
+[5.321s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/robot_rl_controller/lib/pkgconfig/robot_rl_controller.pc'
+[5.321s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/robot_rl_controller/lib/python3.10/site-packages'
+[5.321s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('robot_rl_controller', 'pythonpath')
+[5.322s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/data/rl_deploy/install/robot_rl_controller/share/robot_rl_controller/hook/pythonpath.ps1'
+[5.323s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/data/rl_deploy/install/robot_rl_controller/share/robot_rl_controller/hook/pythonpath.dsv'
+[5.324s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/data/rl_deploy/install/robot_rl_controller/share/robot_rl_controller/hook/pythonpath.sh'
+[5.326s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/data/rl_deploy/install/robot_rl_controller/bin'
+[5.326s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(robot_rl_controller)
+[5.327s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/data/rl_deploy/install/robot_rl_controller/share/robot_rl_controller/package.ps1'
+[5.328s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/data/rl_deploy/install/robot_rl_controller/share/robot_rl_controller/package.dsv'
+[5.329s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/data/rl_deploy/install/robot_rl_controller/share/robot_rl_controller/package.sh'
+[5.331s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/data/rl_deploy/install/robot_rl_controller/share/robot_rl_controller/package.bash'
+[5.331s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/data/rl_deploy/install/robot_rl_controller/share/robot_rl_controller/package.zsh'
+[5.332s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/data/rl_deploy/install/robot_rl_controller/share/colcon-core/packages/robot_rl_controller)
+[5.333s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mclosing loop[0m
+[5.334s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mloop closed[0m
+[5.335s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mrun_until_complete finished with '0'[0m
+[5.335s] [34mcolcon.colcon_core.event_reactor[0m [1;30mDEBUG[0m [32mjoining thread[0m
+[5.345s] [34mcolcon.colcon_core.plugin_system[0m [1;30mINFO[0m Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[5.345s] [34mcolcon.colcon_core.plugin_system[0m [1;30mINFO[0m Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[5.345s] [34mcolcon.colcon_notification.desktop_notification[0m [1;30mINFO[0m Sending desktop notification using 'notify2'
+[5.372s] [34mcolcon.colcon_notification.desktop_notification.notify2[0m [1;30mDEBUG[0m [32mFailed to initialize notify2: org.freedesktop.DBus.Error.Spawn.ChildExited: Process org.freedesktop.Notifications exited with status 1[0m
+[5.372s] [34mcolcon.colcon_core.event_reactor[0m [1;30mDEBUG[0m [32mjoined thread[0m
+[5.373s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/data/rl_deploy/install/local_setup.ps1'
+[5.375s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix util module '/data/rl_deploy/install/_local_setup_util_ps1.py'
+[5.379s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/data/rl_deploy/install/setup.ps1'
+[5.381s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/data/rl_deploy/install/local_setup.sh'
+[5.383s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix util module '/data/rl_deploy/install/_local_setup_util_sh.py'
+[5.385s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/data/rl_deploy/install/setup.sh'
+[5.387s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/data/rl_deploy/install/local_setup.bash'
+[5.388s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/data/rl_deploy/install/setup.bash'
+[5.390s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/data/rl_deploy/install/local_setup.zsh'
+[5.391s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/data/rl_deploy/install/setup.zsh'

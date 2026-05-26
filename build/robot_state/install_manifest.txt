@@ -1,0 +1,16 @@
+/data/rl_deploy/install/robot_state/lib/robot_state/robot_state_node
+/data/rl_deploy/install/robot_state/share/ament_index/resource_index/package_run_dependencies/robot_state
+/data/rl_deploy/install/robot_state/share/ament_index/resource_index/parent_prefix_path/robot_state
+/data/rl_deploy/install/robot_state/share/robot_state/environment/ament_prefix_path.sh
+/data/rl_deploy/install/robot_state/share/robot_state/environment/ament_prefix_path.dsv
+/data/rl_deploy/install/robot_state/share/robot_state/environment/path.sh
+/data/rl_deploy/install/robot_state/share/robot_state/environment/path.dsv
+/data/rl_deploy/install/robot_state/share/robot_state/local_setup.bash
+/data/rl_deploy/install/robot_state/share/robot_state/local_setup.sh
+/data/rl_deploy/install/robot_state/share/robot_state/local_setup.zsh
+/data/rl_deploy/install/robot_state/share/robot_state/local_setup.dsv
+/data/rl_deploy/install/robot_state/share/robot_state/package.dsv
+/data/rl_deploy/install/robot_state/share/ament_index/resource_index/packages/robot_state
+/data/rl_deploy/install/robot_state/share/robot_state/cmake/robot_stateConfig.cmake
+/data/rl_deploy/install/robot_state/share/robot_state/cmake/robot_stateConfig-version.cmake
+/data/rl_deploy/install/robot_state/share/robot_state/package.xml

@@ -1,0 +1,20 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from node_control_msgs/msg/MotorConfigDev.msg
+// generated code does not contain a copyright notice
+
+
+module node_control_msgs {
+  module msg {
+    module MotorConfigDev_Constants {
+      const uint32 PARAMETER_ID_MOTOR_DIRECTION = 0;
+      const uint32 PARAMETER_ID_MOTOR_STATUS = 1;
+      const uint32 PARAMETER_ID_ZERO_POSITION = 2;
+      const uint32 PARAMETER_ID_CLEAR_ERROR = 3;
+    };
+    struct MotorConfigDev {
+      uint32 parameter_id;
+
+      float parameter_value;
+    };
+  };
+};

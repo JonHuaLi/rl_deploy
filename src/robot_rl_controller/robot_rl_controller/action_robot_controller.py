@@ -1,0 +1,1141 @@
+"""
+ActionRobotController - 机器人强化学习控制器（动作版）
+修改：订阅外部状态机（参考joy_action_right_arm），根据状态决定输出
+- disable/damping/ready: 所有26个电机输出0命令
+- running: 下肢12个电机执行policy输出，上肢10个电机执行动作/默认位置
+"""
+
+import rclpy
+import numpy as np
+import os
+import time
+import signal
+import json
+from .base_controller import BaseController, RunState
+from node_control_msgs.msg import MotorCommand
+from node_app_msgs.msg import LrsCmdStateFeedback, LrsCmdAction, LrsCmdActionFeedback
+from ament_index_python.packages import get_package_share_directory
+import onnxruntime as ort
+from tabulate import tabulate
+from node_control_msgs.msg import MotorControl
+
+# 外部状态机常量（与LrsCmdStateFeedback一致）
+STATE_DISABLED = 0
+STATE_DAMPING = 1
+STATE_READY = 2
+STATE_RUNNING = 3
+
+# 模式常量（与LrsCmdStateFeedback一致）
+MODE_DEFAULT = 0
+MODE_DANCE = 1
+
+# 手臂动作控制常量（参考joy_action_dual_arm.cpp）
+ACTION_JSON_DIR = "/data/rl_deploy/action"
+ACTION_JSON_MAP = {
+    20: "wave_joint_path.json",          # WAVE 挥手
+    21: "clenched_fist_joint_path.json",  # CLASP 握拳
+    22: "heart_joint_path.json",          # HEART 比心
+    23: "shake_joint_path.json",          # SHAKE 握手
+    24: "clap_joint_path.json",           # CLAP 鼓掌
+    25: "kiss_joint_path.json",           # KISS 飞吻
+}
+ACTION_NAME_MAP = {
+    10: "DANCE_1(跳舞1)",
+    20: "WAVE(挥手)",
+    21: "CLASP(握拳)",
+    22: "HEART(比心)",
+    23: "SHAKE(握手)",
+    24: "CLAP(鼓掌)",
+    25: "KISS(飞吻)",
+}
+PREPARE_TIME = 1.0       # 准备阶段时长（秒）
+STABILIZE_TIME = 0.5     # 稳定阶段时长（秒）
+KP_ACTION = 200           # 动作执行时的kp值
+KD_ACTION = 20            # 动作执行时的kd值
+LEFT_ARM_MOTOR_START = 15 # 左臂电机起始ID
+RIGHT_ARM_MOTOR_START = 20 # 右臂电机起始ID
+ARM_MOTOR_COUNT = 10      # 双臂总电机数量
+ARM_SWING_AMPLITUDE = 0.3  # 行走摆臂幅度 (rad)
+ARM_SWING_VEL_THRESHOLD = 0.3  # 摆臂触发的速度阈值 (m/s)
+
+# 手臂动作状态枚举
+ARM_STATE_IDLE = 0
+ARM_STATE_PREPARE = 1
+ARM_STATE_STABILIZE = 2
+ARM_STATE_ACTION = 3
+ARM_STATE_FINISHED = 4
+
+ARM_STATE_NAME_MAP = {
+    ARM_STATE_IDLE: "IDLE",
+    ARM_STATE_PREPARE: "PREPARE",
+    ARM_STATE_STABILIZE: "STABILIZE",
+    ARM_STATE_ACTION: "ACTION",
+    ARM_STATE_FINISHED: "FINISHED",
+}
+
+
+class ActionRobotController(BaseController):
+    """机器人强化学习控制器（动作版）
+    
+    26关节人形机器人，Policy控制前12个关节（下肢）
+    观测维度：47维
+    上肢10个关节支持动作控制（参考joy_action_dual_arm）
+    
+    状态机行为（由外部 /system/lrs_cmd 控制）：
+    - STATE_DISABLED(0): 所有电机输出0
+    - STATE_DAMPING(1): 所有电机输出0
+    - STATE_READY(2): 全部26电机3秒缓慢移动到readyPos
+    - STATE_RUNNING(3): 下肢12电机执行policy，上肢执行动作/默认，腰部和头部保持默认
+    """
+    
+    def __init__(self, yaml_path, node_name="action_robot_controller"):
+        super().__init__(yaml_path, node_name)
+        
+        self.phase_t = 0    
+        self.l_flag = 0
+        # 读取onnx     
+        # 加载ONNX模型
+        onnx_path = os.path.join(
+            get_package_share_directory('robot_rl_controller'),
+            'onnx',
+            self.param["onnx_path"]
+        )
+        # self.policy = ort.InferenceSession(onnx_path, providers=['CPUExecutionProvider'], sess_options=sess_options)
+        # 检查模型文件是否存在
+        if not os.path.exists(onnx_path):
+            self.get_logger().warn(
+                f"ONNX模型文件不存在: {onnx_path}, "
+                "将使用零动作作为输出。请将训练好的模型放置到此位置。"
+            )
+            self.policy = None
+        else:
+            sess_options = ort.SessionOptions()
+            sess_options.intra_op_num_threads = 1
+            sess_options.execution_mode = ort.ExecutionMode.ORT_SEQUENTIAL
+            
+            self.policy = ort.InferenceSession(
+                onnx_path, 
+                providers=['CPUExecutionProvider'],
+                sess_options=sess_options
+            )
+            
+            self.get_logger().info(f"成功加载ONNX模型: {onnx_path}")
+        
+        # 初始化观测
+        self.obs_dim = self.param["observation_dim"]
+        self.obs = np.zeros([1, self.obs_dim], dtype=np.float32)
+        
+        # 上一步动作
+        self.actions = np.zeros(self.param["policyJointNum"], dtype=np.float32)
+                
+        # Policy控制的关节索引
+        self.policy_joint_indices = self.param.get("policy_joint_indices", list(range(12)))
+        self.get_logger().info(f"Policy控制关节索引: {self.policy_joint_indices}")
+        
+        # 初始化电机命令消息
+        # from node_control_msgs.msg import MotorControl
+        self.motor_commands = []
+        for _ in range(self.param["robotJointNum"]):
+            cmd = MotorCommand()
+            self.motor_commands.append(cmd)
+        
+        # 退出机制（参考motor_control_publisher.cpp）
+        self.shutdown_requested = False
+        self.emergency_stop_active = False
+        self.emergency_stop_start_time = 0.0
+        
+        # 注册信号处理器
+        signal.signal(signal.SIGINT, self.signal_handler)
+        
+        # Ready状态移动相关变量（参考joy_action_right_arm的STATE_PREPARE）
+        self.all_joint_pos = np.zeros(self.param["robotJointNum"], dtype=np.float32)  # 26个关节绝对位置
+        self.all_joint_pos_initialized = False  # 位置数据是否已有效（参考joy_action_right_arm的has_current_position_）
+        self.ready_move_started = False      # 是否已开始移动
+        self.ready_move_start_time = 0.0     # 移动开始时间
+        self.ready_move_start_pos = None     # 移动起始关节位置（26维绝对位置）
+        self.ready_move_duration = 3.0       # 移动时长 3 秒
+        
+        # ========== 缓存numpy数组，避免每周期重复创建 ==========
+        self.default_pos_np = np.array(self.param["defaultPos"], dtype=np.float32)
+        self.ready_pos_np = np.array(self.param["readyPos"], dtype=np.float32)
+
+        # ========== 手臂动作控制相关变量（参考joy_action_dual_arm.cpp） ==========
+        self.arm_action_data_map = {}  # {action_type: {"timestamps": [], "positions": [[10个关节]...], "action_time": float}}
+        self.arm_action_state = ARM_STATE_IDLE
+        self.current_arm_action = 0  # 当前动作类型
+        self.arm_action_start_time = 0.0
+        self.arm_prepare_start_time = 0.0
+        self.arm_stabilize_start_time = 0.0
+        self.arm_prepare_start_pos = None  # 准备阶段起始手臂位置（10维）
+        self.current_arm_positions = None  # 当前手臂目标位置（10维），None表示使用defaultPos
+        self.current_dance_action = 0  # 当前舞蹈动作编号（0=无，10=DANCE_1）
+        self.node_start_time = time.time()  # 用于过滤启动时旧消息
+        
+        # 加载所有动作JSON数据
+        if not self.load_all_action_data():
+            self.get_logger().warn("部分或全部动作JSON加载失败，手臂动作功能可能不可用")
+        
+        # 订阅动作命令（参考joy_action_dual_arm.cpp的action_sub_）
+        from rclpy.qos import QoSProfile, DurabilityPolicy, ReliabilityPolicy
+        action_qos = QoSProfile(
+            depth=10,
+            reliability=ReliabilityPolicy.RELIABLE,
+            durability=DurabilityPolicy.TRANSIENT_LOCAL
+        )
+        self.action_sub = self.create_subscription(
+            LrsCmdAction,
+            "/system/lrs_motion_action",
+            self.action_callback,
+            action_qos
+        )
+        
+        # 动作完成反馈发布者
+        self.action_feedback_pub = self.create_publisher(
+            LrsCmdActionFeedback,
+            "/system/lrs_motion_action_feedback",
+            action_qos
+        )
+        
+        self.get_logger().info("Action Robot Controller已启动")
+        self.get_logger().info("状态机模式：订阅外部 /system/lrs_cmd 控制")
+        self.get_logger().info("disable/damping -> 所有电机输出0")
+        self.get_logger().info("ready -> 全部26电机3秒缓慢移动到defaultPos")
+        self.get_logger().info("running -> 下肢12电机执行policy，上肢执行动作/默认，腰部和头部保持默认")
+        self.get_logger().info(f"支持手臂动作: {list(ACTION_NAME_MAP.values())}")
+        self.get_logger().info("退出机制已启用：按Ctrl+C将执行紧急停止")
+    
+    def load_all_action_data(self):
+        """加载所有动作JSON文件（参考joy_action_dual_arm.cpp的load_json_data）"""
+        all_success = True
+        for action_type, json_filename in ACTION_JSON_MAP.items():
+            json_path = os.path.join(ACTION_JSON_DIR, json_filename)
+            if not self.load_single_json(json_path, action_type):
+                all_success = False
+        if all_success:
+            self.get_logger().info("所有手臂动作数据加载完成")
+        return all_success
+    
+    def load_single_json(self, json_path, action_type):
+        """加载单个JSON文件（参考joy_action_dual_arm.cpp的load_single_json）
+        
+        从JSON的26维positions中提取10个手臂关节：
+        - 左臂(电机15-19): positions[i][16]~[20]
+        - 右臂(电机20-24): positions[i][21]~[25]
+        """
+        try:
+            with open(json_path, 'r') as f:
+                data = json.load(f)
+            
+            if "time" not in data or not isinstance(data["time"], list):
+                self.get_logger().error(f"JSON文件缺少time字段: {json_path}")
+                return False
+            
+            timestamps = data["time"]
+            action_time = timestamps[-1]
+            
+            if "positions" not in data or not isinstance(data["positions"], list):
+                self.get_logger().error(f"JSON文件缺少positions字段: {json_path}")
+                return False
+            
+            positions = data["positions"]
+            
+            # 提取10个手臂关节位置（与C++代码严格一致）
+            arm_positions = []
+            for i in range(len(timestamps)):
+                if not isinstance(positions[i], list) or len(positions[i]) < 26:
+                    self.get_logger().error(f"位置数据格式错误，索引{i}: {json_path}")
+                    return False
+                
+                frame = [
+                    positions[i][16],  # left_shoulder_pitch
+                    positions[i][17],  # left_shoulder_roll
+                    positions[i][18],  # left_shoulder_yaw
+                    positions[i][19],  # left_elbow
+                    positions[i][20],  # left_wrist_roll
+                    positions[i][21],  # right_shoulder_pitch
+                    positions[i][22],  # right_shoulder_roll
+                    positions[i][23],  # right_shoulder_yaw
+                    positions[i][24],  # right_elbow
+                    positions[i][25],  # right_wrist_roll
+                ]
+                arm_positions.append(frame)
+            
+            self.arm_action_data_map[action_type] = {
+                "timestamps": timestamps,
+                "positions": arm_positions,
+                "action_time": action_time,
+            }
+            
+            action_name = ACTION_NAME_MAP.get(action_type, f"UNKNOWN({action_type})")
+            self.get_logger().info(
+                f"成功加载 {action_name} 动作: 关键帧={len(timestamps)}, 时长={action_time:.1f}秒"
+            )
+            return True
+            
+        except Exception as e:
+            self.get_logger().error(f"解析JSON文件异常: {json_path}, {e}")
+            return False
+    
+    def action_callback(self, msg):
+        """动作命令回调（参考joy_action_dual_arm.cpp的action_callback）"""
+        # 启动后一段时间内忽略旧消息（TRANSIENT_LOCAL 会重发历史消息）
+        if time.time() - self.node_start_time < 5.0:
+            return
+        
+        action = msg.action
+        action_name = ACTION_NAME_MAP.get(action, f"UNKNOWN({action})")
+        
+        self.get_logger().info(f"收到动作命令: {action_name}")
+        
+        # 检查系统状态是否允许执行动作
+        if self.external_system_state != STATE_RUNNING:
+            self.get_logger().warn(
+                f"拒绝执行: 系统状态非运行中 (当前状态={self.external_system_state}, 需要STATE_RUNNING=3)"
+            )
+            return
+        
+        # 舞蹈动作（DANCE_1）：只在DANCE模式下有效，0命令占位
+        if action == 10:  # ACTION_DANCE_1
+            if self.external_system_mode != MODE_DANCE:
+                self.get_logger().warn(
+                    f"拒绝DANCE_1: 当前非DANCE模式 (当前模式={self.external_system_mode})"
+                )
+                return
+            self.current_dance_action = action
+            self.get_logger().info(f"收到舞蹈动作命令: {action_name}, 0命令占位，直接反馈成功")
+            self.publish_action_feedback(action)
+            return
+        
+        # 手臂动作（WAVE等）
+        if action in self.arm_action_data_map:
+            self.current_arm_action = action
+            self.arm_action_state = ARM_STATE_PREPARE
+            self.arm_prepare_start_time = time.time()
+            
+            # 记录当前手臂位置作为准备阶段起始点
+            if self.all_joint_pos_initialized:
+                self.arm_prepare_start_pos = np.array([
+                    self.all_joint_pos[15], self.all_joint_pos[16], self.all_joint_pos[17],
+                    self.all_joint_pos[18], self.all_joint_pos[19],
+                    self.all_joint_pos[20], self.all_joint_pos[21], self.all_joint_pos[22],
+                    self.all_joint_pos[23], self.all_joint_pos[24],
+                ], dtype=np.float32)
+            else:
+                self.arm_prepare_start_pos = None
+            
+            self.get_logger().info(f"开始执行动作: {action_name}, 进入准备阶段")
+        else:
+            self.get_logger().warn(f"不支持的动作类型: {action}")
+    
+    def update_arm_action_state(self):
+        """更新手臂动作状态机（参考joy_action_dual_arm.cpp的control_loop）
+        
+        根据当前状态计算 self.current_arm_positions（10维）：
+        - IDLE/FINISHED: None（使用defaultPos）
+        - PREPARE: 从当前位置插值到首帧
+        - STABILIZE: 保持首帧
+        - ACTION: 沿轨迹插值
+        """
+        if self.arm_action_state == ARM_STATE_IDLE or self.arm_action_state == ARM_STATE_FINISHED:
+            self.current_arm_positions = None
+            return
+        
+        if self.current_arm_action == 0 or self.current_arm_action not in self.arm_action_data_map:
+            self.arm_action_state = ARM_STATE_IDLE
+            self.current_arm_positions = None
+            return
+        
+        action_data = self.arm_action_data_map[self.current_arm_action]
+        now = time.time()
+        
+        if self.arm_action_state == ARM_STATE_PREPARE:
+            elapsed = now - self.arm_prepare_start_time
+            
+            if elapsed >= PREPARE_TIME:
+                self.get_logger().info("手臂动作: 准备阶段完成，进入稳定阶段")
+                self.arm_action_state = ARM_STATE_STABILIZE
+                self.arm_stabilize_start_time = now
+                self.current_arm_positions = action_data["positions"][0]
+            else:
+                alpha = elapsed / PREPARE_TIME
+                first_frame = np.array(action_data["positions"][0], dtype=np.float32)
+                
+                if self.arm_prepare_start_pos is not None:
+                    self.current_arm_positions = self.arm_prepare_start_pos + alpha * (first_frame - self.arm_prepare_start_pos)
+                else:
+                    self.current_arm_positions = first_frame
+        
+        elif self.arm_action_state == ARM_STATE_STABILIZE:
+            elapsed = now - self.arm_stabilize_start_time
+            
+            if elapsed >= STABILIZE_TIME:
+                self.get_logger().info("手臂动作: 稳定阶段完成，开始执行动作")
+                self.arm_action_state = ARM_STATE_ACTION
+                self.arm_action_start_time = now
+            else:
+                self.current_arm_positions = action_data["positions"][0]
+        
+        elif self.arm_action_state == ARM_STATE_ACTION:
+            elapsed = now - self.arm_action_start_time
+            
+            if elapsed >= action_data["action_time"]:
+                self.get_logger().info("手臂动作执行完成")
+                self.publish_action_feedback(self.current_arm_action)
+                self.arm_action_state = ARM_STATE_FINISHED
+                self.current_arm_positions = None
+            else:
+                self.current_arm_positions = self.interpolate_arm_pose(elapsed, action_data)
+    
+    def interpolate_arm_pose(self, t, action_data):
+        """在关键帧之间线性插值（参考joy_action_dual_arm.cpp的interpolate_action_pose）"""
+        timestamps = action_data["timestamps"]
+        positions = action_data["positions"]
+        
+        # 找到t所在的区间
+        idx = 0
+        for i in range(len(timestamps) - 1):
+            if timestamps[i] <= t <= timestamps[i + 1]:
+                idx = i
+                break
+            idx = i
+        
+        # 防止越界
+        if idx >= len(timestamps) - 1:
+            return positions[-1]
+        
+        t0, t1 = timestamps[idx], timestamps[idx + 1]
+        if t1 - t0 < 1e-6:
+            alpha = 0.0
+        else:
+            alpha = (t - t0) / (t1 - t0)
+        
+        # 对10个关节分别插值
+        pose = []
+        for j in range(ARM_MOTOR_COUNT):
+            v0 = positions[idx][j]
+            v1 = positions[idx + 1][j]
+            pose.append(v0 + alpha * (v1 - v0))
+        
+        return pose
+    
+    def publish_action_feedback(self, action_type):
+        """发送动作完成反馈（参考joy_action_dual_arm.cpp的publish_action_feedback）"""
+        feedback_msg = LrsCmdActionFeedback()
+        feedback_msg.header.stamp = self.get_clock().now().to_msg()
+        feedback_msg.header.frame_id = self.get_name()
+        feedback_msg.action_type = action_type
+        feedback_msg.action_result = LrsCmdActionFeedback.ACTION_SUCCESS
+        self.action_feedback_pub.publish(feedback_msg)
+        
+        action_name = ACTION_NAME_MAP.get(action_type, f"UNKNOWN({action_type})")
+        self.get_logger().info(f"已发送动作完成反馈: {action_name}")
+    
+    def get_arm_action_state_name(self):
+        """获取当前手臂动作状态名称"""
+        state_name = ARM_STATE_NAME_MAP.get(self.arm_action_state, "UNKNOWN")
+        action_name = ACTION_NAME_MAP.get(self.current_arm_action, "无")
+        return f"{state_name}/{action_name}"
+    
+    def low_state_callback(self, msg):
+        """重写父类回调，额外存储全部26个关节的绝对位置"""
+        super().low_state_callback(msg)
+        for i in range(self.param["robotJointNum"]):
+            if i < len(msg.motor_feedback.feedback):
+                self.all_joint_pos[i] = msg.motor_feedback.feedback[i].position
+        self.all_joint_pos_initialized = True
+    
+    def cmd_callback(self, msg):
+        """重写父类回调，检测进入READY时重置移动标记"""
+        # 保存旧状态（super().cmd_callback()会更新external_system_state）
+        old_state = self.external_system_state
+        super().cmd_callback(msg)
+        if (msg.cmd_type == msg.CMD_TYPE_STATE_CHANGE and 
+            msg.target_state == STATE_READY):
+            self.ready_move_started = False
+            self.get_logger().info("检测到进入READY状态，重置移动标记")
+        
+        # 离开RUNNING状态时，重置手臂动作状态机
+        if (msg.cmd_type == msg.CMD_TYPE_STATE_CHANGE and 
+            msg.target_state != STATE_RUNNING and
+            old_state == STATE_RUNNING):
+            self.arm_action_state = ARM_STATE_IDLE
+            self.current_arm_action = 0
+            self.current_arm_positions = None
+            self.get_logger().info("检测到离开RUNNING状态，重置手臂动作状态机")
+        
+        # 离开DANCE模式时，重置手臂动作状态机和舞蹈动作
+        if (msg.cmd_type == msg.CMD_TYPE_MODE_CHANGE and 
+            msg.target_mode == MODE_DEFAULT):
+            self.arm_action_state = ARM_STATE_IDLE
+            self.current_arm_action = 0
+            self.current_arm_positions = None
+            self.current_dance_action = 0
+            self.get_logger().info("检测到退出DANCE模式，重置手臂动作状态机和舞蹈动作")
+
+        if (msg.cmd_type == msg.CMD_TYPE_STATE_CHANGE and 
+            msg.target_state == STATE_RUNNING):
+            # 清零速度命令
+            self.twist_cmd.linear.x = 0.0
+            self.twist_cmd.linear.y = 0.0
+            self.twist_cmd.angular.z = 0.0
+            
+            #平滑处理
+            self.vel_smooth_xy = np.zeros(2, dtype=np.float32) 
+
+            # 重置phase累加器，防止长时间运行后浮点精度下降
+            self.phase_t = 0.0
+            # 重置action历史，防止上一轮残留的异常action影响新一轮推理
+            self.actions = np.zeros(self.param["policyJointNum"], dtype=np.float32)
+
+            # 安全措施：进入RUNNING时重置模式为DEFAULT
+            self.external_system_mode = MODE_DEFAULT
+            self.current_dance_action = 0
+            
+            # 将目标角度设为当前角度，避免KP控制器产生意外的旋转命令
+            self.speed_raw_cmd.tar_yaw = self.speed_raw_cmd.now_yaw_multi
+            self.get_logger().info(
+                f"进入RUNNING状态，已清零速度命令、重置模式为DEFAULT、同步yaw目标角: "
+                f"{self.speed_raw_cmd.tar_yaw:.2f} rad"
+            )
+    
+    def signal_handler(self, signum, frame):
+        """处理Ctrl+C信号（参考motor_control_publisher.cpp）"""
+        self.get_logger().warn("\n\n========== 检测到 Ctrl+C 信号 ==========")
+        self.get_logger().warn("正在执行紧急停止程序...")
+        self.get_logger().warn("所有电机参数将被设置为0，持续1秒...\n")
+        self.shutdown_requested = True
+    
+    # def run(self):
+    #     """重写父类run方法，根据外部状态机决定行为"""
+    #     # 检查是否需要执行紧急停止
+    #     if self.shutdown_requested and not self.emergency_stop_active:
+    #         self.emergency_stop_active = True
+    #         self.emergency_stop_start_time = time.time()
+    #         self.get_logger().warn("========== 紧急停止已激活 ==========")
+        
+    #     # 如果紧急停止激活，执行紧急停止逻辑
+    #     if self.emergency_stop_active:
+    #         self.execute_emergency_stop()
+    #         return
+        
+    #     # 开始运行计时
+    #     start_time = time.perf_counter()
+        
+    #     # 根据外部状态机决定行为
+    #     if self.external_system_state == STATE_RUNNING:
+    #         if self.external_system_mode == MODE_DANCE:
+    #             if self.current_dance_action == 10:
+    #                 # DANCE_1：0命令占位（后续替换为实际舞蹈policy）
+    #                 self.twist_cmd.linear.x = 0.0
+    #                 self.twist_cmd.linear.y = 0.0
+    #                 self.twist_cmd.angular.z = 0.0
+    #                 self.actions = np.zeros(self.param["policyJointNum"], dtype=np.float32)
+    #                 self.publish_zero_command()
+    #             else:
+    #                 # DANCE模式（无dance1）：使用推理输出占位，保持站立
+    #                 self.twist_cmd_process()
+    #                 self.update_arm_action_state()
+    #                 self.inference()
+    #         else:
+    #             # DEFAULT模式：处理手柄速度命令 + 更新手臂动作状态 + 执行policy推理
+    #             self.twist_cmd_process()
+    #             self.update_arm_action_state()  # 更新手臂动作状态机
+    #             self.inference()
+    #     elif self.external_system_state == STATE_READY:
+    #         # READY状态：全部26电机缓慢移动到defaultPos（3秒）
+    #         # 清零速度命令
+    #         self.twist_cmd.linear.x = 0.0
+    #         self.twist_cmd.linear.y = 0.0
+    #         self.twist_cmd.angular.z = 0.0
+    #         # actions清零
+    #         self.actions = np.zeros(self.param["policyJointNum"], dtype=np.float32)
+    #         # 发布ready命令（缓慢移动到defaultPos）
+    #         self.publish_ready_command()
+    #     elif self.external_system_state == STATE_DAMPING:
+    #         # 非 RUNNING 状态（disable/damping/ready）：所有电机输出0
+    #         # 清零速度命令
+    #         self.twist_cmd.linear.x = 0.0
+    #         self.twist_cmd.linear.y = 0.0
+    #         self.twist_cmd.angular.z = 0.0
+    #         # actions清零
+    #         self.actions = np.zeros(self.param["policyJointNum"], dtype=np.float32)
+    #         # 发布0命令
+    #         self.publish_dumping_command()
+    #     else:
+    #         # 所有电机输出0 disable 未知状态
+    #         # 清零速度命令
+    #         self.twist_cmd.linear.x = 0.0
+    #         self.twist_cmd.linear.y = 0.0
+    #         self.twist_cmd.angular.z = 0.0
+    #         # actions清零
+    #         self.actions = np.zeros(self.param["policyJointNum"], dtype=np.float32)
+    #         # 发布0命令
+    #         self.publish_zero_command()
+
+        
+    #     # 结束计时
+    #     end_time = time.perf_counter()
+    #     self.run_time_record.record((end_time - start_time) * 1e6)
+        
+    #     # 输出log信息
+    #     self.show_log()
+
+    def run(self):
+        """重写父类run方法，根据外部状态机决定行为"""
+        # 检查是否需要执行紧急停止
+        if self.shutdown_requested and not self.emergency_stop_active:
+            self.emergency_stop_active = True
+            self.emergency_stop_start_time = time.time()
+            self.get_logger().warn("========== 紧急停止已激活 ==========")
+        
+        # 如果紧急停止激活，执行紧急停止逻辑
+        if self.emergency_stop_active:
+            self.execute_emergency_stop()
+            return
+        
+        # 开始运行计时
+        start_time = time.perf_counter()
+        t_infer_start = start_time  # 默认值
+        
+        # 根据外部状态机决定行为
+        if self.external_system_state == STATE_RUNNING:
+            if self.external_system_mode == MODE_DANCE:
+                if self.current_dance_action == 10:
+                    # DANCE_1：0命令占位（后续替换为实际舞蹈policy）
+                    self.twist_cmd.linear.x = 0.0
+                    self.twist_cmd.linear.y = 0.0
+                    self.twist_cmd.angular.z = 0.0
+                    self.actions = np.zeros(self.param["policyJointNum"], dtype=np.float32)
+                    self.publish_zero_command()
+                else:
+                    # DANCE模式（无dance1）：使用推理输出占位，保持站立
+                    self.twist_cmd_process()
+                    self.update_arm_action_state()
+                    t_infer_start = time.perf_counter()
+                    self.inference()
+            else:
+                # DEFAULT模式：处理手柄速度命令 + 更新手臂动作状态 + 执行policy推理
+                self.twist_cmd_process()
+                self.update_arm_action_state()  # 更新手臂动作状态机
+                t_infer_start = time.perf_counter()
+                self.inference()
+        elif self.external_system_state == STATE_READY:
+            # READY状态：全部26电机缓慢移动到defaultPos（3秒）
+            self.twist_cmd.linear.x = 0.0
+            self.twist_cmd.linear.y = 0.0
+            self.twist_cmd.angular.z = 0.0
+            self.actions = np.zeros(self.param["policyJointNum"], dtype=np.float32)
+            self.publish_ready_command()
+        elif self.external_system_state == STATE_DAMPING:
+            self.twist_cmd.linear.x = 0.0
+            self.twist_cmd.linear.y = 0.0
+            self.twist_cmd.angular.z = 0.0
+            self.actions = np.zeros(self.param["policyJointNum"], dtype=np.float32)
+            self.publish_dumping_command()
+        else:
+            self.twist_cmd.linear.x = 0.0
+            self.twist_cmd.linear.y = 0.0
+            self.twist_cmd.angular.z = 0.0
+            self.actions = np.zeros(self.param["policyJointNum"], dtype=np.float32)
+            self.publish_zero_command()
+
+        # 结束计时
+        end_time = time.perf_counter()
+        total_us = (end_time - start_time) * 1e6
+        self.run_time_record.record(total_us)
+        
+        # 耗时分解（仅在总时间异常时打印）
+        if total_us > 5000:
+            infer_us = (end_time - t_infer_start) * 1e6
+            other_us = (t_infer_start - start_time) * 1e6
+            self.get_logger().warn(
+                f"耗时分解: 总计={total_us:.0f}us, "
+                f"inference及发布={infer_us:.0f}us, "
+                f"前处理(cmd/arm)={other_us:.0f}us"
+            )
+        
+        # 输出log信息
+        self.show_log()
+
+
+    def execute_emergency_stop(self):
+        """执行紧急停止：持续发送失能命令1秒（参考motor_control_publisher.cpp）"""
+        # 发送失能命令
+        self.get_logger().warn("发送紧急停止命令：所有电机参数归零")
+        self.disable_motors()
+        
+        # 检查是否已经持续1秒
+        elapsed_time = time.time() - self.emergency_stop_start_time
+        if elapsed_time >= 1.0:
+            self.get_logger().warn("========== 紧急停止完成 (持续%.1f秒) ==========", elapsed_time)
+            self.get_logger().warn("程序即将退出...")
+            rclpy.shutdown()
+        else:
+            self.get_logger().warn("紧急停止中... 已持续 %.1f 秒 / 1.0 秒", elapsed_time)
+    
+    def show_log(self):
+        """输出调试信息到终端（参考L1_controller）"""
+        if self.param.get("ShowLog", 0) == 0:
+            return
+
+        # 保持一定的频率输出
+        self.log_count += 1
+        if self.log_count % self.log_decimation != 0:
+            return
+        
+        # 运行时间
+        run_time_mean, run_time_max, run_time_min = self.run_time_record.get_time()
+        log_runtime = ["runtime[min/mean/max]", f"{run_time_min:.2f}/{run_time_mean:.2f}/{run_time_max:.2f} us"]
+        
+        # 外部状态机状态
+        state_names = {STATE_DISABLED: "DISABLED", STATE_DAMPING: "DAMPING", 
+                       STATE_READY: "READY", STATE_RUNNING: "RUNNING"}
+        mode_names = {MODE_DEFAULT: "DEFAULT", MODE_DANCE: "DANCE"}
+        log_ext_state = ["ext_state", f"{state_names.get(self.external_system_state, 'UNKNOWN')}({self.external_system_state})"]
+        log_ext_mode = ["ext_mode", f"{mode_names.get(self.external_system_mode, 'UNKNOWN')}({self.external_system_mode})"]
+        dance_name = ACTION_NAME_MAP.get(self.current_dance_action, "无") if self.current_dance_action != 0 else "无"
+        log_dance_action = ["dance_action", dance_name]
+        
+        # 手臂动作状态
+        log_arm_action = ["arm_action", self.get_arm_action_state_name()]
+        
+        # IMU信息
+        log_angular_velocity = ["angular_velocity[x/y/z]", 
+                               f"{self.propri_obs.base_ang_vel[0]:.2f}/"
+                               f"{self.propri_obs.base_ang_vel[1]:.2f}/"
+                               f"{self.propri_obs.base_ang_vel[2]:.2f} rad/s"]
+        log_gravity = ["gravity[x/y/z]", 
+                      f"{self.propri_obs.projected_gravity[0]:.2f}/"
+                      f"{self.propri_obs.projected_gravity[1]:.2f}/"
+                      f"{self.propri_obs.projected_gravity[2]:.2f}"]
+        
+        # 手柄命令信息
+        log_velocity_commands = ["velocity_commands[x/y/z]", 
+                                f"{self.twist_cmd.linear.x:.2f}/"
+                                f"{self.twist_cmd.linear.y:.2f}/"
+                                f"{self.twist_cmd.angular.z:.2f} m/s"]
+        
+        # 当前yaw与目标yaw角
+        log_now_yaw = ["now_yaw", f"{self.speed_raw_cmd.now_yaw_multi:.2f} rad"]
+        log_tar_yaw = ["tar_yaw", f"{self.speed_raw_cmd.tar_yaw:.2f} rad"]
+        
+        # 关节位置信息（显示完整的12个关节）
+        dof_policy_str = ", ".join([f"{pos:.2f}" for pos in self.propri_obs.joint_pos])
+        log_dof_policy = ["dof_policy", f"[{dof_policy_str}]"]
+        
+        # 计算绝对位置（显示完整的12个关节）
+        dof_urdf = self.propri_obs.joint_pos + np.array(self.param["defaultPos"][:self.param["policyJointNum"]])
+        dof_urdf_str = ", ".join([f"{pos:.2f}" for pos in dof_urdf])
+        log_dof_urdf = ["dof_urdf", f"[{dof_urdf_str}]"]
+        
+        # Action信息（显示完整的12个关节）
+        action_str = ", ".join([f"{act:.2f}" for act in self.actions])
+        log_action = ["action", f"[{action_str}]"]
+        
+        # 观测向量信息
+        log_obs = ["observation_dim", f"{self.obs_dim}"]
+        
+        table_str = tabulate([
+            log_runtime,
+            log_ext_state,
+            log_ext_mode,
+            log_dance_action,
+            log_arm_action,
+            log_gravity, 
+            log_angular_velocity, 
+            log_velocity_commands,
+            log_now_yaw, 
+            log_tar_yaw, 
+            log_dof_policy,
+            log_dof_urdf,
+            log_action,
+            log_obs
+        ], tablefmt='simple')
+
+        self.get_logger().info("\n" + table_str)
+    
+    def inference(self):
+        """
+        神经网络推理函数
+        只有在 RUNNING 状态下才会被调用
+        """
+        # 填充观测向量
+        # 0:3 - base_ang_vel
+        self.propri_obs.base_ang_vel = np.clip(self.propri_obs.base_ang_vel, -2.0, 2.0)
+        self.obs[0, 0:3] = self.propri_obs.base_ang_vel*0.25       
+        # 3:6 - projected_gravity
+        self.obs[0, 3:6] = self.propri_obs.projected_gravity       
+        # 6:9 - velocity_commands
+        vel_cmd = np.array([
+            self.twist_cmd.linear.x, 
+            self.twist_cmd.linear.y, 
+            self.twist_cmd.angular.z
+        ], dtype=np.float32)
+        # vel_cmd = np.zeros(3, dtype=np.float32)
+        self.obs[0, 6:9] = vel_cmd   
+        # 9:21 - joint_pos (12维)
+        self.obs[0, 9:21] = self.propri_obs.joint_pos
+        # 21:33 - joint_vel (12维)
+        joint_vel_scaled = self.propri_obs.joint_vel * 0.05
+        self.obs[0, 21:33] = joint_vel_scaled
+        # 33:45 - actions (12维)
+        self.obs[0, 33:45] = self.actions
+        # 45:47 - phase (2维: sin, cos)
+        freq = 1.5
+        self.phase_t += 0.02*2*np.pi*freq
+        self.obs[0, 45] = np.sin(self.phase_t)
+        self.obs[0, 46] = np.cos(self.phase_t)
+        self.obs[0, 45:47] *= (np.linalg.norm(self.obs[0, 6:9], ord=2) > 0.2)
+
+        # 执行Policy推理
+        # if self.policy is not None:
+        #     self.actions = self.policy.run(
+        #         None, 
+        #         {self.policy.get_inputs()[0].name: self.obs}
+        #     )[0][0]
+        # else:
+        #     self.actions = np.zeros([self.param["policyJointNum"]], dtype=np.float32)
+
+        # # 发布电机命令（RUNNING模式：下肢12电机policy输出，上肢动作/默认，腰部头部默认）
+        # self.publish_motor_commands()
+                # 执行Policy推理
+        t_onnx_start = time.perf_counter()
+        if self.policy is not None:
+            self.actions = self.policy.run(
+                None, 
+                {self.policy.get_inputs()[0].name: self.obs}
+            )[0][0]
+        else:
+            self.actions = np.zeros([self.param["policyJointNum"]], dtype=np.float32)
+        t_onnx_end = time.perf_counter()
+        
+        onnx_us = (t_onnx_end - t_onnx_start) * 1e6
+        if onnx_us > 3000:
+            self.get_logger().warn(f"ONNX推理耗时异常: {onnx_us:.0f}us")
+            self.l_flag = 1
+        if self.l_flag == 1:
+            self.get_logger().warn(f"ONNX推理耗时异常: {onnx_us:.0f}us")
+
+        # 发布电机命令（RUNNING模式：下肢12电机policy输出，上肢执行动作/默认，腰部头部默认）
+        self.publish_motor_commands()
+    
+    def publish_motor_commands(self):
+        """发布电机命令（RUNNING模式）
+        
+        下肢12个电机(0-11): action * action_scale + defaultPos，设置kp/kd
+        腰部3个电机(12-14): defaultPos，保持默认
+        头部1个电机(25): defaultPos，保持默认
+        手臂10个电机(15-24): 
+          - 有动作执行中: 使用动作轨迹位置，kp=200, kd=20
+          - 无动作: 使用defaultPos
+        """
+        default_pos = self.default_pos_np
+        # default_pos = np.array(self.param["defaultPos"], dtype=np.float32)
+
+        # Policy控制的下肢12个电机
+        for i, idx in enumerate(self.policy_joint_indices):
+            if i < len(self.actions) and idx < len(self.motor_commands):
+                cmd = self.motor_commands[idx]
+                cmd.position_des = float(self.actions[i] * 0.25 * 0.0+ self.param["defaultPos"][idx])
+                # cmd.position_des = self.param["defaultPos"][idx]
+                cmd.kp = int(self.param["kps"][idx]) if idx < len(self.param["kps"]) else 0
+                cmd.kd = int(self.param["kds"][idx]) if idx < len(self.param["kds"]) else 0
+                # cmd.kp = 0
+                # cmd.kd = 0
+                cmd.omega_des = 0.0
+                cmd.torque_des = 0
+                cmd.reserved = 0
+
+        self.motor_commands[4].position_des = np.clip(self.motor_commands[4].position_des, -0.35, 0.35)
+        self.motor_commands[10].position_des = np.clip(self.motor_commands[10].position_des, -0.35, 0.35)
+        self.motor_commands[5].position_des = np.clip(self.motor_commands[5].position_des, -0.15, 0.15)
+        self.motor_commands[11].position_des = np.clip(self.motor_commands[11].position_des, -0.15, 0.15)
+      
+        # self.motor_commands[1].position_des = np.clip(self.motor_commands[1].position_des, -0.60, 0.60)
+        # self.motor_commands[7].position_des = np.clip(self.motor_commands[7].position_des, -0.60, 0.60)
+
+        # 非Policy控制的电机（腰部12-14、头部25、手臂15-24）
+        # 检测是否有运动命令（用于行走摆臂）
+        vel_norm = np.linalg.norm([self.twist_cmd.linear.x, self.twist_cmd.linear.y])
+        has_motion_cmd = vel_norm > ARM_SWING_VEL_THRESHOLD
+        
+        for i in range(self.param["robotJointNum"]):
+            if i not in self.policy_joint_indices:
+                cmd = self.motor_commands[i]
+                
+                # 手臂电机(15-24): 有动作时使用动作轨迹
+                if LEFT_ARM_MOTOR_START <= i <= 24 and self.current_arm_positions is not None:
+                    arm_idx = i - LEFT_ARM_MOTOR_START
+                    cmd.position_des = float(self.current_arm_positions[arm_idx])
+                    cmd.kp = KP_ACTION
+                    cmd.kd = KD_ACTION
+                # 行走摆臂：电机15(左肩pitch)和20(右肩pitch)，无手臂动作且有运动命令时
+                elif i in (15, 20) and self.current_arm_positions is None and has_motion_cmd:
+                    if i == 15:
+                        # 左肩pitch：正弦摆动
+                        cmd.position_des = float(default_pos[i] + ARM_SWING_AMPLITUDE * np.sin(self.phase_t))
+                    else:
+                        # 右肩pitch：反相摆动
+                        cmd.position_des = float(default_pos[i] - ARM_SWING_AMPLITUDE * np.sin(self.phase_t))
+                    cmd.kp = int(self.param["kps"][i]) if i < len(self.param["kps"]) else 0
+                    cmd.kd = int(self.param["kds"][i]) if i < len(self.param["kds"]) else 0
+                else:
+                    # 腰部(12-14)、头部(25)、或无动作/无运动命令时的手臂: 使用defaultPos
+                    cmd.position_des = float(default_pos[i])
+                    cmd.kp = int(self.param["kps"][i]) if i < len(self.param["kps"]) else 0
+                    cmd.kd = int(self.param["kds"][i]) if i < len(self.param["kds"]) else 0
+                
+                cmd.omega_des = 0.0
+                cmd.torque_des = 0
+                cmd.reserved = 0
+
+
+        # # 腰部死区限制
+        # yaw_idx = self.param.get("yaw_motor_index", 14)
+        # dead_zone = self.param.get("yaw_dead_zone", 0.0)
+        # if dead_zone > 0 and self.all_joint_pos_initialized:
+        #     yaw_error = abs(self.motor_commands[yaw_idx].position_des - self.all_joint_pos[yaw_idx])
+        #     if yaw_error < dead_zone:
+        #         self.motor_commands[yaw_idx].kp = 0
+        #         self.motor_commands[yaw_idx].kd = int(self.param.get("yaw_dead_zone_kd", 50.0))
+
+        # 发布消息
+        # from node_control_msgs.msg import MotorControl
+        msg = MotorControl()
+        msg.header.stamp = self.get_clock().now().to_msg()
+        msg.header.frame_id = "robot_base"
+        msg.seq_num = 0
+        msg.cmd = self.motor_commands
+        
+        self.motor_cmd_pub.publish(msg)
+    
+    def publish_zero_command(self):
+        """发布零命令（非RUNNING状态：所有26个电机输出0）"""
+        for i in range(self.param["robotJointNum"]):
+            cmd = self.motor_commands[i]
+            cmd.position_des = 0.0
+            cmd.kp = 0
+            cmd.kd = 0
+            cmd.omega_des = 0.0
+            cmd.torque_des = 0
+            cmd.reserved = 0
+        
+        # 发布消息
+        # from node_control_msgs.msg import MotorControl
+        msg = MotorControl()
+        msg.header.stamp = self.get_clock().now().to_msg()
+        msg.header.frame_id = "robot_base"
+        msg.seq_num = 0
+        msg.cmd = self.motor_commands
+        
+        self.motor_cmd_pub.publish(msg)
+
+    def publish_dumping_command(self):
+        """所有电机进入阻尼"""
+        for i in range(self.param["robotJointNum"]):
+            cmd = self.motor_commands[i]
+            cmd.position_des = 0.0
+            cmd.kp = 0
+            cmd.kd = 20
+            cmd.omega_des = 0.0
+            cmd.torque_des = 0
+            cmd.reserved = 0
+        
+        # 发布消息
+        # from node_control_msgs.msg import MotorControl
+        msg = MotorControl()
+        msg.header.stamp = self.get_clock().now().to_msg()
+        msg.header.frame_id = "robot_base"
+        msg.seq_num = 0
+        msg.cmd = self.motor_commands
+        
+        self.motor_cmd_pub.publish(msg)
+
+    def publish_ready_command(self):
+        """发布ready命令：全部26个电机在3秒内缓慢移动到readyPos
+        
+        参考joy_action_right_arm的STATE_PREPARE阶段：
+        - 首次调用时记录当前26个关节绝对位置作为起始点
+        - 每次调用计算插值系数 alpha = elapsed / 3.0
+        - 线性插值：position = start_pos + alpha * (readyPos - start_pos)
+        - 3秒后持续保持readyPos + kp/kd
+        """
+        # default_pos = np.array(self.param["readyPos"], dtype=np.float32)
+        default_pos = self.ready_pos_np
+        rkps = self.param["rkps"]
+        rkds = self.param["rkds"]
+        
+        # 位置数据未就绪时，安全回退：发零命令（参考joy_action_right_arm的has_current_position_检查）
+        if not self.all_joint_pos_initialized:
+            self.publish_zero_command()
+            return
+        
+        # 首次调用：记录起始位置和时间
+        if not self.ready_move_started:
+            self.ready_move_start_pos = self.all_joint_pos.copy()
+            self.ready_move_start_time = time.time()
+            self.ready_move_started = True
+            self.get_logger().info(
+                f"开始缓慢移动到readyPos，起始位置: "
+                f"[{', '.join(f'{p:.3f}' for p in self.ready_move_start_pos)}]"
+            )
+        
+        # 计算插值系数
+        elapsed = time.time() - self.ready_move_start_time
+        alpha = min(elapsed / self.ready_move_duration, 1.0)
+        
+        # 对全部26个电机进行线性插值
+        for i in range(self.param["robotJointNum"]):
+            cmd = self.motor_commands[i]
+            cmd.position_des = float(
+                self.ready_move_start_pos[i] + alpha * (default_pos[i] - self.ready_move_start_pos[i])
+            )
+            cmd.kp = int(rkps[i]) if i < len(rkps) else 0
+            cmd.kd = int(rkds[i]) if i < len(rkds) else 0
+            cmd.omega_des = 0.0
+            cmd.torque_des = 0
+            cmd.reserved = 0
+        
+        # 发布消息
+        # from node_control_msgs.msg import MotorControl
+        msg = MotorControl()
+        msg.header.stamp = self.get_clock().now().to_msg()
+        msg.header.frame_id = "robot_base"
+        msg.seq_num = 0
+        msg.cmd = self.motor_commands
+        
+        self.motor_cmd_pub.publish(msg)
+        
+        # 到达目标时打印一次日志
+        if alpha >= 1.0 and elapsed < self.ready_move_duration + 0.1:
+            self.get_logger().info("已完成移动到defaultPos，保持站立姿态")
+
+    def zero_cmd(self, duration=2.0, rate=50):
+        """
+        在 duration 秒内，匀速将电机位置移动到 defaultPos
+        
+        Args:
+            duration: 插值时长 (秒)
+            rate: 控制频率 (Hz)
+        """
+        self.get_logger().info("Move to init pos")
+        n_steps = int(duration * rate)
+        dt = 1.0 / rate
+
+        # 获取当前关节位置作为起点
+        current_pos = self.propri_obs.joint_pos.copy()
+        # 目标位置是0（相对于defaultPos）
+        target_pos = np.zeros(self.param["policyJointNum"], dtype=np.float32)
+
+        # 为每个关节生成插值轨迹
+        trajectories = []
+        for i in range(self.param["policyJointNum"]):
+            traj = np.linspace(current_pos[i], target_pos[i], n_steps)
+            trajectories.append(traj)
+
+        # 循环发布
+        for step in range(n_steps):
+            # Policy控制的电机
+            for i, idx in enumerate(self.policy_joint_indices):
+                if i < len(trajectories) and idx < len(self.motor_commands):
+                    cmd = self.motor_commands[idx]
+                    cmd.position_des = float(trajectories[i][step] + self.param["defaultPos"][idx])
+                    cmd.kp = int(self.param["kps"][idx]) if idx < len(self.param["kps"]) else 0
+                    cmd.kd = int(self.param["kds"][idx]) if idx < len(self.param["kds"]) else 0
+                    cmd.omega_des = 0.0
+                    cmd.torque_des = 0
+                    cmd.reserved = 0
+            
+            # 未控制的电机
+            for i in range(self.param["robotJointNum"]):
+                if i not in self.policy_joint_indices:
+                    cmd = self.motor_commands[i]
+                    cmd.position_des = 0.0
+                    cmd.kp = int(self.param["kps"][i]) if i < len(self.param["kps"]) else 0
+                    cmd.kd = int(self.param["kds"][i]) if i < len(self.param["kds"]) else 0
+                    cmd.omega_des = 0.0
+                    cmd.torque_des = 0
+                    cmd.reserved = 0
+            
+            # 发布消息
+            # from node_control_msgs.msg import MotorControl
+            msg = MotorControl()
+            msg.header.stamp = self.get_clock().now().to_msg()
+            msg.header.frame_id = "robot_base"
+            msg.seq_num = 0
+            msg.cmd = self.motor_commands
+            
+            self.motor_cmd_pub.publish(msg)
+
+            time.sleep(dt)
+
+    def disable_motors(self):
+        """发送电机失能命令（所有电机kp=0, kd=0）"""
+        # 所有电机设置为失能状态
+        for i in range(self.param["robotJointNum"]):
+            cmd = self.motor_commands[i]
+            cmd.position_des = 0.0
+            cmd.kp = 0  # 失能
+            cmd.kd = 0  # 失能
+            cmd.omega_des = 0.0
+            cmd.torque_des = 0
+            cmd.reserved = 0
+        
+        # 发布命令
+        # from node_control_msgs.msg import MotorControl
+        msg = MotorControl()
+        msg.header.stamp = self.get_clock().now().to_msg()
+        msg.header.frame_id = "robot_base"
+        msg.seq_num = 0
+        msg.cmd = self.motor_commands
+        
+        self.motor_cmd_pub.publish(msg)
+
+
+def main(args=None):
+
+    import ctypes
+    import errno
+
+    libc = ctypes.CDLL("libc.so.6")
+    PR_SET_NAME = 15
+    libc.prctl(PR_SET_NAME, b"LY_robot_controller", 0, 0, 0)
+    # 绑定到核心4-5
+    os.sched_setaffinity(0, {4})
+
+    # 设置SCHED_FIFO实时调度（需要root权限）
+    class SchedParam(ctypes.Structure):
+        _fields_ = [("sched_priority", ctypes.c_int)]
+    sched_param = SchedParam(99)
+    ret = libc.sched_setscheduler(0, 1, ctypes.byref(sched_param))  # 1=SCHED_FIFO
+    if ret == 0:
+        print("成功设置SCHED_FIFO实时调度, 优先级=99")
+    else:
+        err = ctypes.get_errno()
+        print(f"设置SCHED_FIFO失败, errno={err}, 需要root权限")
+
+    rclpy.init(args=args)
+    
+    # 获取配置文件路径
+    yaml_path = os.path.join(
+        get_package_share_directory('robot_rl_controller'),
+        'config',
+        'robot_controller_config.yaml'
+    )
+    
+    # 如果配置文件不存在，使用默认路径
+    if not os.path.exists(yaml_path):
+        yaml_path = os.path.join(
+            os.path.dirname(__file__),
+            '../../config/robot_controller_config.yaml'
+        )
+    
+    node = ActionRobotController(yaml_path)
+
+    rclpy.spin(node)
+    node.destroy_node()
+    rclpy.shutdown()
+
+
+if __name__ == '__main__':
+    main()

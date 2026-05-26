@@ -1,0 +1,29 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from node_app_msgs/msg/LrsCmdStateFeedback.msg
+// generated code does not contain a copyright notice
+
+#include "std_msgs/msg/Header.idl"
+
+module node_app_msgs {
+  module msg {
+    module LrsCmdStateFeedback_Constants {
+      @verbatim (language="comment", text=
+        "状态命令")
+      const uint32 STATE_DISABLED = 0;
+      const uint32 STATE_DAMPING = 1;
+      const uint32 STATE_READY = 2;
+      const uint32 STATE_RUNNING = 3;
+      @verbatim (language="comment", text=
+        "各个状态下的运行模式")
+      const uint32 MODE_DEFAULT = 0;
+      const uint32 MODE_DANCE = 1;
+    };
+    struct LrsCmdStateFeedback {
+      std_msgs::msg::Header header;
+
+      uint32 current_state;
+
+      uint32 current_mode;
+    };
+  };
+};

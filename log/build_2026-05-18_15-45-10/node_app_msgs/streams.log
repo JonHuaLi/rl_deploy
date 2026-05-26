@@ -1,0 +1,431 @@
+[0.018s] Invoking command in '/data/rl_deploy/build/node_app_msgs': AMENT_PREFIX_PATH=/data/rl_deploy/install/node_control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/data/rl_deploy/install/node_control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/data/rl_deploy/install/node_control_msgs/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/app/lib:/usr/local/cuda-12/lib64 PYTHONPATH=/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/local/bin/cmake /data/rl_deploy/src/node_app_msgs -DCMAKE_INSTALL_PREFIX=/data/rl_deploy/install/node_app_msgs
+[0.148s] [0mCMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+[0.149s]   Compatibility with CMake < 3.10 will be removed from a future version of
+[0.149s]   CMake.
+[0.149s] 
+[0.149s]   Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+[0.149s]   to tell CMake that the project requires at least <min> but has been updated
+[0.149s]   to work with policies introduced by <max> or earlier.
+[0.149s] 
+[0.149s] [0m
+[0.228s] -- The C compiler identification is GNU 11.4.0
+[0.355s] -- The CXX compiler identification is GNU 11.4.0
+[0.370s] -- Detecting C compiler ABI info
+[0.480s] -- Detecting C compiler ABI info - done
+[0.504s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.504s] -- Detecting C compile features
+[0.505s] -- Detecting C compile features - done
+[0.526s] -- Detecting CXX compiler ABI info
+[0.653s] -- Detecting CXX compiler ABI info - done
+[0.679s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.680s] -- Detecting CXX compile features
+[0.681s] -- Detecting CXX compile features - done
+[0.697s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.937s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter
+[1.111s] -- Found rosidl_default_generators: 1.2.1 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[1.117s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.130s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.216s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.306s] -- Found builtin_interfaces: 1.2.2 (/opt/ros/humble/share/builtin_interfaces/cmake)
+[1.340s] -- Found std_msgs: 4.9.1 (/opt/ros/humble/share/std_msgs/cmake)
+[1.371s] -- Found node_control_msgs: 0.0.0 (/data/rl_deploy/install/node_control_msgs/share/node_control_msgs/cmake)
+[2.357s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[3.281s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[4.497s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[4.502s] [33mCMake Warning (dev) at /opt/ros/humble/share/rosidl_generator_py/cmake/rosidl_generator_py_generate_interfaces.cmake:20 (find_package):
+[4.503s]   Policy CMP0148 is not set: The FindPythonInterp and FindPythonLibs modules
+[4.503s]   are removed.  Run "cmake --help-policy CMP0148" for policy details.  Use
+[4.503s]   the cmake_policy command to set the policy and suppress this warning.
+[4.503s] 
+[4.503s] Call Stack (most recent call first):
+[4.503s]   /opt/ros/humble/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[4.503s]   /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:286 (ament_execute_extensions)
+[4.503s]   CMakeLists.txt:15 (rosidl_generate_interfaces)
+[4.503s] This warning is for project developers.  Use -Wno-dev to suppress it.
+[4.504s] [0m
+[4.542s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6")
+[4.544s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[4.546s] [33mCMake Warning (dev) at /opt/ros/humble/share/python_cmake_module/cmake/Modules/FindPythonExtra.cmake:52 (find_package):
+[4.546s]   Policy CMP0148 is not set: The FindPythonInterp and FindPythonLibs modules
+[4.546s]   are removed.  Run "cmake --help-policy CMP0148" for policy details.  Use
+[4.546s]   the cmake_policy command to set the policy and suppress this warning.
+[4.546s] 
+[4.546s] Call Stack (most recent call first):
+[4.546s]   /opt/ros/humble/share/rosidl_generator_py/cmake/rosidl_generator_py_generate_interfaces.cmake:23 (find_package)
+[4.546s]   /opt/ros/humble/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[4.546s]   /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:286 (ament_execute_extensions)
+[4.547s]   CMakeLists.txt:15 (rosidl_generate_interfaces)
+[4.547s] This warning is for project developers.  Use -Wno-dev to suppress it.
+[4.547s] [0m
+[4.585s] [33mCMake Warning (dev) at /opt/ros/humble/share/python_cmake_module/cmake/Modules/FindPythonExtra.cmake:140 (find_package):
+[4.585s]   Policy CMP0148 is not set: The FindPythonInterp and FindPythonLibs modules
+[4.585s]   are removed.  Run "cmake --help-policy CMP0148" for policy details.  Use
+[4.586s]   the cmake_policy command to set the policy and suppress this warning.
+[4.586s] 
+[4.586s] Call Stack (most recent call first):
+[4.586s]   /opt/ros/humble/share/rosidl_generator_py/cmake/rosidl_generator_py_generate_interfaces.cmake:23 (find_package)
+[4.586s]   /opt/ros/humble/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[4.586s]   /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:286 (ament_execute_extensions)
+[4.587s]   CMakeLists.txt:15 (rosidl_generate_interfaces)
+[4.587s] This warning is for project developers.  Use -Wno-dev to suppress it.
+[4.587s] [0m
+[4.599s] -- Found PythonLibs: /usr/lib/aarch64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5")
+[4.599s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[4.599s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[4.599s] -- Using PYTHON_LIBRARIES: /usr/lib/aarch64-linux-gnu/libpython3.10.so
+[4.639s] -- Found PythonExtra: .so
+[4.997s] -- Using numpy include directory: /usr/local/lib/python3.10/dist-packages/numpy/core/include
+[5.377s] -- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[5.423s] -- Added test 'lint_cmake' to check CMake code style
+[5.426s] -- Added test 'xmllint' to check XML markup files
+[5.433s] -- Configuring done (5.3s)
+[5.556s] -- Generating done (0.1s)
+[5.596s] -- Build files have been written to: /data/rl_deploy/build/node_app_msgs
+[5.625s] Invoked command in '/data/rl_deploy/build/node_app_msgs' returned '0': AMENT_PREFIX_PATH=/data/rl_deploy/install/node_control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/data/rl_deploy/install/node_control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/data/rl_deploy/install/node_control_msgs/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/app/lib:/usr/local/cuda-12/lib64 PYTHONPATH=/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/local/bin/cmake /data/rl_deploy/src/node_app_msgs -DCMAKE_INSTALL_PREFIX=/data/rl_deploy/install/node_app_msgs
+[5.627s] Invoking command in '/data/rl_deploy/build/node_app_msgs': AMENT_PREFIX_PATH=/data/rl_deploy/install/node_control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/data/rl_deploy/install/node_control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/data/rl_deploy/install/node_control_msgs/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/app/lib:/usr/local/cuda-12/lib64 PYTHONPATH=/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/local/bin/cmake --build /data/rl_deploy/build/node_app_msgs -- -j8 -l8
+[5.812s] [  1%] [1m[34mGenerating C++ code for ROS interfaces[0m
+[7.362s] [  1%] Built target node_app_msgs__cpp
+[7.387s] [  1%] Built target ament_cmake_python_copy_node_app_msgs
+[7.398s] [  2%] [1m[34mGenerating C++ introspection for ROS interfaces[0m
+[8.666s] [  4%] [32mBuilding CXX object CMakeFiles/node_app_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/node_app_msgs/msg/detail/iot_cmd_msg__type_support.cpp.o[0m
+[9.367s] [  5%] [32mBuilding CXX object CMakeFiles/node_app_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/node_app_msgs/msg/detail/lrs_cmd_action_feedback__type_support.cpp.o[0m
+[10.157s] [  6%] [32mBuilding CXX object CMakeFiles/node_app_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/node_app_msgs/msg/detail/lrs_cmd_state__type_support.cpp.o[0m
+[10.854s] [  8%] [32mBuilding CXX object CMakeFiles/node_app_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/node_app_msgs/msg/detail/lrs_cmd_state_feedback__type_support.cpp.o[0m
+[11.583s] [  9%] [32mBuilding CXX object CMakeFiles/node_app_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/node_app_msgs/msg/detail/lrs_state__type_support.cpp.o[0m
+[12.378s] [ 11%] [32mBuilding CXX object CMakeFiles/node_app_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/node_app_msgs/msg/detail/lrs_cmd_action__type_support.cpp.o[0m
+[13.099s] [ 12%] [1m[32mLinking CXX shared library libnode_app_msgs__rosidl_typesupport_introspection_cpp.so[0m
+[13.227s] [ 12%] Built target node_app_msgs__rosidl_typesupport_introspection_cpp
+[13.629s] running egg_info
+[13.630s] creating node_app_msgs.egg-info
+[13.631s] writing node_app_msgs.egg-info/PKG-INFO
+[13.631s] writing dependency_links to node_app_msgs.egg-info/dependency_links.txt
+[13.631s] writing top-level names to node_app_msgs.egg-info/top_level.txt
+[13.632s] writing manifest file 'node_app_msgs.egg-info/SOURCES.txt'
+[13.636s] reading manifest file 'node_app_msgs.egg-info/SOURCES.txt'
+[13.637s] writing manifest file 'node_app_msgs.egg-info/SOURCES.txt'
+[13.694s] [ 12%] Built target ament_cmake_python_build_node_app_msgs_egg
+[13.705s] [ 13%] [1m[34mGenerating C++ type support for eProsima Fast-RTPS[0m
+[15.084s] [ 15%] [32mBuilding CXX object CMakeFiles/node_app_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/node_app_msgs/msg/detail/dds_fastrtps/iot_cmd_msg__type_support.cpp.o[0m
+[15.818s] [ 16%] [32mBuilding CXX object CMakeFiles/node_app_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/node_app_msgs/msg/detail/dds_fastrtps/lrs_cmd_state_feedback__type_support.cpp.o[0m
+[16.579s] [ 18%] [32mBuilding CXX object CMakeFiles/node_app_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/node_app_msgs/msg/detail/dds_fastrtps/lrs_state__type_support.cpp.o[0m
+[17.403s] [ 19%] [32mBuilding CXX object CMakeFiles/node_app_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/node_app_msgs/msg/detail/dds_fastrtps/lrs_cmd_state__type_support.cpp.o[0m
+[18.139s] [ 20%] [32mBuilding CXX object CMakeFiles/node_app_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/node_app_msgs/msg/detail/dds_fastrtps/lrs_cmd_action_feedback__type_support.cpp.o[0m
+[19.057s] [ 22%] [32mBuilding CXX object CMakeFiles/node_app_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/node_app_msgs/msg/detail/dds_fastrtps/lrs_cmd_action__type_support.cpp.o[0m
+[19.738s] [ 23%] [1m[32mLinking CXX shared library libnode_app_msgs__rosidl_typesupport_fastrtps_cpp.so[0m
+[19.877s] [ 23%] Built target node_app_msgs__rosidl_typesupport_fastrtps_cpp
+[19.891s] [ 25%] [1m[34mGenerating C++ type support dispatch for ROS interfaces[0m
+[21.023s] [ 26%] [32mBuilding CXX object CMakeFiles/node_app_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/node_app_msgs/msg/iot_cmd_msg__type_support.cpp.o[0m
+[21.579s] [ 27%] [32mBuilding CXX object CMakeFiles/node_app_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/node_app_msgs/msg/lrs_state__type_support.cpp.o[0m
+[22.126s] [ 29%] [32mBuilding CXX object CMakeFiles/node_app_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/node_app_msgs/msg/lrs_cmd_state_feedback__type_support.cpp.o[0m
+[22.128s] [ 30%] [32mBuilding CXX object CMakeFiles/node_app_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/node_app_msgs/msg/lrs_cmd_state__type_support.cpp.o[0m
+[22.596s] [ 31%] [32mBuilding CXX object CMakeFiles/node_app_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/node_app_msgs/msg/lrs_cmd_action_feedback__type_support.cpp.o[0m
+[22.618s] [ 33%] [32mBuilding CXX object CMakeFiles/node_app_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/node_app_msgs/msg/lrs_cmd_action__type_support.cpp.o[0m
+[23.216s] [ 34%] [1m[32mLinking CXX shared library libnode_app_msgs__rosidl_typesupport_cpp.so[0m
+[23.271s] [ 34%] Built target node_app_msgs__rosidl_typesupport_cpp
+[23.283s] [ 36%] [1m[34mGenerating C code for ROS interfaces[0m
+[23.292s] [ 37%] [1m[34mGenerating Rust code for ROS interfaces[0m
+[24.368s] [ 37%] Built target node_app_msgs__rs
+[24.866s] [ 40%] [32mBuilding C object CMakeFiles/node_app_msgs__rosidl_generator_c.dir/rosidl_generator_c/node_app_msgs/msg/detail/iot_cmd_msg__functions.c.o[0m
+[24.866s] [ 40%] [32mBuilding C object CMakeFiles/node_app_msgs__rosidl_generator_c.dir/rosidl_generator_c/node_app_msgs/msg/detail/lrs_cmd_action__functions.c.o[0m
+[24.956s] [ 41%] [32mBuilding C object CMakeFiles/node_app_msgs__rosidl_generator_c.dir/rosidl_generator_c/node_app_msgs/msg/detail/lrs_state__functions.c.o[0m
+[24.968s] [ 43%] [32mBuilding C object CMakeFiles/node_app_msgs__rosidl_generator_c.dir/rosidl_generator_c/node_app_msgs/msg/detail/lrs_cmd_state_feedback__functions.c.o[0m
+[25.045s] [ 44%] [32mBuilding C object CMakeFiles/node_app_msgs__rosidl_generator_c.dir/rosidl_generator_c/node_app_msgs/msg/detail/lrs_cmd_state__functions.c.o[0m
+[25.059s] [ 45%] [32mBuilding C object CMakeFiles/node_app_msgs__rosidl_generator_c.dir/rosidl_generator_c/node_app_msgs/msg/detail/lrs_cmd_action_feedback__functions.c.o[0m
+[40.428s] [ 47%] [1m[32mLinking C shared library libnode_app_msgs__rosidl_generator_c.so[0m
+[40.491s] [ 47%] Built target node_app_msgs__rosidl_generator_c
+[40.503s] [ 50%] [1m[34mGenerating C type support dispatch for ROS interfaces[0m
+[40.503s] [ 50%] [1m[34mGenerating C introspection for ROS interfaces[0m
+[41.693s] [ 51%] [32mBuilding CXX object CMakeFiles/node_app_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/node_app_msgs/msg/iot_cmd_msg__type_support.cpp.o[0m
+[41.753s] [ 52%] [32mBuilding CXX object CMakeFiles/node_app_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/node_app_msgs/msg/lrs_state__type_support.cpp.o[0m
+[41.769s] [ 54%] [32mBuilding C object CMakeFiles/node_app_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/node_app_msgs/msg/detail/iot_cmd_msg__type_support.c.o[0m
+[41.815s] [ 55%] [32mBuilding CXX object CMakeFiles/node_app_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/node_app_msgs/msg/lrs_cmd_state_feedback__type_support.cpp.o[0m
+[41.823s] [ 56%] [32mBuilding C object CMakeFiles/node_app_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/node_app_msgs/msg/detail/lrs_cmd_action_feedback__type_support.c.o[0m
+[41.868s] [ 58%] [32mBuilding CXX object CMakeFiles/node_app_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/node_app_msgs/msg/lrs_cmd_state__type_support.cpp.o[0m
+[41.875s] [ 59%] [32mBuilding C object CMakeFiles/node_app_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/node_app_msgs/msg/detail/lrs_cmd_state_feedback__type_support.c.o[0m
+[41.918s] [ 61%] [32mBuilding CXX object CMakeFiles/node_app_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/node_app_msgs/msg/lrs_cmd_action_feedback__type_support.cpp.o[0m
+[41.931s] [ 62%] [32mBuilding C object CMakeFiles/node_app_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/node_app_msgs/msg/detail/lrs_state__type_support.c.o[0m
+[41.970s] [ 63%] [32mBuilding CXX object CMakeFiles/node_app_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/node_app_msgs/msg/lrs_cmd_action__type_support.cpp.o[0m
+[41.994s] [ 65%] [32mBuilding C object CMakeFiles/node_app_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/node_app_msgs/msg/detail/lrs_cmd_state__type_support.c.o[0m
+[42.025s] [ 66%] [1m[32mLinking CXX shared library libnode_app_msgs__rosidl_typesupport_c.so[0m
+[42.052s] [ 68%] [32mBuilding C object CMakeFiles/node_app_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/node_app_msgs/msg/detail/lrs_cmd_action__type_support.c.o[0m
+[42.085s] [ 68%] Built target node_app_msgs__rosidl_typesupport_c
+[42.116s] [ 69%] [1m[32mLinking C shared library libnode_app_msgs__rosidl_typesupport_introspection_c.so[0m
+[42.160s] [ 69%] Built target node_app_msgs__rosidl_typesupport_introspection_c
+[42.171s] [ 70%] [1m[34mGenerating C type support for eProsima Fast-RTPS[0m
+[43.641s] [ 72%] [32mBuilding CXX object CMakeFiles/node_app_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/node_app_msgs/msg/detail/iot_cmd_msg__type_support_c.cpp.o[0m
+[44.242s] [ 73%] [32mBuilding CXX object CMakeFiles/node_app_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/node_app_msgs/msg/detail/lrs_state__type_support_c.cpp.o[0m
+[44.938s] [ 75%] [32mBuilding CXX object CMakeFiles/node_app_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/node_app_msgs/msg/detail/lrs_cmd_state_feedback__type_support_c.cpp.o[0m
+[45.585s] [ 76%] [32mBuilding CXX object CMakeFiles/node_app_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/node_app_msgs/msg/detail/lrs_cmd_state__type_support_c.cpp.o[0m
+[46.253s] [ 77%] [32mBuilding CXX object CMakeFiles/node_app_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/node_app_msgs/msg/detail/lrs_cmd_action_feedback__type_support_c.cpp.o[0m
+[46.856s] [ 79%] [32mBuilding CXX object CMakeFiles/node_app_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/node_app_msgs/msg/detail/lrs_cmd_action__type_support_c.cpp.o[0m
+[47.544s] [ 80%] [1m[32mLinking CXX shared library libnode_app_msgs__rosidl_typesupport_fastrtps_c.so[0m
+[47.672s] [ 80%] Built target node_app_msgs__rosidl_typesupport_fastrtps_c
+[47.694s] [ 80%] Built target node_app_msgs
+[47.714s] [ 81%] [1m[34mGenerating Python code for ROS interfaces[0m
+[50.003s] [ 81%] Built target node_app_msgs__py
+[50.023s] [ 84%] [32mBuilding C object CMakeFiles/node_app_msgs__rosidl_generator_py.dir/rosidl_generator_py/node_app_msgs/msg/_lrs_cmd_action_s.c.o[0m
+[50.023s] [ 84%] [32mBuilding C object CMakeFiles/node_app_msgs__rosidl_generator_py.dir/rosidl_generator_py/node_app_msgs/msg/_iot_cmd_msg_s.c.o[0m
+[50.206s] [ 86%] [32mBuilding C object CMakeFiles/node_app_msgs__rosidl_generator_py.dir/rosidl_generator_py/node_app_msgs/msg/_lrs_state_s.c.o[0m
+[50.217s] [ 87%] [32mBuilding C object CMakeFiles/node_app_msgs__rosidl_generator_py.dir/rosidl_generator_py/node_app_msgs/msg/_lrs_cmd_state_feedback_s.c.o[0m
+[50.397s] [ 88%] [32mBuilding C object CMakeFiles/node_app_msgs__rosidl_generator_py.dir/rosidl_generator_py/node_app_msgs/msg/_lrs_cmd_state_s.c.o[0m
+[50.399s] [ 90%] [32mBuilding C object CMakeFiles/node_app_msgs__rosidl_generator_py.dir/rosidl_generator_py/node_app_msgs/msg/_lrs_cmd_action_feedback_s.c.o[0m
+[50.619s] [ 91%] [1m[32mLinking C shared library rosidl_generator_py/node_app_msgs/libnode_app_msgs__rosidl_generator_py.so[0m
+[50.680s] [ 91%] Built target node_app_msgs__rosidl_generator_py
+[50.701s] [ 94%] [32mBuilding C object CMakeFiles/node_app_msgs__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/node_app_msgs/_node_app_msgs_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[50.701s] [ 94%] [32mBuilding C object CMakeFiles/node_app_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/node_app_msgs/_node_app_msgs_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[50.916s] [ 95%] [1m[32mLinking C shared library rosidl_generator_py/node_app_msgs/node_app_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so[0m
+[50.917s] [ 97%] [1m[32mLinking C shared library rosidl_generator_py/node_app_msgs/node_app_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so[0m
+[50.972s] [ 97%] Built target node_app_msgs__rosidl_typesupport_introspection_c__pyext
+[50.975s] [ 97%] Built target node_app_msgs__rosidl_typesupport_fastrtps_c__pyext
+[50.991s] [ 98%] [32mBuilding C object CMakeFiles/node_app_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/node_app_msgs/_node_app_msgs_s.ep.rosidl_typesupport_c.c.o[0m
+[51.189s] [100%] [1m[32mLinking C shared library rosidl_generator_py/node_app_msgs/node_app_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so[0m
+[51.243s] [100%] Built target node_app_msgs__rosidl_typesupport_c__pyext
+[51.256s] Invoked command in '/data/rl_deploy/build/node_app_msgs' returned '0': AMENT_PREFIX_PATH=/data/rl_deploy/install/node_control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/data/rl_deploy/install/node_control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/data/rl_deploy/install/node_control_msgs/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/app/lib:/usr/local/cuda-12/lib64 PYTHONPATH=/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/local/bin/cmake --build /data/rl_deploy/build/node_app_msgs -- -j8 -l8
+[51.259s] Invoking command in '/data/rl_deploy/build/node_app_msgs': AMENT_PREFIX_PATH=/data/rl_deploy/install/node_control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/data/rl_deploy/install/node_control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/data/rl_deploy/install/node_control_msgs/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/app/lib:/usr/local/cuda-12/lib64 PYTHONPATH=/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/local/bin/cmake --install /data/rl_deploy/build/node_app_msgs
+[51.395s] -- Install configuration: ""
+[51.395s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/ament_index/resource_index/rosidl_interfaces/node_app_msgs
+[51.395s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs
+[51.396s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg
+[51.396s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/lrs_cmd_state_feedback.h
+[51.396s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/lrs_cmd_action.h
+[51.396s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/iot_cmd_msg.h
+[51.396s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/lrs_cmd_state.h
+[51.396s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail
+[51.397s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_state__functions.h
+[51.397s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_state__type_support.h
+[51.397s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_state_feedback__functions.c
+[51.397s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_action_feedback__functions.h
+[51.398s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_state_feedback__struct.h
+[51.398s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_state_feedback__functions.h
+[51.398s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/iot_cmd_msg__functions.c
+[51.398s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_state__functions.c
+[51.399s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_state__functions.c
+[51.399s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_action__functions.c
+[51.399s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_state__type_support.h
+[51.399s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_state_feedback__type_support.h
+[51.399s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_action__functions.h
+[51.400s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_action__struct.h
+[51.400s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_action__type_support.h
+[51.400s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_action_feedback__type_support.h
+[51.400s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/iot_cmd_msg__functions.h
+[51.401s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_state__struct.h
+[51.401s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_action_feedback__struct.h
+[51.401s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_action_feedback__functions.c
+[51.401s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_state__functions.h
+[51.401s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/iot_cmd_msg__struct.h
+[51.402s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/iot_cmd_msg__type_support.h
+[51.402s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_state__struct.h
+[51.402s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/lrs_cmd_action_feedback.h
+[51.402s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/rosidl_generator_c__visibility_control.h
+[51.402s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/lrs_state.h
+[51.403s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/environment/library_path.sh
+[51.403s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/environment/library_path.dsv
+[51.403s] -- Installing: /data/rl_deploy/install/node_app_msgs/lib/libnode_app_msgs__rosidl_generator_c.so
+[51.404s] -- Set non-toolchain portion of runtime path of "/data/rl_deploy/install/node_app_msgs/lib/libnode_app_msgs__rosidl_generator_c.so" to ""
+[51.404s] -- Up-to-date: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs
+[51.404s] -- Up-to-date: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg
+[51.405s] -- Up-to-date: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail
+[51.405s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_action_feedback__rosidl_typesupport_fastrtps_c.h
+[51.405s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_state__rosidl_typesupport_fastrtps_c.h
+[51.405s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_action__rosidl_typesupport_fastrtps_c.h
+[51.405s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/iot_cmd_msg__rosidl_typesupport_fastrtps_c.h
+[51.405s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_state_feedback__rosidl_typesupport_fastrtps_c.h
+[51.406s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_state__rosidl_typesupport_fastrtps_c.h
+[51.406s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[51.406s] -- Installing: /data/rl_deploy/install/node_app_msgs/lib/libnode_app_msgs__rosidl_typesupport_fastrtps_c.so
+[51.407s] -- Set non-toolchain portion of runtime path of "/data/rl_deploy/install/node_app_msgs/lib/libnode_app_msgs__rosidl_typesupport_fastrtps_c.so" to ""
+[51.407s] -- Up-to-date: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs
+[51.407s] -- Up-to-date: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg
+[51.407s] -- Up-to-date: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail
+[51.407s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_state_feedback__type_support.c
+[51.407s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_action_feedback__rosidl_typesupport_introspection_c.h
+[51.408s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_action__rosidl_typesupport_introspection_c.h
+[51.408s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/iot_cmd_msg__type_support.c
+[51.408s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_state__type_support.c
+[51.408s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_state_feedback__rosidl_typesupport_introspection_c.h
+[51.408s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_state__rosidl_typesupport_introspection_c.h
+[51.408s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_action__type_support.c
+[51.409s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_state__type_support.c
+[51.409s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_action_feedback__type_support.c
+[51.409s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/iot_cmd_msg__rosidl_typesupport_introspection_c.h
+[51.409s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_state__rosidl_typesupport_introspection_c.h
+[51.410s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[51.410s] -- Installing: /data/rl_deploy/install/node_app_msgs/lib/libnode_app_msgs__rosidl_typesupport_introspection_c.so
+[51.410s] -- Set non-toolchain portion of runtime path of "/data/rl_deploy/install/node_app_msgs/lib/libnode_app_msgs__rosidl_typesupport_introspection_c.so" to ""
+[51.411s] -- Installing: /data/rl_deploy/install/node_app_msgs/lib/libnode_app_msgs__rosidl_typesupport_c.so
+[51.411s] -- Set non-toolchain portion of runtime path of "/data/rl_deploy/install/node_app_msgs/lib/libnode_app_msgs__rosidl_typesupport_c.so" to ""
+[51.411s] -- Up-to-date: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs
+[51.411s] -- Up-to-date: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg
+[51.411s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/lrs_cmd_state.hpp
+[51.412s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/iot_cmd_msg.hpp
+[51.412s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/lrs_cmd_action.hpp
+[51.412s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/lrs_state.hpp
+[51.412s] -- Up-to-date: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail
+[51.412s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_action__builder.hpp
+[51.412s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_state__builder.hpp
+[51.413s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/iot_cmd_msg__struct.hpp
+[51.413s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_state__struct.hpp
+[51.413s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_state__struct.hpp
+[51.413s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_state__builder.hpp
+[51.413s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/iot_cmd_msg__type_support.hpp
+[51.414s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_action_feedback__struct.hpp
+[51.414s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_action_feedback__traits.hpp
+[51.414s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_state_feedback__type_support.hpp
+[51.414s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_state_feedback__builder.hpp
+[51.414s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_action__traits.hpp
+[51.415s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_state__traits.hpp
+[51.415s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_state_feedback__struct.hpp
+[51.415s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_state__type_support.hpp
+[51.415s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_action__struct.hpp
+[51.416s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/iot_cmd_msg__traits.hpp
+[51.416s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_action_feedback__type_support.hpp
+[51.416s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_state__traits.hpp
+[51.416s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_state_feedback__traits.hpp
+[51.416s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_action__type_support.hpp
+[51.416s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_action_feedback__builder.hpp
+[51.417s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/iot_cmd_msg__builder.hpp
+[51.417s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_state__type_support.hpp
+[51.417s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/lrs_cmd_state_feedback.hpp
+[51.417s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/rosidl_generator_cpp__visibility_control.hpp
+[51.417s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/lrs_cmd_action_feedback.hpp
+[51.418s] -- Up-to-date: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs
+[51.418s] -- Up-to-date: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg
+[51.418s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[51.418s] -- Up-to-date: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail
+[51.418s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/iot_cmd_msg__rosidl_typesupport_fastrtps_cpp.hpp
+[51.418s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_action__rosidl_typesupport_fastrtps_cpp.hpp
+[51.419s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_action_feedback__rosidl_typesupport_fastrtps_cpp.hpp
+[51.419s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/dds_fastrtps
+[51.419s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_state__rosidl_typesupport_fastrtps_cpp.hpp
+[51.419s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_state_feedback__rosidl_typesupport_fastrtps_cpp.hpp
+[51.419s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_state__rosidl_typesupport_fastrtps_cpp.hpp
+[51.420s] -- Installing: /data/rl_deploy/install/node_app_msgs/lib/libnode_app_msgs__rosidl_typesupport_fastrtps_cpp.so
+[51.420s] -- Set non-toolchain portion of runtime path of "/data/rl_deploy/install/node_app_msgs/lib/libnode_app_msgs__rosidl_typesupport_fastrtps_cpp.so" to ""
+[51.421s] -- Up-to-date: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs
+[51.421s] -- Up-to-date: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg
+[51.421s] -- Up-to-date: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail
+[51.421s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_state__type_support.cpp
+[51.421s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_state__rosidl_typesupport_introspection_cpp.hpp
+[51.422s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/iot_cmd_msg__type_support.cpp
+[51.422s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/iot_cmd_msg__rosidl_typesupport_introspection_cpp.hpp
+[51.422s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_action__type_support.cpp
+[51.422s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_action__rosidl_typesupport_introspection_cpp.hpp
+[51.422s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_action_feedback__type_support.cpp
+[51.423s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_action_feedback__rosidl_typesupport_introspection_cpp.hpp
+[51.423s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_state__type_support.cpp
+[51.423s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_state__rosidl_typesupport_introspection_cpp.hpp
+[51.423s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_state_feedback__rosidl_typesupport_introspection_cpp.hpp
+[51.423s] -- Installing: /data/rl_deploy/install/node_app_msgs/include/node_app_msgs/node_app_msgs/msg/detail/lrs_cmd_state_feedback__type_support.cpp
+[51.423s] -- Installing: /data/rl_deploy/install/node_app_msgs/lib/libnode_app_msgs__rosidl_typesupport_introspection_cpp.so
+[51.424s] -- Set non-toolchain portion of runtime path of "/data/rl_deploy/install/node_app_msgs/lib/libnode_app_msgs__rosidl_typesupport_introspection_cpp.so" to ""
+[51.424s] -- Installing: /data/rl_deploy/install/node_app_msgs/lib/libnode_app_msgs__rosidl_typesupport_cpp.so
+[51.425s] -- Set non-toolchain portion of runtime path of "/data/rl_deploy/install/node_app_msgs/lib/libnode_app_msgs__rosidl_typesupport_cpp.so" to ""
+[51.425s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/environment/pythonpath.sh
+[51.425s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/environment/pythonpath.dsv
+[51.425s] -- Installing: /data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages/node_app_msgs-0.0.0-py3.10.egg-info
+[51.426s] -- Installing: /data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages/node_app_msgs-0.0.0-py3.10.egg-info/top_level.txt
+[51.426s] -- Installing: /data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages/node_app_msgs-0.0.0-py3.10.egg-info/PKG-INFO
+[51.426s] -- Installing: /data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages/node_app_msgs-0.0.0-py3.10.egg-info/SOURCES.txt
+[51.426s] -- Installing: /data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages/node_app_msgs-0.0.0-py3.10.egg-info/dependency_links.txt
+[51.426s] -- Installing: /data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages/node_app_msgs
+[51.427s] -- Installing: /data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages/node_app_msgs/libnode_app_msgs__rosidl_generator_py.so
+[51.427s] -- Installing: /data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages/node_app_msgs/node_app_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so
+[51.427s] -- Installing: /data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages/node_app_msgs/_node_app_msgs_s.ep.rosidl_typesupport_introspection_c.c
+[51.427s] -- Installing: /data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages/node_app_msgs/_node_app_msgs_s.ep.rosidl_typesupport_c.c
+[51.428s] -- Installing: /data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages/node_app_msgs/node_app_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so
+[51.428s] -- Installing: /data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages/node_app_msgs/__init__.py
+[51.428s] -- Installing: /data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages/node_app_msgs/_node_app_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+[51.428s] -- Installing: /data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages/node_app_msgs/msg
+[51.429s] -- Installing: /data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages/node_app_msgs/msg/_lrs_state_s.c
+[51.429s] -- Installing: /data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages/node_app_msgs/msg/_lrs_cmd_action_feedback.py
+[51.429s] -- Installing: /data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages/node_app_msgs/msg/_lrs_cmd_state.py
+[51.429s] -- Installing: /data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages/node_app_msgs/msg/_iot_cmd_msg.py
+[51.429s] -- Installing: /data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages/node_app_msgs/msg/_lrs_cmd_action_feedback_s.c
+[51.430s] -- Installing: /data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages/node_app_msgs/msg/_lrs_cmd_action_s.c
+[51.430s] -- Installing: /data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages/node_app_msgs/msg/_lrs_state.py
+[51.430s] -- Installing: /data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages/node_app_msgs/msg/_iot_cmd_msg_s.c
+[51.430s] -- Installing: /data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages/node_app_msgs/msg/__init__.py
+[51.430s] -- Installing: /data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages/node_app_msgs/msg/_lrs_cmd_state_feedback_s.c
+[51.431s] -- Installing: /data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages/node_app_msgs/msg/_lrs_cmd_action.py
+[51.431s] -- Installing: /data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages/node_app_msgs/msg/_lrs_cmd_state_feedback.py
+[51.431s] -- Installing: /data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages/node_app_msgs/msg/_lrs_cmd_state_s.c
+[51.431s] -- Installing: /data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages/node_app_msgs/node_app_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so
+[51.503s] Listing '/data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages/node_app_msgs'...
+[51.504s] Compiling '/data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages/node_app_msgs/__init__.py'...
+[51.504s] Listing '/data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages/node_app_msgs/msg'...
+[51.504s] Compiling '/data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages/node_app_msgs/msg/__init__.py'...
+[51.504s] Compiling '/data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages/node_app_msgs/msg/_iot_cmd_msg.py'...
+[51.504s] Compiling '/data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages/node_app_msgs/msg/_lrs_cmd_action.py'...
+[51.504s] Compiling '/data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages/node_app_msgs/msg/_lrs_cmd_action_feedback.py'...
+[51.504s] Compiling '/data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages/node_app_msgs/msg/_lrs_cmd_state.py'...
+[51.504s] Compiling '/data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages/node_app_msgs/msg/_lrs_cmd_state_feedback.py'...
+[51.505s] Compiling '/data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages/node_app_msgs/msg/_lrs_state.py'...
+[51.515s] -- Installing: /data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages/node_app_msgs/node_app_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so
+[51.516s] -- Set non-toolchain portion of runtime path of "/data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages/node_app_msgs/node_app_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so" to ""
+[51.516s] -- Installing: /data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages/node_app_msgs/node_app_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so
+[51.517s] -- Set non-toolchain portion of runtime path of "/data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages/node_app_msgs/node_app_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so" to ""
+[51.517s] -- Installing: /data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages/node_app_msgs/node_app_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so
+[51.518s] -- Set non-toolchain portion of runtime path of "/data/rl_deploy/install/node_app_msgs/local/lib/python3.10/dist-packages/node_app_msgs/node_app_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so" to ""
+[51.518s] -- Installing: /data/rl_deploy/install/node_app_msgs/lib/libnode_app_msgs__rosidl_generator_py.so
+[51.518s] -- Set non-toolchain portion of runtime path of "/data/rl_deploy/install/node_app_msgs/lib/libnode_app_msgs__rosidl_generator_py.so" to ""
+[51.519s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/ament_index/resource_index/rust_packages/node_app_msgs
+[51.519s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/rust
+[51.519s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/rust/Cargo.toml
+[51.519s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/rust/src
+[51.519s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/rust/src/lib.rs
+[51.520s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/rust/src/msg.rs
+[51.520s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/rust/src/msg
+[51.520s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/rust/src/msg/rmw.rs
+[51.520s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/rust/build.rs
+[51.521s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/msg/IotCmdMsg.idl
+[51.521s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/msg/LrsCmdAction.idl
+[51.521s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/msg/LrsCmdActionFeedback.idl
+[51.521s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/msg/LrsCmdState.idl
+[51.522s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/msg/LrsCmdStateFeedback.idl
+[51.522s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/msg/LrsState.idl
+[51.522s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/msg/IotCmdMsg.msg
+[51.522s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/msg/LrsCmdAction.msg
+[51.522s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/msg/LrsCmdActionFeedback.msg
+[51.523s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/msg/LrsCmdState.msg
+[51.523s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/msg/LrsCmdStateFeedback.msg
+[51.523s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/msg/LrsState.msg
+[51.524s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/ament_index/resource_index/package_run_dependencies/node_app_msgs
+[51.524s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/ament_index/resource_index/parent_prefix_path/node_app_msgs
+[51.524s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/environment/ament_prefix_path.sh
+[51.524s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/environment/ament_prefix_path.dsv
+[51.525s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/environment/path.sh
+[51.525s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/environment/path.dsv
+[51.525s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/local_setup.bash
+[51.525s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/local_setup.sh
+[51.526s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/local_setup.zsh
+[51.526s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/local_setup.dsv
+[51.526s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/package.dsv
+[51.526s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/ament_index/resource_index/packages/node_app_msgs
+[51.527s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/cmake/export_node_app_msgs__rosidl_generator_cExport.cmake
+[51.527s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/cmake/export_node_app_msgs__rosidl_generator_cExport-noconfig.cmake
+[51.527s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/cmake/export_node_app_msgs__rosidl_typesupport_fastrtps_cExport.cmake
+[51.528s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/cmake/export_node_app_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[51.528s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/cmake/node_app_msgs__rosidl_typesupport_introspection_cExport.cmake
+[51.528s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/cmake/node_app_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[51.528s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/cmake/node_app_msgs__rosidl_typesupport_cExport.cmake
+[51.529s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/cmake/node_app_msgs__rosidl_typesupport_cExport-noconfig.cmake
+[51.529s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/cmake/export_node_app_msgs__rosidl_generator_cppExport.cmake
+[51.529s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/cmake/export_node_app_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
+[51.530s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/cmake/export_node_app_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[51.530s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/cmake/node_app_msgs__rosidl_typesupport_introspection_cppExport.cmake
+[51.530s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/cmake/node_app_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[51.530s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/cmake/node_app_msgs__rosidl_typesupport_cppExport.cmake
+[51.531s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/cmake/node_app_msgs__rosidl_typesupport_cppExport-noconfig.cmake
+[51.531s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/cmake/export_node_app_msgs__rosidl_generator_pyExport.cmake
+[51.531s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/cmake/export_node_app_msgs__rosidl_generator_pyExport-noconfig.cmake
+[51.531s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/cmake/rosidl_cmake-extras.cmake
+[51.532s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/cmake/ament_cmake_export_dependencies-extras.cmake
+[51.532s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/cmake/ament_cmake_export_include_directories-extras.cmake
+[51.532s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/cmake/ament_cmake_export_libraries-extras.cmake
+[51.532s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/cmake/ament_cmake_export_targets-extras.cmake
+[51.533s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[51.533s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[51.533s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/cmake/node_app_msgsConfig.cmake
+[51.533s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/cmake/node_app_msgsConfig-version.cmake
+[51.534s] -- Installing: /data/rl_deploy/install/node_app_msgs/share/node_app_msgs/package.xml
+[51.538s] Invoked command in '/data/rl_deploy/build/node_app_msgs' returned '0': AMENT_PREFIX_PATH=/data/rl_deploy/install/node_control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/data/rl_deploy/install/node_control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/data/rl_deploy/install/node_control_msgs/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/app/lib:/usr/local/cuda-12/lib64 PYTHONPATH=/data/rl_deploy/install/node_control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/local/bin/cmake --install /data/rl_deploy/build/node_app_msgs

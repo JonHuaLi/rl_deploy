@@ -1,0 +1,11 @@
+{
+  "package_name": "node_app_msgs",
+  "non_idl_tuples": [
+    "/data/rl_deploy/src/node_app_msgs:msg/IotCmdMsg.msg",
+    "/data/rl_deploy/src/node_app_msgs:msg/LrsCmdAction.msg",
+    "/data/rl_deploy/src/node_app_msgs:msg/LrsCmdActionFeedback.msg",
+    "/data/rl_deploy/src/node_app_msgs:msg/LrsCmdState.msg",
+    "/data/rl_deploy/src/node_app_msgs:msg/LrsCmdStateFeedback.msg",
+    "/data/rl_deploy/src/node_app_msgs:msg/LrsState.msg"
+  ]
+}

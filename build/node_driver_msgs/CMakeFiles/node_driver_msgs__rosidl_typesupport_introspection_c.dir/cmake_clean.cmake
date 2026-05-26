@@ -1,0 +1,17 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/node_driver_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/node_driver_msgs/msg/detail/sensormsgcontrol__type_support.c.o"
+  "CMakeFiles/node_driver_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/node_driver_msgs/msg/detail/sensormsgcontrol__type_support.c.o.d"
+  "CMakeFiles/node_driver_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/node_driver_msgs/msg/detail/sensormsgstate__type_support.c.o"
+  "CMakeFiles/node_driver_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/node_driver_msgs/msg/detail/sensormsgstate__type_support.c.o.d"
+  "libnode_driver_msgs__rosidl_typesupport_introspection_c.pdb"
+  "libnode_driver_msgs__rosidl_typesupport_introspection_c.so"
+  "rosidl_typesupport_introspection_c/node_driver_msgs/msg/detail/sensormsgcontrol__rosidl_typesupport_introspection_c.h"
+  "rosidl_typesupport_introspection_c/node_driver_msgs/msg/detail/sensormsgcontrol__type_support.c"
+  "rosidl_typesupport_introspection_c/node_driver_msgs/msg/detail/sensormsgstate__rosidl_typesupport_introspection_c.h"
+  "rosidl_typesupport_introspection_c/node_driver_msgs/msg/detail/sensormsgstate__type_support.c"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang C)
+  include(CMakeFiles/node_driver_msgs__rosidl_typesupport_introspection_c.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

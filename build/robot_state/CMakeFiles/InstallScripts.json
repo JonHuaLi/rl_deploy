@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/data/rl_deploy/build/robot_state/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

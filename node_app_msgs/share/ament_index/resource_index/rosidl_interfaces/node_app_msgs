@@ -1,0 +1,12 @@
+msg/IotCmdMsg.idl
+msg/IotCmdMsg.msg
+msg/LrsCmdAction.idl
+msg/LrsCmdAction.msg
+msg/LrsCmdActionFeedback.idl
+msg/LrsCmdActionFeedback.msg
+msg/LrsCmdState.idl
+msg/LrsCmdState.msg
+msg/LrsCmdStateFeedback.idl
+msg/LrsCmdStateFeedback.msg
+msg/LrsState.idl
+msg/LrsState.msg

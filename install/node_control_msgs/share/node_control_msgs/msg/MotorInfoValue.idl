@@ -1,0 +1,35 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from node_control_msgs/msg/MotorInfoValue.msg
+// generated code does not contain a copyright notice
+
+
+module node_control_msgs {
+  module msg {
+    typedef uint8 uint8__3[3];
+    struct MotorInfoValue {
+      @verbatim (language="comment", text=
+        "开机时间")
+      uint64 startup_time_ms;
+
+      @verbatim (language="comment", text=
+        "CANFD板软件版本")
+      uint8__3 sw_version;
+
+      @verbatim (language="comment", text=
+        "CANFD板硬件版本")
+      uint8__3 hw_version;
+
+      @verbatim (language="comment", text=
+        "关节软件版本")
+      uint8__3 joint_version;
+
+      @verbatim (language="comment", text=
+        "CANFD板状态")
+      uint16 state;
+
+      @verbatim (language="comment", text=
+        "关节批次号")
+      uint64 serial_num;
+    };
+  };
+};

@@ -1,0 +1,36 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from node_app_msgs/msg/LrsState.msg
+// generated code does not contain a copyright notice
+
+#include "node_control_msgs/msg/MotorHealthState.idl"
+#include "std_msgs/msg/Header.idl"
+
+module node_app_msgs {
+  module msg {
+    struct LrsState {
+      std_msgs::msg::Header header;
+
+      @verbatim (language="comment", text=
+        "失能，待机，预备，运行,转换")
+      string current_state;
+
+      @verbatim (language="comment", text=
+        "无，舞蹈，其他")
+      string current_mode;
+
+      @verbatim (language="comment", text=
+        "电机恢复，升级，跳舞，其他")
+      string current_action;
+
+      @verbatim (language="comment", text=
+        "成功，失败，进行中，未开始")
+      string running_status;
+
+      @verbatim (language="comment", text=
+        "健康，警告，错误，致命错误")
+      string motor_health;
+
+      sequence<node_control_msgs::msg::MotorHealthState> motor_health_states;
+    };
+  };
+};

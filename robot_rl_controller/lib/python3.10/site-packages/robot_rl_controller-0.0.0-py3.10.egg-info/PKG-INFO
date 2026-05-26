@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: robot-rl-controller
+Version: 0.0.0
+Summary: 机器人强化学习控制器 - Python应用层
+Home-page: UNKNOWN
+Maintainer: nvidia
+Maintainer-email: nvidia@todo.todo
+License: MIT
+Platform: UNKNOWN
+Provides-Extra: test
+
+UNKNOWN
+
