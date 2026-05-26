@@ -51,45 +51,41 @@
 ```mermaid
 graph TB
     subgraph 外部控制系统
-        A1[/system/lrs_cmd<br/>状态机命令]
-        A2[/joy<br/>手柄输入]
-        A3[/rl_cmd_vel<br/>速度命令]
+        A1[/"system/lrs_cmd 状态机命令"/]
+        A2[/"joy 手柄输入"/]
+        A3[/"rl_cmd_vel 速度命令"/]
     end
 
     subgraph RobotRLController_Node["Robot RL Controller (ROS2 Python Node)"]
-        subgraph BaseController["BaseController 基类"]
-            B1[状态机管理]
-            B2[观测向量构建]
-            B3[ONNX推理]
-            B4[命令生成]
-        end
-        subgraph 子类实现
-            C1[ActionRobotController<br/>12关节]
-            C2[Waist15RobotController<br/>15关节]
-            C3[DanceRobotController<br/>舞蹈]
-        end
+        B1["状态机管理"]
+        B2["观测向量构建"]
+        B3["ONNX推理"]
+        B4["命令生成"]
+        C1["ActionRobotController 12关节"]
+        C2["Waist15RobotController 15关节"]
+        C3["DanceRobotController 舞蹈"]
     end
 
     subgraph RobotState_Node["Robot State Node (ROS2 C++ Node)"]
-        D1[IMU数据融合]
-        D2[电机反馈融合]
-        D3[发布 /robot/state]
+        D1["IMU数据融合"]
+        D2["电机反馈融合"]
+        D3["发布 /robot/state"]
     end
 
     subgraph 硬件抽象层
-        E1[电机控制器通信]
-        E2[CAN/EtherCAT]
-        E3[电机执行]
+        E1["电机控制器通信"]
+        E2["CAN/EtherCAT"]
+        E3["电机执行"]
     end
 
-    A1 --> BaseController
-    A2 --> BaseController
-    A3 --> BaseController
-    BaseController --> 子类实现
-    子类实现 --> E1
-    D1 -.-> BaseController
-    D3 -.-> BaseController
-    
+    A1 --> B1
+    A2 --> B1
+    A3 --> B1
+    B1 --> C1
+    C1 --> E1
+    D1 -.-> B1
+    D3 -.-> B1
+
     style RobotRLController_Node fill:#f9f,stroke:#333,stroke-width:4px
     style RobotState_Node fill:#9ff,stroke:#333,stroke-width:4px
 ```
@@ -99,63 +95,59 @@ graph TB
 ```mermaid
 graph TB
     subgraph launch层["launch 文件层"]
-        L1[action_robot_controller.launch.py]
-        L2[waist_15_action_robot_controller.launch.py]
-        L3[dance_robot_controller.launch.py]
+        L1["action_robot_controller.launch.py"]
+        L2["waist_15_action_robot_controller.launch.py"]
+        L3["dance_robot_controller.launch.py"]
     end
 
     subgraph Python代码层["Python 代码层"]
-        subgraph 基类
-            BC[base_controller.py<br/>基类-状态机QoS订阅发布]
-        end
-        subgraph 控制器实现
-            AC[action_robot_controller.py]
-            WC[waist_15_action_robot_controller.py]
-            SWC[s_waist_15_action_robot_controller.py]
-            DC[dance_robot_controller.py]
-        end
+        BC["base_controller.py<br/>基类-状态机QoS订阅发布"]
+        AC["action_robot_controller.py"]
+        WC["waist_15_action_robot_controller.py"]
+        SWC["s_waist_15_action_robot_controller.py"]
+        DC["dance_robot_controller.py"]
     end
 
     subgraph 消息定义["消息定义"]
-        M1[robot_msgs/msg/RobotState.msg]
-        M2[node_control_msgs/msg/MotorControl.msg]
-        M3[node_app_msgs/msg/LrsCmdState.msg]
+        M1["robot_msgs/msg/RobotState.msg"]
+        M2["node_control_msgs/msg/MotorControl.msg"]
+        M3["node_app_msgs/msg/LrsCmdState.msg"]
     end
 
     subgraph 配置文件["配置文件"]
-        C1[robot_controller_config.yaml]
-        C2[waist_15_robot_controller_config.yaml]
-        C3[dance_robot_controller_config.yaml]
+        C1["robot_controller_config.yaml"]
+        C2["waist_15_robot_controller_config.yaml"]
+        C3["dance_robot_controller_config.yaml"]
     end
 
     subgraph ONNX模型["ONNX模型"]
-        ONNX1[policy_12.onnx]
-        ONNX2[policy_d15_4.onnx]
+        ONNX1["policy_12.onnx"]
+        ONNX2["policy_d15_4.onnx"]
     end
 
-    L1 --> Python代码层
-    L2 --> Python代码层
-    L3 --> Python代码层
-    
+    L1 --> BC
+    L2 --> BC
+    L3 --> BC
+
     BC --> AC
     BC --> WC
     BC --> SWC
     BC --> DC
-    
+
     AC --> M1
     AC --> M2
     WC --> M1
     WC --> M2
     DC --> M1
     DC --> M2
-    
+
     AC --> C1
     WC --> C2
     DC --> C3
-    
+
     AC --> ONNX1
     WC --> ONNX2
-    
+
     style launch层 fill:#ff9,stroke:#333
     style Python代码层 fill:#9ff,stroke:#333
 ```
@@ -452,25 +444,26 @@ sequenceDiagram
 #### 3.4.2 控制循环时序 (50Hz)
 
 ```mermaid
-loop 50Hz 控制循环 (20ms周期)
+sequenceDiagram
     participant CTRL as Controller
-    participant ONNX as ONNX Model
-    participant PUB as Motor Publisher
-    
-    CTRL->>CTRL: 1. 构建观测向量
-    Note over CTRL: 从/robot/state提取
-    
-    CTRL->>ONNX: 2. ONNX推理
-    ONNX-->>CTRL: 返回action输出
-    
-    CTRL->>CTRL: 3. 动作裁剪/限幅
-    Note over CTRL: action_scale + defaultPos
-    
-    CTRL->>PUB: 4. 发布motor_cmd
-    Note over CTRL: /motor_control/motor_control
-    
-    CTRL->>CTRL: 5. 诊断日志输出
-end
+    participant ONNX as ONNX_Model
+    participant PUB as Motor_Publisher
+
+    loop 50Hz 控制循环 (20ms周期)
+        CTRL->>CTRL: 1. 构建观测向量
+        Note over CTRL: 从/robot/state提取
+
+        CTRL->>ONNX: 2. ONNX推理
+        ONNX-->>CTRL: 返回action输出
+
+        CTRL->>CTRL: 3. 动作裁剪/限幅
+        Note over CTRL: action_scale + defaultPos
+
+        CTRL->>PUB: 4. 发布motor_cmd
+        Note over CTRL: /motor_control/motor_control
+
+        CTRL->>CTRL: 5. 诊断日志输出
+    end
 ```
 
 #### 3.4.3 状态切换时序
@@ -506,17 +499,17 @@ sequenceDiagram
 
 ```mermaid
 graph LR
-    subgraph 观测向量分解
-        A1[base_ang_vel<br/>3维]
-        A2[projected_gravity<br/>3维]
-        A3[vel_cmd<br/>3维]
-        A4[joint_pos<br/>12维]
-        A5[joint_vel<br/>12维]
-        A6[action<br/>12维]
-        A7[phase<br/>0维]
+    subgraph "观测向量分解"
+        A1["base_ang_vel<br/>3维"]
+        A2["projected_gravity<br/>3维"]
+        A3["vel_cmd<br/>3维"]
+        A4["joint_pos<br/>12维"]
+        A5["joint_vel<br/>12维"]
+        A6["action<br/>12维"]
+        A7["phase<br/>0维"]
     end
     
-    A1 --> OBS[总观测维度<br/>~47维]
+    A1 --> OBS["总观测维度<br/>~47维"]
     A2 --> OBS
     A3 --> OBS
     A4 --> OBS
@@ -529,17 +522,17 @@ graph LR
 
 ```mermaid
 graph LR
-    subgraph 观测向量分解
-        B1[base_ang_vel<br/>3维]
-        B2[projected_gravity<br/>3维]
-        B3[vel_cmd<br/>3维]
-        B4[joint_pos<br/>15维]
-        B5[joint_vel<br/>15维]
-        B6[action<br/>15维]
-        B7[phase<br/>12维]
+    subgraph "观测向量分解"
+        B1["base_ang_vel<br/>3维"]
+        B2["projected_gravity<br/>3维"]
+        B3["vel_cmd<br/>3维"]
+        B4["joint_pos<br/>15维"]
+        B5["joint_vel<br/>15维"]
+        B6["action<br/>15维"]
+        B7["phase<br/>12维"]
     end
     
-    B1 --> OBS2[总观测维度<br/>~56维]
+    B1 --> OBS2["总观测维度<br/>~56维"]
     B2 --> OBS2
     B3 --> OBS2
     B4 --> OBS2
@@ -624,14 +617,14 @@ reward = (
 
 ```mermaid
 graph TB
-    subgraph PolicyNetwork
-        INPUT[观测输入<br/>observation_dim: 47或56]
-        FC1[全连接层<br/>256神经元]
-        TN1[Tanh激活]
-        FC2[全连接层<br/>256神经元]
-        TN2[Tanh激活]
-        FC3[全连接层<br/>action_dim输出]
-        TN3[Tanh输出<br/>[-1,1]]
+    subgraph "PolicyNetwork"
+        INPUT["观测输入<br/>observation_dim: 47或56"]
+        FC1["全连接层<br/>256神经元"]
+        TN1["Tanh激活"]
+        FC2["全连接层<br/>256神经元"]
+        TN2["Tanh激活"]
+        FC3["全连接层<br/>action_dim输出"]
+        TN3["Tanh输出<br/>[-1,1]"]
     end
     
     INPUT --> FC1
@@ -647,23 +640,23 @@ graph TB
 ### 4.5 训练流程
 
 ```mermaid
-flowchart TB
-    subgraph 训练环境
-        MJ[MuJoCo/Isaac Gym<br/>仿真环境]
+graph TB
+    subgraph "训练环境"
+        MJ["MuJoCo/Isaac Gym<br/>仿真环境"]
     end
     
-    subgraph 训练循环
-        STEP[环境步进]
-        OBS[获取观测 o_t]
-        ACT[策略π采样 a_t]
-        EXEC[执行动作]
-        REW[获取奖励 r_t]
-        STORE[存储经验<br/>(s,a,r,s')]
-        UPDATE[更新网络<br/>PPO/SAC]
+    subgraph "训练循环"
+        STEP["环境步进"]
+        OBS["获取观测 o_t"]
+        ACT["策略π采样 a_t"]
+        EXEC["执行动作"]
+        REW["获取奖励 r_t"]
+        STORE["存储经验<br/>(s,a,r,s')"]
+        UPDATE["更新网络<br/>PPO/SAC"]
     end
     
-    subgraph 导出
-        ONNX[导出ONNX模型]
+    subgraph "导出"
+        ONNX["导出ONNX模型"]
     end
     
     MJ --> STEP
@@ -776,27 +769,27 @@ uint32 current_mode
 ```mermaid
 graph TB
     subgraph src_robot_rl_controller["src/robot_rl_controller/"]
-        CFG[config/]
-        LAUNCH[launch/]
-        ONNX_DIR[onnx/]
+        CFG["config/"]
+        LAUNCH["launch/"]
+        ONNX_DIR["onnx/"]
     end
     
-    subgraph 配置文件
-        C1[robot_controller_config.yaml<br/>12关节标准配置]
-        C2[waist_15_robot_controller_config.yaml<br/>15关节含腰部配置]
-        C3[dance_robot_controller_config.yaml<br/>舞蹈配置]
+    subgraph 配置文件["配置文件"]
+        C1["robot_controller_config.yaml<br/>12关节标准配置"]
+        C2["waist_15_robot_controller_config.yaml<br/>15关节含腰部配置"]
+        C3["dance_robot_controller_config.yaml<br/>舞蹈配置"]
     end
     
-    subgraph 启动文件
-        L1[action_robot_controller.launch.py]
-        L2[waist_15_action_robot_controller.launch.py]
-        L3[dance_robot_controller.launch.py]
+    subgraph 启动文件["启动文件"]
+        L1["action_robot_controller.launch.py"]
+        L2["waist_15_action_robot_controller.launch.py"]
+        L3["dance_robot_controller.launch.py"]
     end
     
-    subgraph ONNX模型
-        M1[policy_12.onnx]
-        M2[policy_d15_4.onnx]
-        M3[policy_lrs_d1s2_12k.onnx]
+    subgraph ONNX模型["ONNX模型"]
+        M1["policy_12.onnx"]
+        M2["policy_d15_4.onnx"]
+        M3["policy_lrs_d1s2_12k.onnx"]
     end
     
     CFG --> C1
@@ -1065,32 +1058,32 @@ def export_to_onnx(policy, obs_dim, act_dim, output_path):
 ### 7.5 训练最佳实践
 
 ```mermaid
-flowchart TB
-    subgraph 训练策略
-        P1[渐进式训练]
-        P2[域随机化]
-        P3[评估指标]
+graph TB
+    subgraph 训练策略["训练策略"]
+        P1["渐进式训练"]
+        P2["域随机化"]
+        P3["评估指标"]
     end
     
-    subgraph 渐进式训练阶段
-        PH1[Phase 1: 只训练站立<br/>无速度命令]
-        PH2[Phase 2: 训练前后移动]
-        PH3[Phase 3: 训练全向移动]
-        PH4[Phase 4: 加入噪声鲁棒性]
+    subgraph 渐进式训练阶段["渐进式训练阶段"]
+        PH1["Phase 1: 只训练站立<br/>无速度命令"]
+        PH2["Phase 2: 训练前后移动"]
+        PH3["Phase 3: 训练全向移动"]
+        PH4["Phase 4: 加入噪声鲁棒性"]
     end
     
-    subgraph 域随机化
-        DR1[随机化电机增益 ±10%]
-        DR2[随机化质量分布 ±20%]
-        DR3[随机化摩擦系数]
-        DR4[随机化延迟]
+    subgraph 域随机化["域随机化"]
+        DR1["随机化电机增益 ±10%"]
+        DR2["随机化质量分布 ±20%"]
+        DR3["随机化摩擦系数"]
+        DR4["随机化延迟"]
     end
     
-    subgraph 评估指标
-        E1[最大行走速度]
-        E2[能耗效率 速度/能耗]
-        E3[抗干扰能力]
-        E4[动作平滑度]
+    subgraph 评估指标["评估指标"]
+        E1["最大行走速度"]
+        E2["能耗效率 速度/能耗"]
+        E3["抗干扰能力"]
+        E4["动作平滑度"]
     end
     
     P1 --> PH1
