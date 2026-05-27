@@ -1,0 +1,22 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from node_control_msgs/msg/MotorConfig.msg
+// generated code does not contain a copyright notice
+
+#include "node_control_msgs/msg/MotorConfigDev.idl"
+#include "std_msgs/msg/Header.idl"
+
+module node_control_msgs {
+  module msg {
+    struct MotorConfig {
+      std_msgs::msg::Header header;
+
+      @verbatim (language="comment", text=
+        "0-25   ff 全配")
+      uint32 motor_id;
+
+      @verbatim (language="comment", text=
+        "各个关节电机配置")
+      node_control_msgs::msg::MotorConfigDev config;
+    };
+  };
+};

@@ -1,0 +1,6 @@
+[console_scripts]
+action_robot_controller = robot_rl_controller.action_robot_controller:main
+dance_robot_controller = robot_rl_controller.dance_robot_controller:main
+s_waist_15_action_robot_controller = robot_rl_controller.s_waist_15_action_robot_controller:main
+waist_15_action_robot_controller = robot_rl_controller.waist_15_action_robot_controller:main
+

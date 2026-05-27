@@ -1,0 +1,288 @@
+<mujoco model="LRS-X2">
+  <compiler angle="radian" autolimits="true"/>
+
+  <!-- ===== 材质定义 ===== -->
+  <asset>
+    <mesh name="base_link" file="./meshes/base_link.STL" scale="0.001 0.001 0.001"/>
+    <mesh name="waist_yaw_Link" file="./meshes/waist_yaw_Link.STL" scale="0.001 0.001 0.001"/>
+    <mesh name="waist_roll_Link" file="./meshes/waist_roll_Link.STL" scale="0.001 0.001 0.001"/>
+    <mesh name="waist_pitch_Link" file="./meshes/waist_pitch_Link.STL" scale="0.001 0.001 0.001"/>
+    <mesh name="head_Link" file="./meshes/head_Link.STL" scale="0.001 0.001 0.001"/>
+    <mesh name="left_shoulder_pitch_Link" file="./meshes/left_shoulder_pitch_Link.STL" scale="0.001 0.001 0.001"/>
+    <mesh name="left_shoulder_roll_Link" file="./meshes/left_shoulder_roll_Link.STL" scale="0.001 0.001 0.001"/>
+    <mesh name="left_shoulder_yaw_Link" file="./meshes/left_shoulder_yaw_Link.STL" scale="0.001 0.001 0.001"/>
+    <mesh name="left_elbow_Link" file="./meshes/left_elbow_Link.STL" scale="0.001 0.001 0.001"/>
+    <mesh name="left_handwrist_Link" file="./meshes/left_handwrist_Link.STL" scale="0.001 0.001 0.001"/>
+    <mesh name="right_shoulder_pitch_Link" file="./meshes/right_shoulder_pitch_Link.STL" scale="0.001 0.001 0.001"/>
+    <mesh name="right_shoulder_roll_Link" file="./meshes/right_shoulder_roll_Link.STL" scale="0.001 0.001 0.001"/>
+    <mesh name="right_shoulder_yaw_Link" file="./meshes/right_shoulder_yaw_Link.STL" scale="0.001 0.001 0.001"/>
+    <mesh name="right_elbow_Link" file="./meshes/right_elbow_Link.STL" scale="0.001 0.001 0.001"/>
+    <mesh name="right_handwrist_Link" file="./meshes/right_handwrist_Link.STL" scale="0.001 0.001 0.001"/>
+    <mesh name="left_hippitch_Link" file="./meshes/left_hippitch_Link.STL" scale="0.001 0.001 0.001"/>
+    <mesh name="left_hiproll_Link" file="./meshes/left_hiproll_Link.STL" scale="0.001 0.001 0.001"/>
+    <mesh name="left_hipyaw_Link" file="./meshes/left_hipyaw_Link.STL" scale="0.001 0.001 0.001"/>
+    <mesh name="left_knee_Link" file="./meshes/left_knee_Link.STL" scale="0.001 0.001 0.001"/>
+    <mesh name="left_anklepitch_Link" file="./meshes/left_anklepitch_Link.STL" scale="0.001 0.001 0.001"/>
+    <mesh name="left_ankleroll_Link" file="./meshes/left_ankleroll_Link.STL" scale="0.001 0.001 0.001"/>
+    <mesh name="right_hippitch_Link" file="./meshes/right_hippitch_Link.STL" scale="0.001 0.001 0.001"/>
+    <mesh name="right_hiproll_Link" file="./meshes/right_hiproll_Link.STL" scale="0.001 0.001 0.001"/>
+    <mesh name="right_hipyaw_Link" file="./meshes/right_hipyaw_Link.STL" scale="0.001 0.001 0.001"/>
+    <mesh name="right_knee_Link" file="./meshes/right_knee_Link.STL" scale="0.001 0.001 0.001"/>
+    <mesh name="right_anklepitch_Link" file="./meshes/right_anklepitch_Link.STL" scale="0.001 0.001 0.001"/>
+    <mesh name="right_ankleroll_Link" file="./meshes/right_ankleroll_Link.STL" scale="0.001 0.001 0.001"/>
+    
+    <!-- 材质 -->
+    <material name="gray" rgba="0.752941 0.752941 0.752941 1"/>
+    <material name="black" rgba="0.1 0.1 0.1 1"/>
+    <material name="green" rgba="0 0.5 0 1"/>
+  </asset>
+
+  <!-- ===== 物理设置 ===== -->
+  <option gravity="0 0 -9.81" timestep="0.002" iterations="50" ls_iterations="5"/>
+
+  <!-- ===== 全局设置 ===== -->
+  <size njmax="500" nconmax="100"/>
+
+  <!-- ===== 世界设置 ===== -->
+  <worldbody>
+    <!-- 地面 -->
+    <geom name="floor" type="plane" condim="3" pos="0 0 0" size="10 10 0.1" material="black"/>
+    
+    <!-- 光源 -->
+    <light pos="0 0 5" dir="0 0 -1" directional="true"/>
+
+    <!-- ===== 机器人根体 ===== -->
+    <body name="base" pos="0 0 0.8">
+      <inertial pos="0 0 0" mass="0" diaginertia="0 0 0"/>
+      
+      <!-- 视觉几何 - 基座 -->
+      <geom name="base_visual" type="mesh" material="gray" mesh="base_link"/>
+
+      <!-- ===== 腰部关节 ===== -->
+      <body name="waist_yaw_Link" pos="0 0 0">
+        <inertial pos="-0.0150609 -3.63578e-05 0.0207429" quat="-0.00135178 0.707786 -0.000412909 0.706425" mass="0.269139" diaginertia="0.000126469 0.000107096 4.65752e-05"/>
+        <joint name="waist_yaw" axis="0 0 1" range="-2.71 2.71" damping="1.0" frictionloss="0.1"/>
+        <geom name="waist_yaw_visual" type="mesh" material="gray" mesh="waist_yaw_Link"/>
+        
+        <body name="waist_roll_Link" pos="0 -1.95334e-05 0.041">
+          <inertial pos="-3.23412e-10 3.95135e-10 0" quat="0.5 0.5 -0.5 0.5" mass="0.0507195" diaginertia="4.49915e-06 3.46029e-06 3.10425e-06"/>
+          <joint name="waist_roll" axis="1 0 0" range="-0.52 0.52" damping="1.0" frictionloss="0.1"/>
+          <geom name="waist_roll_visual" type="mesh" material="gray" mesh="waist_roll_Link"/>
+          
+          <body name="waist_pitch_Link">
+            <inertial pos="0.00313523 0.000323891 0.147559" quat="0.999098 -0.00203222 -0.0424041 0.000392744" mass="3.26207" diaginertia="0.0155989 0.010281 0.00862796"/>
+            <joint name="waist_pitch" axis="0 1 0" range="-0.79 0.79" damping="1.0" frictionloss="0.1"/>
+            <geom name="waist_pitch_visual" type="mesh" material="gray" mesh="waist_pitch_Link"/>
+            
+            <!-- ===== 头部关节 ===== -->
+            <body name="head_Link" pos="-0.00174696 0 0.286379">
+              <inertial pos="0.00646861 8.67721e-05 0.0845569" quat="0.000335941 0.860703 -0.000292118 0.509107" mass="0.763249" diaginertia="0.00123633 0.00104866 0.000900251"/>
+              <joint name="head" axis="0 0 1" range="-1.57 1.57" damping="0.5" frictionloss="0.05"/>
+              <geom name="head_visual" type="mesh" material="gray" mesh="head_Link"/>
+            </body>
+
+            <!-- ===== 左臂 ===== -->
+            <body name="left_shoulder_pitch_Link" pos="-1.45184e-05 0.1136 0.225279">
+              <inertial pos="-0.000236047 0.0368448 -0.00872046" quat="0.825013 0.564238 0.0275912 -0.0151213" mass="0.169544" diaginertia="9.61419e-05 8.71305e-05 6.78402e-05"/>
+              <joint name="left_shoulder_pitch" axis="0 1 0" range="-3.05 2.62" damping="0.5" frictionloss="0.05"/>
+              <geom name="left_shoulder_pitch_visual" type="mesh" material="gray" mesh="left_shoulder_pitch_Link"/>
+              
+              <body name="left_shoulder_roll_Link" pos="0.0275145 0.0439999 -0.0120144">
+                <inertial pos="-0.0242086 0.00140515 -0.0493865" quat="0.999547 -0.00799422 0.0288971 0.00250862" mass="0.311588" diaginertia="0.000398822 0.000319496 0.000155234"/>
+                <joint name="left_shoulder_roll" axis="1 0 0" range="-0.35 2.18" damping="0.5" frictionloss="0.05"/>
+                <geom name="left_shoulder_roll_visual" type="mesh" material="gray" mesh="left_shoulder_roll_Link"/>
+                
+                <body name="left_shoulder_yaw_Link" pos="-0.0274999 -1.43944e-05 -0.104585">
+                  <inertial pos="0.00480512 0.000273767 -0.0723525" quat="0.997682 0.000966901 -0.0676392 -0.00741441" mass="0.270043" diaginertia="0.000365332 0.000362707 0.000111724"/>
+                  <joint name="left_shoulder_yaw" axis="0 0 1" range="-2.62 2.62" damping="0.5" frictionloss="0.05"/>
+                  <geom name="left_shoulder_yaw_visual" type="mesh" material="gray" mesh="left_shoulder_yaw_Link"/>
+                  
+                  <body name="left_elbow_Link" pos="0.0119854 0.0275145 -0.1057">
+                    <inertial pos="0.0478722 -0.0209558 -0.0087589" quat="0.464616 0.554259 0.530061 0.442678" mass="0.293553" diaginertia="0.000465468 0.000376684 0.000159679"/>
+                    <joint name="left_elbow" axis="0 1 0" range="-2.62 0.52" damping="0.5" frictionloss="0.05"/>
+                    <geom name="left_elbow_visual" type="mesh" material="gray" mesh="left_elbow_Link"/>
+                    
+                    <body name="left_handwrist_Link" pos="0.109715 -0.0275001 -0.0120144">
+                      <inertial pos="0.107953 -0.00424661 0.00340809" quat="0.385963 0.63834 0.29312 0.598026" mass="0.414941" diaginertia="0.000605758 0.000545871 0.000233381"/>
+                      <joint name="left_handwrist" axis="1 0 0" range="-2.62 2.62" damping="0.5" frictionloss="0.05"/>
+                      <geom name="left_handwrist_visual" type="mesh" material="gray" mesh="left_handwrist_Link"/>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+
+            <!-- ===== 右臂 ===== -->
+            <body name="right_shoulder_pitch_Link" pos="-1.45184e-05 -0.1136 0.225279">
+              <inertial pos="-0.000129918 -0.035805 -0.00862368" quat="0.564211 0.825033 0.0150466 -0.0275721" mass="0.168751" diaginertia="9.61235e-05 8.7124e-05 6.78302e-05"/>
+              <joint name="right_shoulder_pitch" axis="0 1 0" range="-3.05 2.62" damping="0.5" frictionloss="0.05"/>
+              <geom name="right_shoulder_pitch_visual" type="mesh" material="gray" mesh="right_shoulder_pitch_Link"/>
+              
+              <body name="right_shoulder_roll_Link" pos="0.0275145 -0.0429999 -0.0120144">
+                <inertial pos="-0.0241978 -0.00145314 -0.0493726" quat="0.999546 0.00795471 0.0289512 -0.00263522" mass="0.310875" diaginertia="0.000398905 0.000319538 0.000155245"/>
+                <joint name="right_shoulder_roll" axis="1 0 0" range="-2.18 0.35" damping="0.5" frictionloss="0.05"/>
+                <geom name="right_shoulder_roll_visual" type="mesh" material="gray" mesh="right_shoulder_roll_Link"/>
+                
+                <body name="right_shoulder_yaw_Link" pos="-0.0274999 1.43944e-05 -0.104585">
+                  <inertial pos="0.00483018 -0.000337491 -0.0722582" quat="0.997678 -0.000900509 -0.0676374 0.00798245" mass="0.269276" diaginertia="0.000365178 0.000362561 0.000111685"/>
+                  <joint name="right_shoulder_yaw" axis="0 0 1" range="-2.62 2.62" damping="0.5" frictionloss="0.05"/>
+                  <geom name="right_shoulder_yaw_visual" type="mesh" material="gray" mesh="right_shoulder_yaw_Link"/>
+                  
+                  <body name="right_elbow_Link" pos="0.0119854 -0.0275145 -0.1057">
+                    <inertial pos="0.0478571 0.0209352 -0.00880161" quat="0.441958 0.529701 0.556634 0.46287" mass="0.291603" diaginertia="0.0004635 0.000375664 0.000158427"/>
+                    <joint name="right_elbow" axis="0 1 0" range="-2.62 0.52" damping="0.5" frictionloss="0.05"/>
+                    <geom name="right_elbow_visual" type="mesh" material="gray" mesh="right_elbow_Link"/>
+                    
+                    <body name="right_handwrist_Link" pos="0.109715 0.0275001 -0.0120144">
+                      <inertial pos="0.106422 0.00491175 0.00353248" quat="0.590755 0.303383 0.633438 0.397144" mass="0.399368" diaginertia="0.000597306 0.000538612 0.000223312"/>
+                      <joint name="right_handwrist" axis="1 0 0" range="-2.62 2.62" damping="0.5" frictionloss="0.05"/>
+                      <geom name="right_handwrist_visual" type="mesh" material="gray" mesh="right_handwrist_Link"/>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+
+            <!-- ===== 左腿 (Policy 控制关节) ===== -->
+            <body name="left_hippitch_Link" pos="0 0.0729805 -0.1131">
+              <inertial pos="-0.00733908 0.0430593 -0.0299043" quat="0.930292 0.360335 -0.0265931 -0.0633149" mass="0.568538" diaginertia="0.000668925 0.000544541 0.000409602"/>
+              <joint name="left_hippitch" axis="0 1 0" range="-2.69 2.69" damping="2.0" frictionloss="1.0"/>
+              <geom name="left_hippitch_visual" type="mesh" material="gray" mesh="left_hippitch_Link"/>
+              
+              <body name="left_hiproll_Link" pos="0.019 0.0500805 -0.0369093">
+                <inertial pos="0.00458817 2.05407e-05 -0.0296405" quat="0.980658 -7.50407e-05 0.195728 -0.000395917" mass="0.340324" diaginertia="0.000427954 0.000395254 0.000200544"/>
+                <joint name="left_hiproll" axis="1 0 0" range="-0.52 2.97" damping="2.0" frictionloss="1.0"/>
+                <geom name="left_hiproll_visual" type="mesh" material="gray" mesh="left_hiproll_Link"/>
+                
+                <body name="left_hipyaw_Link" pos="-0.0164907 0 -0.0669907">
+                  <inertial pos="0.00537425 0.0120213 -0.105644" quat="0.688884 0.052921 -0.0238644 0.722543" mass="1.34325" diaginertia="0.00545774 0.00502054 0.00130411"/>
+                  <joint name="left_hipyaw" axis="0 0 1" range="-2.76 2.76" damping="2.0" frictionloss="1.0"/>
+                  <geom name="left_hipyaw_visual" type="mesh" material="gray" mesh="left_hipyaw_Link"/>
+                  
+                  <body name="left_knee_Link" pos="-0.00250643 0.0240195 -0.210642">
+                    <inertial pos="0.0112456 -0.0250893 -0.128139" quat="0.999684 -0.00544292 -0.021775 0.0113001" mass="1.83731" diaginertia="0.0106698 0.0104678 0.00105033"/>
+                    <joint name="left_knee" axis="0 1 0" range="-0.09 2.53" damping="2.0" frictionloss="1.0"/>
+                    <geom name="left_knee_visual" type="mesh" material="gray" mesh="left_knee_Link"/>
+                    
+                    <body name="left_anklepitch_Link" pos="0.014 -0.024 -0.3225">
+                      <inertial pos="0 0 -0.00722519" mass="0.0528192" diaginertia="6.74926e-06 5.91459e-06 3.34525e-06"/>
+                      <joint name="left_anklepitch" axis="0 1 0" range="-0.49 0.87" damping="1.0" frictionloss="0.5"/>
+                      <geom name="left_anklepitch_visual" type="mesh" material="gray" mesh="left_anklepitch_Link"/>
+                      
+                      <body name="left_ankleroll_Link" pos="0 0 -0.0165">
+                        <inertial pos="0.0220945 5.43539e-06 -0.0314321" quat="-6.26757e-07 0.714196 1.28238e-05 0.699946" mass="0.559045" diaginertia="0.0011494 0.00101511 0.000193136"/>
+                        <joint name="left_ankleroll" axis="1 0 0" range="-0.26 0.26" damping="1.0" frictionloss="0.5"/>
+                        <geom name="left_ankleroll_visual" type="mesh" material="gray" mesh="left_ankleroll_Link"/>
+                        <!-- 左脚接触几何 -->
+                        <geom name="left_foot" type="box" pos="0.08 0 -0.01" size="0.08 0.04 0.005" material="black"/>
+                      </body>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+
+            <!-- ===== 右腿 (Policy 控制关节) ===== -->
+            <body name="right_hippitch_Link" pos="0 -0.0730195 -0.1131">
+              <inertial pos="-0.00733802 -0.0430703 -0.0299082" quat="0.930293 -0.360304 -0.0267487 0.0634033" mass="0.568494" diaginertia="0.000668882 0.00054424 0.000409769"/>
+              <joint name="right_hippitch" axis="0 1 0" range="-2.69 2.69" damping="2.0" frictionloss="1.0"/>
+              <geom name="right_hippitch_visual" type="mesh" material="gray" mesh="right_hippitch_Link"/>
+              
+              <body name="right_hiproll_Link" pos="0.019 -0.0501195 -0.0369093">
+                <inertial pos="0.00458817 2.05407e-05 -0.0296405" quat="0.980658 -7.50402e-05 0.195728 -0.000395915" mass="0.340324" diaginertia="0.000427954 0.000395254 0.000200544"/>
+                <joint name="right_hiproll" axis="1 0 0" range="-2.97 0.52" damping="2.0" frictionloss="1.0"/>
+                <geom name="right_hiproll_visual" type="mesh" material="gray" mesh="right_hiproll_Link"/>
+                
+                <body name="right_hipyaw_Link" pos="-0.0164907 0 -0.0669907">
+                  <inertial pos="0.00537226 -0.0119879 -0.105648" quat="0.722389 -0.0238486 0.0529209 0.689047" mass="1.34325" diaginertia="0.00545772 0.00502063 0.00130406"/>
+                  <joint name="right_hipyaw" axis="0 0 1" range="-2.76 2.76" damping="2.0" frictionloss="1.0"/>
+                  <geom name="right_hipyaw_visual" type="mesh" material="gray" mesh="right_hipyaw_Link"/>
+                  
+                  <body name="right_knee_Link" pos="-0.00250643 -0.0239804 -0.210642">
+                    <inertial pos="0.0112477 0.0250917 -0.128154" quat="0.999684 0.00543868 -0.0217686 -0.0113763" mass="1.83739" diaginertia="0.0106703 0.0104682 0.00105041"/>
+                    <joint name="right_knee" axis="0 1 0" range="-0.09 2.53" damping="2.0" frictionloss="1.0"/>
+                    <geom name="right_knee_visual" type="mesh" material="gray" mesh="right_knee_Link"/>
+                    
+                    <body name="right_anklepitch_Link" pos="0.014 0.024 -0.3225">
+                      <inertial pos="0 0 -0.00722519" mass="0.0528192" diaginertia="6.74926e-06 5.91459e-06 3.34525e-06"/>
+                      <joint name="right_anklepitch" axis="0 1 0" range="-0.49 0.87" damping="1.0" frictionloss="0.5"/>
+                      <geom name="right_anklepitch_visual" type="mesh" material="gray" mesh="right_anklepitch_Link"/>
+                      
+                      <body name="right_ankleroll_Link" pos="0 0 -0.0165">
+                        <inertial pos="0.0220944 5.43365e-06 -0.031447" quat="4.64097e-06 0.714196 6.16911e-06 0.699946" mass="0.559045" diaginertia="0.0011494 0.00101511 0.000193135"/>
+                        <joint name="right_ankleroll" axis="1 0 0" range="-0.26 0.26" damping="1.0" frictionloss="0.5"/>
+                        <geom name="right_ankleroll_visual" type="mesh" material="gray" mesh="right_ankleroll_Link"/>
+                        <!-- 右脚接触几何 -->
+                        <geom name="right_foot" type="box" pos="0.08 0 -0.01" size="0.08 0.04 0.005" material="black"/>
+                      </body>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+  <!-- ===== 控制器定义 ===== -->
+  <actuator>
+    <!-- 腰部 -->
+    <position name="waist_yaw" joint="waist_yaw" kp="2000" kv="50" ctrlrange="-2.71 2.71" forcerange="-90 90"/>
+    <position name="waist_roll" joint="waist_roll" kp="2000" kv="50" ctrlrange="-0.52 0.52" forcerange="-25 25"/>
+    <position name="waist_pitch" joint="waist_pitch" kp="2000" kv="50" ctrlrange="-0.79 0.79" forcerange="-25 25"/>
+    
+    <!-- 头部 -->
+    <position name="head" joint="head" kp="200" kv="20" ctrlrange="-1.57 1.57" forcerange="-25 25"/>
+    
+    <!-- 左臂 -->
+    <position name="left_shoulder_pitch" joint="left_shoulder_pitch" kp="200" kv="20" ctrlrange="-3.05 2.62" forcerange="-25 25"/>
+    <position name="left_shoulder_roll" joint="left_shoulder_roll" kp="50" kv="20" ctrlrange="-0.35 2.18" forcerange="-25 25"/>
+    <position name="left_shoulder_yaw" joint="left_shoulder_yaw" kp="50" kv="20" ctrlrange="-2.62 2.62" forcerange="-25 25"/>
+    <position name="left_elbow" joint="left_elbow" kp="50" kv="20" ctrlrange="-2.62 0.52" forcerange="-25 25"/>
+    <position name="left_handwrist" joint="left_handwrist" kp="50" kv="20" ctrlrange="-2.62 2.62" forcerange="-25 25"/>
+    
+    <!-- 右臂 -->
+    <position name="right_shoulder_pitch" joint="right_shoulder_pitch" kp="200" kv="20" ctrlrange="-3.05 2.62" forcerange="-25 25"/>
+    <position name="right_shoulder_roll" joint="right_shoulder_roll" kp="50" kv="20" ctrlrange="-2.18 0.35" forcerange="-25 25"/>
+    <position name="right_shoulder_yaw" joint="right_shoulder_yaw" kp="50" kv="20" ctrlrange="-2.62 2.62" forcerange="-25 25"/>
+    <position name="right_elbow" joint="right_elbow" kp="50" kv="20" ctrlrange="-2.62 0.52" forcerange="-25 25"/>
+    <position name="right_handwrist" joint="right_handwrist" kp="50" kv="20" ctrlrange="-2.62 2.62" forcerange="-25 25"/>
+    
+    <!-- 左腿 (Policy 控制) -->
+    <position name="left_hippitch" joint="left_hippitch" kp="2000" kv="50" ctrlrange="-2.69 2.69" forcerange="-140 140"/>
+    <position name="left_hiproll" joint="left_hiproll" kp="2000" kv="50" ctrlrange="-0.52 2.97" forcerange="-90 90"/>
+    <position name="left_hipyaw" joint="left_hipyaw" kp="2000" kv="50" ctrlrange="-2.76 2.76" forcerange="-90 90"/>
+    <position name="left_knee" joint="left_knee" kp="2000" kv="50" ctrlrange="-0.09 2.53" forcerange="-140 140"/>
+    <position name="left_anklepitch" joint="left_anklepitch" kp="200" kv="20" ctrlrange="-0.49 0.87" forcerange="-25 25"/>
+    <position name="left_ankleroll" joint="left_ankleroll" kp="200" kv="20" ctrlrange="-0.26 0.26" forcerange="-25 25"/>
+    
+    <!-- 右腿 (Policy 控制) -->
+    <position name="right_hippitch" joint="right_hippitch" kp="2000" kv="50" ctrlrange="-2.69 2.69" forcerange="-140 140"/>
+    <position name="right_hiproll" joint="right_hiproll" kp="2000" kv="50" ctrlrange="-2.97 0.52" forcerange="-90 90"/>
+    <position name="right_hipyaw" joint="right_hipyaw" kp="2000" kv="50" ctrlrange="-2.76 2.76" forcerange="-90 90"/>
+    <position name="right_knee" joint="right_knee" kp="2000" kv="50" ctrlrange="-0.09 2.53" forcerange="-140 140"/>
+    <position name="right_anklepitch" joint="right_anklepitch" kp="200" kv="20" ctrlrange="-0.49 0.87" forcerange="-25 25"/>
+    <position name="right_ankleroll" joint="right_ankleroll" kp="200" kv="20" ctrlrange="-0.26 0.26" forcerange="-25 25"/>
+  </actuator>
+
+  <!-- ===== 初始关键帧 ===== -->
+  <keyframe>
+    <!-- 站立初始状态 -->
+    <key name="stand" 
+         qpos="0 0 0.85
+               0 0 0
+               0
+               0 0 0 0 0
+               0 0 0 0 0
+               0 0 0 0 0 0
+               0 0 0 0 0 0"
+         ctrl="0 0 0
+               0
+               0 0 0 0 0
+               0 0 0 0 0
+               0 0 0 0 0 0
+               0 0 0 0 0 0"/>
+  </keyframe>
+</mujoco>

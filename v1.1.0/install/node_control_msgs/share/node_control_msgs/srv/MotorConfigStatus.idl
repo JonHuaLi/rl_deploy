@@ -1,0 +1,18 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from node_control_msgs/srv/MotorConfigStatus.srv
+// generated code does not contain a copyright notice
+
+#include "node_control_msgs/msg/MotorConfigDev.idl"
+
+module node_control_msgs {
+  module srv {
+    struct MotorConfigStatus_Request {
+      @verbatim (language="comment", text=
+        "0-25   ff 全配")
+      uint32 motor_id;
+    };
+    struct MotorConfigStatus_Response {
+      sequence<node_control_msgs::msg::MotorConfigDev> config;
+    };
+  };
+};

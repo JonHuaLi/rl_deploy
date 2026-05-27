@@ -1,0 +1,38 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from node_app_msgs/msg/LrsCmdAction.msg
+// generated code does not contain a copyright notice
+
+#include "std_msgs/msg/Header.idl"
+
+module node_app_msgs {
+  module msg {
+    module LrsCmdAction_Constants {
+      @verbatim (language="comment", text=
+        " 普通命令" "\n"        "机器电机状态恢复")
+      const uint32 ACTION_MOTOR_RECOVER = 0;
+      @verbatim (language="comment", text=
+        "机器人升级")
+      const uint32 ACTION_UPGRADE = 1;
+      @verbatim (language="comment", text=
+        "舞蹈命令")
+      const uint32 ACTION_DANCE_1 = 10;
+      @verbatim (language="comment", text=
+        "其他命令")
+      const uint32 ACTION_WAVE = 20;
+      const uint32 ACTION_CLASP = 21;
+      const uint32 ACTION_HEART = 22;
+      const uint32 ACTION_SHAKE = 23;
+      const uint32 ACTION_CLAP = 24;
+      const uint32 ACTION_KISS = 25;
+    };
+    struct LrsCmdAction {
+      std_msgs::msg::Header header;
+
+      uint32 action;
+
+      @verbatim (language="comment", text=
+        "参数")
+      string param;
+    };
+  };
+};

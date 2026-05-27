@@ -1,0 +1,38 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from node_control_msgs/msg/MotorHealthState.msg
+// generated code does not contain a copyright notice
+
+
+module node_control_msgs {
+  module msg {
+    struct MotorHealthState {
+      @verbatim (language="comment", text=
+        "0-3 表示4种健康状态")
+      uint16 health;
+
+      @verbatim (language="comment", text=
+        "电机方向")
+      uint8 motor_direction;
+
+      @verbatim (language="comment", text=
+        "电机温度")
+      uint8 motor_temperature;
+
+      @verbatim (language="comment", text=
+        "mos温度")
+      uint8 mos_temperature;
+
+      @verbatim (language="comment", text=
+        "母线电压")
+      uint8 bus_voltage;
+
+      @verbatim (language="comment", text=
+        "电机在线状态")
+      uint8 u1_online;
+
+      @verbatim (language="comment", text=
+        "电机位置零点")
+      float position_zero;
+    };
+  };
+};

@@ -1,0 +1,22 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from robot_msgs/msg/RobotState.msg
+// generated code does not contain a copyright notice
+
+#include "node_control_msgs/msg/MotorCommandFeedback.idl"
+#include "sensor_msgs/msg/Imu.idl"
+#include "std_msgs/msg/Header.idl"
+
+module robot_msgs {
+  module msg {
+    @verbatim (language="comment", text=
+      "RobotState.msg - 统一的机器人状态消息" "\n"
+      "包含IMU和电机反馈数据")
+    struct RobotState {
+      std_msgs::msg::Header header;
+
+      sensor_msgs::msg::Imu imu;
+
+      node_control_msgs::msg::MotorCommandFeedback motor_feedback;
+    };
+  };
+};

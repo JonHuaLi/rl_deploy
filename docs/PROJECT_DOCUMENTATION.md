@@ -867,45 +867,169 @@ pip install mujoco
 pip install isaacgym
 ```
 
-#### 7.1.2 机器人URDF/MJCF
+#### 7.1.2 机器人 MJCF 模型
+
+项目已提供完整的 LRS-X2 机器人 MJCF 模型文件：`model.mjcf`
+
+**模型文件结构**：
+```
+model/
+├── model.mjcf              # Mujoco 模型文件
+└── meshes/                 # 3D 模型文件夹
+    ├── README.md           # 文件说明
+    └── *.STL               # STL 网格文件 (需复制)
+```
+
+**模型文件关键配置**：
 
 ```xml
-<!-- robot.xml (MJCF 示例) -->
-<mujoco>
+<!-- model.mjcf 核心配置 -->
+<mujoco model="LRS-X2">
+  <!-- 编译器设置：弧度单位，自动限制 -->
   <compiler angle="radian" autolimits="true"/>
   
-  <asset>
-    <mesh name="body" file="body.stl"/>
-  </asset>
+  <!-- 物理设置 -->
+  <option gravity="0 0 -9.81" timestep="0.002" iterations="50" ls_iterations="5"/>
   
-  <worldbody>
-    <body name="robot_base" pos="0 0 0.5">
-      <!-- 26个关节定义 -->
-      <!-- 左腿 -->
-      <joint name="left_hip" type="hinge" axis="0 0 1" range="-1.5 1.5"/>
-      <joint name="left_knee" type="hinge" axis="0 1 0" range="-0.2 2.0"/>
-      <joint name="left_ankle" type="hinge" axis="0 1 0" range="-1.0 1.0"/>
-      
-      <!-- 右腿 -->
-      <joint name="right_hip" type="hinge" axis="0 0 1" range="-1.5 1.5"/>
-      <joint name="right_knee" type="hinge" axis="0 1 0" range="-0.2 2.0"/>
-      <joint name="right_ankle" type="hinge" axis="0 1 0" range="-1.0 1.0"/>
-      
-      <!-- 腰部 -->
-      <joint name="waist_yaw" type="hinge" axis="0 0 1" range="-1.0 1.0"/>
-      <joint name="waist_roll" type="hinge" axis="0 1 0" range="-0.5 0.5"/>
-      <joint name="waist_pitch" type="hinge" axis="0 1 0" range="-0.5 0.5"/>
-      
-      <!-- 手臂... -->
-    </body>
-  </worldbody>
-  
-  <actuator>
-    <!-- 26个电机定义 -->
-    <position name="left_hip" joint="left_hip" kp="680" kv="40"/>
-  </actuator>
+  <!-- 全局设置 -->
+  <size njmax="500" nconmax="100"/>
 </mujoco>
 ```
+
+**关节定义**（26个）：
+
+| 关节名称 | 类型 | 范围 (rad) | 阻尼 | 摩擦力 |
+|----------|------|------------|------|--------|
+| waist_yaw | hinge | [-2.71, 2.71] | 1.0 | 0.1 |
+| waist_roll | hinge | [-0.52, 0.52] | 1.0 | 0.1 |
+| waist_pitch | hinge | [-0.79, 0.79] | 1.0 | 0.1 |
+| head | hinge | [-1.57, 1.57] | 0.5 | 0.05 |
+| left_shoulder_pitch | hinge | [-3.05, 2.62] | 0.5 | 0.05 |
+| left_shoulder_roll | hinge | [-0.35, 2.18] | 0.5 | 0.05 |
+| left_shoulder_yaw | hinge | [-2.62, 2.62] | 0.5 | 0.05 |
+| left_elbow | hinge | [-2.62, 0.52] | 0.5 | 0.05 |
+| left_handwrist | hinge | [-2.62, 2.62] | 0.5 | 0.05 |
+| right_shoulder_pitch | hinge | [-3.05, 2.62] | 0.5 | 0.05 |
+| right_shoulder_roll | hinge | [-2.18, 0.35] | 0.5 | 0.05 |
+| right_shoulder_yaw | hinge | [-2.62, 2.62] | 0.5 | 0.05 |
+| right_elbow | hinge | [-2.62, 0.52] | 0.5 | 0.05 |
+| right_handwrist | hinge | [-2.62, 2.62] | 0.5 | 0.05 |
+| left_hippitch | hinge | [-2.69, 2.69] | 2.0 | 1.0 |
+| left_hiproll | hinge | [-0.52, 2.97] | 2.0 | 1.0 |
+| left_hipyaw | hinge | [-2.76, 2.76] | 2.0 | 1.0 |
+| left_knee | hinge | [-0.09, 2.53] | 2.0 | 1.0 |
+| left_anklepitch | hinge | [-0.49, 0.87] | 1.0 | 0.5 |
+| left_ankleroll | hinge | [-0.26, 0.26] | 1.0 | 0.5 |
+| right_hippitch | hinge | [-2.69, 2.69] | 2.0 | 1.0 |
+| right_hiproll | hinge | [-2.97, 0.52] | 2.0 | 1.0 |
+| right_hipyaw | hinge | [-2.76, 2.76] | 2.0 | 1.0 |
+| right_knee | hinge | [-0.09, 2.53] | 2.0 | 1.0 |
+| right_anklepitch | hinge | [-0.49, 0.87] | 1.0 | 0.5 |
+| right_ankleroll | hinge | [-0.26, 0.26] | 1.0 | 0.5 |
+
+**Policy 控制关节**（12个，对应 policy_joint_indices）：
+
+| 索引 | 关节名称 | 腿/部位 |
+|------|----------|---------|
+| 0 | waist_yaw | 腰部 |
+| 1 | waist_roll | 腰部 |
+| 2 | waist_pitch | 腰部 |
+| 3 | head | 头部 |
+| 4 | left_shoulder_pitch | 左臂 |
+| 5 | left_shoulder_roll | 左臂 |
+| 6 | left_shoulder_yaw | 左臂 |
+| 7 | left_elbow | 左臂 |
+| 8 | left_handwrist | 左臂 |
+| 9 | right_shoulder_pitch | 右臂 |
+| 10 | right_shoulder_roll | 右臂 |
+| 11 | right_shoulder_yaw | 右臂 |
+
+**控制器定义**：
+
+```xml
+<actuator>
+  <!-- 腰部 (高扭矩) -->
+  <position name="waist_yaw" joint="waist_yaw" kp="2000" kv="50" 
+            ctrlrange="-2.71 2.71" forcerange="-90 90"/>
+  <position name="waist_roll" joint="waist_roll" kp="2000" kv="50" 
+            ctrlrange="-0.52 0.52" forcerange="-25 25"/>
+  <position name="waist_pitch" joint="waist_pitch" kp="2000" kv="50" 
+            ctrlrange="-0.79 0.79" forcerange="-25 25"/>
+  
+  <!-- 左腿 (Policy 控制) -->
+  <position name="left_hippitch" joint="left_hippitch" kp="2000" kv="50" 
+            ctrlrange="-2.69 2.69" forcerange="-140 140"/>
+  <position name="left_hiproll" joint="left_hiproll" kp="2000" kv="50" 
+            ctrlrange="-0.52 2.97" forcerange="-90 90"/>
+  <position name="left_hipyaw" joint="left_hipyaw" kp="2000" kv="50" 
+            ctrlrange="-2.76 2.76" forcerange="-90 90"/>
+  <position name="left_knee" joint="left_knee" kp="2000" kv="50" 
+            ctrlrange="-0.09 2.53" forcerange="-140 140"/>
+  <position name="left_anklepitch" joint="left_anklepitch" kp="200" kv="20" 
+            ctrlrange="-0.49 0.87" forcerange="-25 25"/>
+  <position name="left_ankleroll" joint="left_ankleroll" kp="200" kv="20" 
+            ctrlrange="-0.26 0.26" forcerange="-25 25"/>
+  
+  <!-- 右腿 (Policy 控制) -->
+  <position name="right_hippitch" joint="right_hippitch" kp="2000" kv="50" 
+            ctrlrange="-2.69 2.69" forcerange="-140 140"/>
+  <position name="right_hiproll" joint="right_hiproll" kp="2000" kv="50" 
+            ctrlrange="-2.97 0.52" forcerange="-90 90"/>
+  <position name="right_hipyaw" joint="right_hipyaw" kp="2000" kv="50" 
+            ctrlrange="-2.76 2.76" forcerange="-90 90"/>
+  <position name="right_knee" joint="right_knee" kp="2000" kv="50" 
+            ctrlrange="-0.09 2.53" forcerange="-140 140"/>
+  <position name="right_anklepitch" joint="right_anklepitch" kp="200" kv="20" 
+            ctrlrange="-0.49 0.87" forcerange="-25 25"/>
+  <position name="right_ankleroll" joint="right_ankleroll" kp="200" kv="20" 
+            ctrlrange="-0.26 0.26" forcerange="-25 25"/>
+</actuator>
+```
+
+**初始关键帧**：
+
+```xml
+<keyframe>
+  <key name="stand" 
+       qpos="0 0 0.85
+             0 0 0
+             0
+             0 0 0 0 0
+             0 0 0 0 0
+             0 0 0 0 0 0
+             0 0 0 0 0 0"
+       ctrl="0 0 0
+             0
+             0 0 0 0 0
+             0 0 0 0 0
+             0 0 0 0 0 0
+             0 0 0 0 0 0"/>
+</keyframe>
+```
+
+**meshes 文件夹设置**：
+
+```bash
+# 1. 创建 meshes 目录
+mkdir -p model/meshes
+
+# 2. 从 robot_state 包复制 STL 文件
+# 方法1: 从 install 目录复制
+cp install/robot_state/share/robot_state/meshes/*.STL model/meshes/
+
+# 方法2: 从 src 目录复制
+cp src/robot_state/share/robot_state/meshes/*.STL model/meshes/
+
+# 3. 验证文件
+ls -la model/meshes/
+```
+
+**⚠️ 重要注意事项**：
+
+1. **单位转换**: STL 文件使用毫米 (mm)，MJCF 中已设置 `scale="0.001 0.001 0.001"` 转换为米
+2. **坐标系**: 确保所有模型的坐标系与原始导出一致
+3. **地面定义**: 模型已包含地面几何体 (`floor` geom)
+4. **接触定义**: 脚部已定义接触几何体 (`left_foot`, `right_foot`)
 
 ### 7.2 训练脚本结构
 

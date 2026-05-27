@@ -1,0 +1,1 @@
+/data/rl_deploy/install/robot_state:/data/rl_deploy/install/robot_rl_controller:/data/rl_deploy/install/robot_msgs:/data/rl_deploy/install/node_app_msgs:/data/rl_deploy/install/node_control_msgs:/opt/ros/humble
